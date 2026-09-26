@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<!-- saved from url=(0249)file:///C:/Users/ASUS/OneDrive/Documents/MEGA/Agri-Tech%20Training%20for%20Youth%20&%20Disability%20-%20Google%20Gemini_files/Lwandile%20Engineering%20Projects%20Voice%20of%20Vision/Swine%20Microclimate%20Controller%20_%20Sovereign%20Bio-Engine.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swine Microclimate Controller | Sovereign Bio-Engine</title>
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --panel-bg: #161b22;
+            --border-color: #30363d;
+            --accent-green: #238636;
+            --accent-blue: #58a6ff;
+            --accent-amber: #d29922;
+            --text-main: #c9d1d9;
+            --text-bright: #f0f6fc;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 24px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* Voice of Vision Container */
+        .vision-drawer {
+            background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--accent-blue);
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+
+        .vision-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 16px;
+            margin-bottom: 16px;
+        }
+
+        .vision-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .vision-title h2 {
+            margin: 0;
+            color: var(--text-bright);
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .vision-title p {
+            margin: 4px 0 0 0;
+            color: #8b949e;
+            font-size: 13px;
+        }
+
+        .audio-btn {
+            background: var(--accent-blue);
+            color: #ffffff;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .audio-btn:hover {
+            opacity: 0.9;
+        }
+
+        .vision-quote {
+            line-height: 1.7;
+            font-size: 15px;
+            color: var(--text-bright);
+        }
+
+        .vision-quote blockquote {
+            margin: 16px 0;
+            padding: 12px 18px;
+            background: #0d1117;
+            border-left: 3px solid var(--accent-amber);
+            color: var(--accent-amber);
+            font-style: italic;
+            font-size: 14px;
+            border-radius: 0 6px 6px 0;
+        }
+
+        /* SCADA Grid Layout */
+        .scada-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .panel {
+            background: var(--panel-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .panel h3 {
+            margin-top: 0;
+            color: var(--text-bright);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .control-group {
+            margin-bottom: 18px;
+        }
+
+        .control-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 13px;
+            color: #8b949e;
+        }
+
+        .control-group select, .control-group input[type="range"] {
+            width: 100%;
+            accent-color: var(--accent-blue);
+        }
+
+        .control-group select {
+            background: var(--bg-dark);
+            color: var(--text-bright);
+            border: 1px solid var(--border-color);
+            padding: 8px;
+            border-radius: 6px;
+        }
+
+        .telemetry-value {
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--text-bright);
+            margin: 8px 0;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .status-optimal { background: rgba(35, 134, 54, 0.2); color: #3fb950; border: 1px solid var(--accent-green); }
+        .status-warning { background: rgba(210, 153, 34, 0.2); color: var(--accent-amber); border: 1px solid var(--accent-amber); }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- ============================================================ -->
+    <!-- PRESTIGE SCAPUSH: VOICE OF VISION (SWINE ENGINE)            -->
+    <!-- ============================================================ -->
+    <div class="vision-drawer">
+        <div class="vision-header">
+            <div class="vision-title">
+                <span style="font-size: 28px;">🐷</span>
+                <div>
+                    <h2>Voice of Vision | Swine Microclimate Architecture</h2>
+                    <p>Sovereign Bio-Engine Operational Philosophy • Scapush Precision</p>
+                </div>
+            </div>
+            <button onclick="toggleVisionAudio()" id="audio-btn" class="audio-btn" style="background: var(--accent-blue);"><span>▶</span> Listen to Vision</button>
+        </div>
+
+        <div class="vision-quote">
+            <p>
+                <strong style="color: var(--accent-blue);">Sovereign Intent:</strong> 
+                "We do not react to biological stress in the pod; we engineer an environment where stress cannot manifest. Hydronic floor priming absorbs core metabolic heat while shielding animals from high-velocity air drafts."
+            </p>
+            <blockquote style="margin: 16px 0; padding: 12px 18px; background: #0d1117; border-left: 3px solid var(--accent-amber); color: var(--accent-amber); font-style: italic; font-size: 14px; border-radius: 0 6px 6px 0;">
+                "Air purity always supersedes thermal comfort. If Ammonia exceeds 15 PPM, the engine overrides thermal logic to purge toxicity instantly, guaranteeing zero-mortality air quality standards."
+            </blockquote>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- SCADA INTERACTIVE SIMULATION ENGINE                          -->
+    <!-- ============================================================ -->
+    <div class="scada-grid">
+        <!-- Interactive Controls -->
+        <div class="panel">
+            <h3>🎛️ Swine Growth Phase &amp; Telemetry</h3>
+            
+            <div class="control-group">
+                <label>Select Swine Growth Phase:</label>
+                <select id="stage-input" onchange="updateSCADA()">
+                    <option value="farrowing">Farrowing Phase (Sow + Piglets | Floor: 32°C)</option>
+                    <option value="nursery" selected="">Nursery Phase (Equilibrium Target: 24°C)</option>
+                    <option value="finisher">Finisher Phase (Target: 18°C)</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label>Ambient Room Temperature: <span id="temp-val">24</span>°C</label>
+                <input type="range" id="temp-input" min="15" max="38" value="24" oninput="updateSCADA()">
+            </div>
+
+            <div class="control-group">
+                <label>Ammonia Concentration ($NH_3$): <span id="nh3-val">8</span> PPM</label>
+                <input type="range" id="nh3-input" min="0" max="40" value="8" oninput="updateSCADA()">
+            </div>
+        </div>
+
+        <!-- System Response Output -->
+        <div class="panel">
+            <h3>⚙️ Hydronic &amp; Ventilation Actuation</h3>
+            
+            <div>
+                <span style="font-size: 12px; color: #8b949e;">Hydronic Floor Pad Thermal Setpoint</span>
+                <div id="hydronic-status" class="telemetry-value">26.0°C</div>
+            </div>
+
+            <div style="margin-top: 15px;">
+                <span style="font-size: 12px; color: #8b949e;">Exhaust Fan Velocity Output</span>
+                <div id="fan-status" class="telemetry-value">35% CFM</div>
+            </div>
+
+            <div style="margin-top: 15px;">
+                <span style="font-size: 12px; color: #8b949e;">System Operating Status</span><br>
+                <span id="system-badge" class="status-badge status-optimal">EQUILIBRIUM MAINTAINED</span>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+// Voice of Vision Engine (Browser-Native Web Speech API)
+let isSpeaking = false;
+const visionText = `Voice of Vision, Swine Microclimate Architecture. We do not react to biological stress in the pod; we engineer an environment where stress cannot manifest. Hydronic floor priming absorbs core metabolic heat while shielding animals from high-velocity air drafts. Air purity always supersedes thermal comfort. If Ammonia exceeds 15 PPM, the engine overrides thermal logic to purge toxicity instantly, guaranteeing zero-mortality air quality standards. Proceed with absolute precision.`;
+
+function toggleVisionAudio() {
+    const btn = document.getElementById('audio-btn');
+    if ('speechSynthesis' in window) {
+        if (isSpeaking) {
+            window.speechSynthesis.cancel();
+            isSpeaking = false;
+            btn.innerHTML = '<span>▶</span> Listen to Vision';
+            btn.style.background = 'var(--accent-blue)';
+        } else {
+            const utterance = new SpeechSynthesisUtterance(visionText);
+            utterance.rate = 0.92;
+            utterance.pitch = 0.95;
+            
+            utterance.onend = function() {
+                isSpeaking = false;
+                btn.innerHTML = '<span>▶</span> Listen to Vision';
+                btn.style.background = 'var(--accent-blue)';
+            };
+
+            window.speechSynthesis.speak(utterance);
+            isSpeaking = true;
+            btn.innerHTML = '<span>⏹</span> Pause Vision';
+            btn.style.background = '#da3633';
+        }
+    }
+}
+
+// Interactive SCADA Control Logic Engine
+function updateSCADA() {
+    const stage = document.getElementById('stage-input').value;
+    const temp = parseInt(document.getElementById('temp-input').value);
+    const nh3 = parseInt(document.getElementById('nh3-input').value);
+
+    document.getElementById('temp-val').innerText = temp;
+    document.getElementById('nh3-val').innerText = nh3;
+
+    const hydronic = document.getElementById('hydronic-status');
+    const fan = document.getElementById('fan-status');
+    const badge = document.getElementById('system-badge');
+
+    // Priority 1: Safety Override for Air Purity
+    if (nh3 > 15) {
+        fan.innerText = "100% CFM (AIR PURGE)";
+        hydronic.innerText = "22.0°C (MAINTENANCE)";
+        badge.className = "status-badge status-warning";
+        badge.innerText = "AIR PURGE OVERRIDE ACTIVE";
+        return;
+    }
+
+    // Priority 2: Phase-Specific Thermal Balancing
+    if (stage === 'farrowing') {
+        if (temp < 22) {
+            hydronic.innerText = "32.0°C (HIGH HEAT)";
+            fan.innerText = "10% CFM (MIN VENT)";
+            badge.className = "status-badge status-optimal";
+            badge.innerText = "PIGLET THERMAL HEATING";
+        } else {
+            hydronic.innerText = "28.0°C";
+            fan.innerText = Math.min(100, 20 + (temp - 22) * 8) + "% CFM";
+            badge.className = "status-badge status-optimal";
+            badge.innerText = "SOW COOLING & PIGLET WARMTH";
+        }
+    } else if (stage === 'nursery') {
+        if (temp > 26) {
+            hydronic.innerText = "22.0°C (HEAT SINK)";
+            fan.innerText = Math.min(100, 35 + (temp - 26) * 10) + "% CFM";
+            badge.className = "status-badge status-warning";
+            badge.innerText = "THERMAL DISSIPATION MODE";
+        } else if (temp < 22) {
+            hydronic.innerText = "30.0°C (HEATING)";
+            fan.innerText = "10% CFM (MIN VENT)";
+            badge.className = "status-badge status-optimal";
+            badge.innerText = "HYDRONIC PRIMING ACTIVE";
+        } else {
+            hydronic.innerText = "26.0°C";
+            fan.innerText = "35% CFM";
+            badge.className = "status-badge status-optimal";
+            badge.innerText = "EQUILIBRIUM MAINTAINED";
+        }
+    } else if (stage === 'finisher') {
+        if (temp > 22) {
+            hydronic.innerText = "18.0°C (COOLING)";
+            fan.innerText = Math.min(100, 50 + (temp - 22) * 12) + "% CFM";
+            badge.className = "status-badge status-warning";
+            badge.innerText = "FINISHER HEAT DISSIPATION";
+        } else {
+            hydronic.innerText = "20.0°C";
+            fan.innerText = "20% CFM";
+            badge.className = "status-badge status-optimal";
+            badge.innerText = "FINISHER ZONE BALANCED";
+        }
+    }
+}
+
+// Initial Run
+updateSCADA();
+</script>
+
+
+</body></html>

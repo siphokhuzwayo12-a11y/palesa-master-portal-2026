@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<!-- saved from url=(0133)file:///C:/Users/ASUS/OneDrive/Desktop/Hongjiali/Voice_of_Vision/Unified%20Master%20SCADA%20Gateway%20_%20Sovereign%20Bio-Engine.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unified Master SCADA Gateway | Sovereign Bio-Engine</title>
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --panel-bg: #161b22;
+            --border-color: #30363d;
+            --accent-green: #238636;
+            --accent-blue: #58a6ff;
+            --accent-amber: #d29922;
+            --accent-red: #da3633;
+            --accent-purple: #bc8cff;
+            --text-main: #c9d1d9;
+            --text-bright: #f0f6fc;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        /* Top Executive Telemetry Strip */
+        .status-strip {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .strip-card {
+            background: var(--panel-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 12px 16px;
+        }
+
+        .strip-label {
+            font-size: 11px;
+            color: #8b949e;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .strip-val {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-bright);
+            margin-top: 4px;
+        }
+
+        /* Voice of Vision Container */
+        .vision-drawer {
+            background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--accent-blue);
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+
+        .vision-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 12px;
+            margin-bottom: 12px;
+        }
+
+        .vision-title h2 {
+            margin: 0;
+            color: var(--text-bright);
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .vision-title p {
+            margin: 2px 0 0 0;
+            color: #8b949e;
+            font-size: 12px;
+        }
+
+        .audio-btn {
+            background: var(--accent-blue);
+            color: #ffffff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Navigation Tabs */
+        .tab-bar {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .tab-btn {
+            background: var(--panel-bg);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+            padding: 10px 18px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 13px;
+        }
+
+        .tab-btn.active {
+            background: var(--accent-blue);
+            color: #ffffff;
+            border-color: var(--accent-blue);
+        }
+
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+
+        /* SCADA Layout Grid */
+        .scada-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .panel {
+            background: var(--panel-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .panel h3 {
+            margin-top: 0;
+            color: var(--text-bright);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+            font-size: 15px;
+        }
+
+        .control-group {
+            margin-bottom: 16px;
+            background: var(--bg-dark);
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+        }
+
+        .control-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-bright);
+        }
+
+        .control-group input[type="range"] {
+            width: 100%;
+            accent-color: var(--accent-blue);
+        }
+
+        .teaching-note {
+            margin-top: 8px;
+            font-size: 12px;
+            color: var(--accent-amber);
+            line-height: 1.4;
+            border-left: 2px solid var(--accent-amber);
+            padding-left: 8px;
+            font-style: italic;
+        }
+
+        .telemetry-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-bright);
+            margin: 6px 0;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .status-optimal { background: rgba(35, 134, 54, 0.2); color: #3fb950; border: 1px solid var(--accent-green); }
+        .status-warning { background: rgba(210, 153, 34, 0.2); color: var(--accent-amber); border: 1px solid var(--accent-amber); }
+        .status-danger { background: rgba(218, 54, 51, 0.2); color: var(--accent-red); border: 1px solid var(--accent-red); }
+
+        /* Terminal Audit Log */
+        .audit-terminal {
+            background: #040d12;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 16px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 12px;
+            color: #3fb950;
+            height: 120px;
+            overflow-y: auto;
+            margin-top: 20px;
+        }
+
+        /* Vault Links */
+        .vault-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .vault-card {
+            background: var(--bg-dark);
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            border-radius: 6px;
+            text-decoration: none;
+            color: var(--text-main);
+            transition: all 0.2s;
+        }
+
+        .vault-card:hover {
+            border-color: var(--accent-blue);
+        }
+
+        .vault-title {
+            font-weight: 600;
+            color: var(--accent-blue);
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- 1. Global Executive Telemetry Strip -->
+    <div class="status-strip">
+        <div class="strip-card">
+            <div class="strip-label">4-Pod Power Load</div>
+            <div class="strip-val">12.4 kW <span style="font-size: 11px; color: var(--accent-green);">(Solar Direct)</span></div>
+        </div>
+        <div class="strip-card">
+            <div class="strip-label">Hydronic Buffer Reserve</div>
+            <div class="strip-val">84% Capacity</div>
+        </div>
+        <div class="strip-card">
+            <div class="strip-label">Global Air Purity</div>
+            <div class="strip-val" id="global-air" style="color: var(--text-bright);">OPTIMAL (8 PPM)</div>
+        </div>
+        <div class="strip-card">
+            <div class="strip-label">Academy Protocol Status</div>
+            <div class="strip-val" style="color: var(--accent-green);">SCAPUSH ACTIVE</div>
+        </div>
+    </div>
+
+    <!-- 2. Voice of Vision Command Drawer -->
+    <div class="vision-drawer">
+        <div class="vision-header">
+            <div class="vision-title">
+                <h2>🏛️ Unified Master Control Gateway | Sovereign Bio-Engine</h2>
+                <p>Lead Architecture &amp; Initiate Training Infrastructure • Scapush Precision</p>
+            </div>
+            <button onclick="toggleVisionAudio()" id="audio-btn" class="audio-btn" style="background: var(--accent-blue);"><span>▶</span> Listen to Vision Master Script</button>
+        </div>
+        <div style="font-size: 14px; color: var(--text-bright); line-height: 1.6;">
+            "Initiates, welcome to the Sovereign Bio-Engine Master Gateway. This interface connects the entire ecosystem: Swine Nursery microclimates, Broiler growth stages, and the 4-Pod Thermal Manifold. Here, zero mortality is engineered through absolute dynamic equilibrium."
+        </div>
+    </div>
+
+    <!-- 3. Navigation Tab Bar -->
+    <div class="tab-bar">
+        <button class="tab-btn" onclick="switchTab('swine')">🐷 Swine Microclimate</button>
+        <button class="tab-btn active" onclick="switchTab('broiler')">🐔 Broiler Stage Matrix</button>
+        <button class="tab-btn" onclick="switchTab('manifold')">🔥 4-Pod Thermal Manifold</button>
+        <button class="tab-btn" onclick="switchTab('vault')">📁 Repository Artifact Vault</button>
+    </div>
+
+    <!-- TAB 1: SWINE NURSERY -->
+    <div id="swine-tab" class="tab-content">
+        <div class="scada-grid">
+            <div class="panel">
+                <h3>🎛️ Swine Telemetry Inputs</h3>
+                <div class="control-group">
+                    <label>Ambient Room Temp: <span id="swine-temp-val">24</span>°C</label>
+                    <input type="range" id="swine-temp-input" min="15" max="38" value="24" oninput="updateMasterSCADA()">
+                    <div class="teaching-note">💡 <strong>Initiate Script:</strong> "Demonstrate how floor cooling loops absorb core metabolic heat without creating high-velocity drafts."</div>
+                </div>
+                <div class="control-group">
+                    <label>Ammonia Level ($NH_3$): <span id="swine-nh3-val">8</span> PPM</label>
+                    <input type="range" id="swine-nh3-input" min="0" max="40" value="8" oninput="updateMasterSCADA()">
+                    <div class="teaching-note">💡 <strong>Initiate Script:</strong> "Slide past 15 PPM to show recruits how toxicity purges supersede thermal comfort automatically."</div>
+                </div>
+            </div>
+            <div class="panel">
+                <h3>⚙️ Swine Actuation Output</h3>
+                <div>
+                    <span style="font-size: 12px; color: #8b949e;">Hydronic Floor Loop Supply</span>
+                    <div id="swine-hydronic-status" class="telemetry-value">26.0°C</div>
+                </div>
+                <div style="margin-top: 12px;">
+                    <span style="font-size: 12px; color: #8b949e;">Exhaust Ventilation CFM</span>
+                    <div id="swine-fan-status" class="telemetry-value">35% CFM</div>
+                </div>
+                <div style="margin-top: 12px;">
+                    <span id="swine-badge" class="status-badge status-optimal">EQUILIBRIUM MAINTAINED</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TAB 2: BROILER MATRIX -->
+    <div id="broiler-tab" class="tab-content active">
+        <div class="scada-grid">
+            <div class="panel">
+                <h3>🎛️ Broiler Telemetry Inputs</h3>
+                <div class="control-group">
+                    <label>Outside Ambient Temp: <span id="broiler-temp-val">28</span>°C</label>
+                    <input type="range" id="broiler-temp-input" min="15" max="40" value="28" oninput="updateMasterSCADA()">
+                    <div class="teaching-note">💡 <strong>Initiate Script:</strong> "Explain how brooding chicks require 32°C while finishers thrive at 20°C. Show curtain positioning logic."</div>
+                </div>
+            </div>
+            <div class="panel">
+                <h3>⚙️ Broiler Curtain &amp; Tunnel Output</h3>
+                <div>
+                    <span style="font-size: 12px; color: #8b949e;">Dwarf Wall Curtain Opening</span>
+                    <div id="broiler-curtain-status" class="telemetry-value">OPEN (60%)</div>
+                </div>
+                <div style="margin-top: 12px;">
+                    <span style="font-size: 12px; color: #8b949e;">Tunnel Fan Output</span>
+                    <div id="broiler-fan-status" class="telemetry-value">80% CFM</div>
+                </div>
+                <div style="margin-top: 12px;">
+                    <span id="broiler-badge" class="status-badge status-optimal">DYNAMIC AIR BALANCE</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TAB 3: 4-POD THERMAL MANIFOLD -->
+    <div id="manifold-tab" class="tab-content">
+        <div class="scada-grid">
+            <div class="panel">
+                <h3>🎛️ Thermal Buffer Controls</h3>
+                <div class="control-group">
+                    <label>Solar Buffer Core Temp: <span id="buffer-val">65</span>°C</label>
+                    <input type="range" id="buffer-input" min="30" max="85" value="65" oninput="updateMasterSCADA()">
+                    <div class="teaching-note">💡 <strong>Initiate Script:</strong> "Demonstrate how primary solar heat buffers are continuously dispatched across all four pods."</div>
+                </div>
+            </div>
+            <div class="panel">
+                <h3>⚙️ 4-Pod Heat Loop Output</h3>
+                <div>
+                    <span style="font-size: 12px; color: #8b949e;">Pod 1 (Brooder) Supply</span>
+                    <div id="pod1-val" class="telemetry-value">33.8°C</div>
+                </div>
+                <div style="margin-top: 12px;">
+                    <span style="font-size: 12px; color: #8b949e;">Pod 2 (Swine Nursery) Supply</span>
+                    <div id="pod2-val" class="telemetry-value">27.9°C</div>
+                </div>
+                <div style="margin-top: 12px;">
+                    <span id="manifold-badge" class="status-badge status-optimal">HYDRONIC EQUILIBRIUM ACTIVE</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TAB 4: REPOSITORY VAULT GATEWAY -->
+    <div id="vault-tab" class="tab-content">
+        <div class="panel">
+            <h3>📁 Sealed Artifact Vault Gateway</h3>
+            <p style="font-size: 13px; color: #8b949e;">Direct access links to standalone interactive HTML prototypes vaulted in `siphokhuzwayo12-a11y` repository:</p>
+            <div class="vault-grid">
+                <a class="vault-card" href="file:///C:/Users/ASUS/AppData/Local/Temp/MicrosoftEdgeDownloads/3ab9e574-59ad-4b0b-a419-b7df57a6e6f0/swine_microclimate_controller.html" target="_blank">
+                    <div class="vault-title">🐷 Swine Controller Prototype</div>
+                    <div style="font-size: 11px; margin-top: 4px; color: #8b949e;">Standalone SCADA Engine</div>
+                </a>
+                <a class="vault-card" href="file:///C:/Users/ASUS/AppData/Local/Temp/MicrosoftEdgeDownloads/3ab9e574-59ad-4b0b-a419-b7df57a6e6f0/broiler_microclimate_simulator.html" target="_blank">
+                    <div class="vault-title">🐔 Broiler Simulator Prototype</div>
+                    <div style="font-size: 11px; margin-top: 4px; color: #8b949e;">Multi-Stage Growth Matrix</div>
+                </a>
+                <a class="vault-card" href="file:///C:/Users/ASUS/AppData/Local/Temp/MicrosoftEdgeDownloads/3ab9e574-59ad-4b0b-a419-b7df57a6e6f0/thermal_manifold_distribution.html" target="_blank">
+                    <div class="vault-title">🔥 4-Pod Manifold Prototype</div>
+                    <div style="font-size: 11px; margin-top: 4px; color: #8b949e;">Hydronic Heat Exchange</div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. Real-Time SCADA Audit Terminal -->
+    <div class="audit-terminal" id="terminal-log">
+        [SYSTEM STARTUP]: Sovereign SCADA Master Control Center Initialized.<br>
+        [SCAPUSH LOG]: Telemetry streams synchronized across Pods 1, 2, 3, and 4.<br>
+        [TEACHING ENGINE]: Initiate Command Logging Active.
+    <br>[00:04:47]: Voice of Vision audio playback started.<br>[00:05:45]: [ALERT]: Swine ammonia breach (17 PPM). Air purge override engaged.<br>[00:05:56]: [ALERT]: Swine ammonia breach (23 PPM). Air purge override engaged.<br>[00:05:58]: [ALERT]: Swine ammonia breach (23 PPM). Air purge override engaged.<br>[00:06:00]: [ALERT]: Swine ammonia breach (23 PPM). Air purge override engaged.<br>[00:06:02]: [ALERT]: Swine ammonia breach (23 PPM). Air purge override engaged.<br>[00:06:04]: [ALERT]: Swine ammonia breach (23 PPM). Air purge override engaged.<br>[00:06:07]: [ALERT]: Swine ammonia breach (23 PPM). Air purge override engaged.<br>[00:06:25]: [ALERT]: Swine ammonia breach (21 PPM). Air purge override engaged.<br>[00:06:27]: [ALERT]: Swine ammonia breach (16 PPM). Air purge override engaged.<br>[00:06:42]: [ALERT]: Swine ammonia breach (25 PPM). Air purge override engaged.<br>[00:06:45]: [ALERT]: Swine ammonia breach (32 PPM). Air purge override engaged.<br>[00:07:30]: Voice of Vision audio playback started.<br>[00:07:59]: Switched master view to [BROILER] cabinet.<br>[00:08:05]: Switched master view to [MANIFOLD] cabinet.<br>[00:08:09]: Switched master view to [VAULT] cabinet.<br>[00:08:23]: Switched master view to [BROILER] cabinet.<br>[00:09:05]: Voice of Vision audio playback started.<br>[5:34:16 PM]: Voice of Vision audio playback started.<br>[5:34:17 PM]: Voice of Vision audio paused.<br>[5:34:20 PM]: Voice of Vision audio playback started.</div>
+
+</div>
+
+<script>
+// Voice of Vision API
+let isSpeaking = false;
+const visionText = `Voice of Vision, Unified Master Control Gateway. Initiates, welcome to the Sovereign Bio Engine. This interface connects all four production pods: swine nursery microclimates, broiler stage growth matrices, and the four pod thermal manifold. Zero mortality is engineered through absolute dynamic equilibrium. Proceed with precision.`;
+
+function toggleVisionAudio() {
+    const btn = document.getElementById('audio-btn');
+    if ('speechSynthesis' in window) {
+        if (isSpeaking) {
+            window.speechSynthesis.cancel();
+            isSpeaking = false;
+            btn.innerHTML = '<span>▶</span> Listen to Vision Master Script';
+            btn.style.background = 'var(--accent-blue)';
+            logTerminal('Voice of Vision audio paused.');
+        } else {
+            const utterance = new SpeechSynthesisUtterance(visionText);
+            utterance.rate = 0.92;
+            utterance.pitch = 0.95;
+            utterance.onend = function() {
+                isSpeaking = false;
+                btn.innerHTML = '<span>▶</span> Listen to Vision Master Script';
+                btn.style.background = 'var(--accent-blue)';
+            };
+            window.speechSynthesis.speak(utterance);
+            isSpeaking = true;
+            btn.innerHTML = '<span>⏹</span> Pause Script';
+            btn.style.background = 'var(--accent-red)';
+            logTerminal('Voice of Vision audio playback started.');
+        }
+    }
+}
+
+// Terminal Logger
+function logTerminal(message) {
+    const log = document.getElementById('terminal-log');
+    const timestamp = new Date().toLocaleTimeString();
+    log.innerHTML += `<br>[${timestamp}]: ${message}`;
+    log.scrollTop = log.scrollHeight;
+}
+
+// Navigation Tabs
+function switchTab(tabName) {
+    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+
+    const tabMap = { 'swine': 0, 'broiler': 1, 'manifold': 2, 'vault': 3 };
+    document.querySelectorAll('.tab-btn')[tabMap[tabName]].classList.add('active');
+    document.getElementById(tabName + '-tab').classList.add('active');
+    logTerminal(`Switched master view to [${tabName.toUpperCase()}] cabinet.`);
+}
+
+// Master Control Logic
+function updateMasterSCADA() {
+    // Swine Logic
+    const swineTemp = parseInt(document.getElementById('swine-temp-input').value);
+    const swineNh3 = parseInt(document.getElementById('swine-nh3-input').value);
+    document.getElementById('swine-temp-val').innerText = swineTemp;
+    document.getElementById('swine-nh3-val').innerText = swineNh3;
+
+    const globalAir = document.getElementById('global-air');
+
+    if (swineNh3 > 15) {
+        document.getElementById('swine-fan-status').innerText = "100% CFM (AIR PURGE)";
+        document.getElementById('swine-hydronic-status').innerText = "22.0°C";
+        document.getElementById('swine-badge').className = "status-badge status-danger";
+        document.getElementById('swine-badge').innerText = "AIR PURGE OVERRIDE ACTIVE";
+        globalAir.innerText = `WARNING (${swineNh3} PPM NH3)`;
+        globalAir.style.color = "var(--accent-red)";
+        logTerminal(`[ALERT]: Swine ammonia breach (${swineNh3} PPM). Air purge override engaged.`);
+    } else {
+        document.getElementById('swine-fan-status').innerText = swineTemp > 26 ? "75% CFM" : "35% CFM";
+        document.getElementById('swine-hydronic-status').innerText = swineTemp > 26 ? "22.0°C" : "26.0°C";
+        document.getElementById('swine-badge').className = "status-badge status-optimal";
+        document.getElementById('swine-badge').innerText = "EQUILIBRIUM MAINTAINED";
+        globalAir.innerText = `OPTIMAL (${swineNh3} PPM)`;
+        globalAir.style.color = "var(--text-bright)";
+    }
+
+    // Broiler Logic
+    const broilerTemp = parseInt(document.getElementById('broiler-temp-input').value);
+    document.getElementById('broiler-temp-val').innerText = broilerTemp;
+    if (broilerTemp > 25) {
+        document.getElementById('broiler-curtain-status').innerText = "OPEN (60%)";
+        document.getElementById('broiler-fan-status').innerText = "80% CFM";
+    } else {
+        document.getElementById('broiler-curtain-status').innerText = "CLOSED (0%)";
+        document.getElementById('broiler-fan-status').innerText = "25% CFM";
+    }
+
+    // Manifold Logic
+    const buffer = parseInt(document.getElementById('buffer-input').value);
+    document.getElementById('buffer-val').innerText = buffer;
+    document.getElementById('pod1-val').innerText = (buffer * 0.52).toFixed(1) + "°C";
+    document.getElementById('pod2-val').innerText = (buffer * 0.43).toFixed(1) + "°C";
+}
+
+// Initial Run
+updateMasterSCADA();
+</script>
+
+
+</body></html>

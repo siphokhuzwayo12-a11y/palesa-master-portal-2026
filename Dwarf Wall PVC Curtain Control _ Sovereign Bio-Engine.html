@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<!-- saved from url=(0254)file:///C:/Users/ASUS/OneDrive/Documents/MEGA/Agri-Tech%20Training%20for%20Youth%20&%20Disability%20-%20Google%20Gemini_files/Lwandile%20Engineering%20Projects%20Voice%20of%20Vision/Dwarf%20Wall%20PVC%20Curtain%20Control%20_%20Sovereign%20Bio-Engine.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dwarf Wall PVC Curtain Control | Sovereign Bio-Engine</title>
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --panel-bg: #161b22;
+            --border-color: #30363d;
+            --accent-green: #238636;
+            --accent-blue: #58a6ff;
+            --accent-amber: #d29922;
+            --accent-red: #da3633;
+            --text-main: #c9d1d9;
+            --text-bright: #f0f6fc;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 24px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* Voice of Vision Container */
+        .vision-drawer {
+            background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--accent-amber);
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+
+        .vision-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 16px;
+            margin-bottom: 16px;
+        }
+
+        .vision-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .vision-title h2 {
+            margin: 0;
+            color: var(--text-bright);
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .vision-title p {
+            margin: 4px 0 0 0;
+            color: #8b949e;
+            font-size: 13px;
+        }
+
+        .audio-btn {
+            background: var(--accent-amber);
+            color: #000000;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .vision-quote {
+            line-height: 1.7;
+            font-size: 15px;
+            color: var(--text-bright);
+        }
+
+        /* SCADA Grid Layout */
+        .scada-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .panel {
+            background: var(--panel-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .panel h3 {
+            margin-top: 0;
+            color: var(--text-bright);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .control-group {
+            margin-bottom: 18px;
+            background: var(--bg-dark);
+            padding: 14px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+        }
+
+        .control-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-bright);
+        }
+
+        .control-group input[type="range"] {
+            width: 100%;
+            accent-color: var(--accent-amber);
+        }
+
+        .teaching-note {
+            margin-top: 8px;
+            font-size: 12px;
+            color: var(--accent-amber);
+            line-height: 1.4;
+            border-left: 2px solid var(--accent-amber);
+            padding-left: 8px;
+            font-style: italic;
+        }
+
+        .trip-btn {
+            width: 100%;
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid var(--accent-red);
+            background: rgba(218, 54, 51, 0.15);
+            color: var(--accent-red);
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: all 0.2s;
+        }
+
+        .trip-btn:hover {
+            background: var(--accent-red);
+            color: #ffffff;
+        }
+
+        .telemetry-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-bright);
+            margin: 6px 0;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .status-optimal { background: rgba(35, 134, 54, 0.2); color: #3fb950; border: 1px solid var(--accent-green); }
+        .status-warning { background: rgba(210, 153, 34, 0.2); color: var(--accent-amber); border: 1px solid var(--accent-amber); }
+        .status-danger { background: rgba(218, 54, 51, 0.2); color: var(--accent-red); border: 1px solid var(--accent-red); }
+
+        /* Terminal Audit Log */
+        .audit-terminal {
+            background: #040d12;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 16px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 12px;
+            color: #3fb950;
+            height: 130px;
+            overflow-y: auto;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="vision-drawer">
+        <div class="vision-header">
+            <div class="vision-title">
+                <span style="font-size: 28px;">🪟</span>
+                <div>
+                    <h2>Voice of Vision | Dwarf Wall PVC Curtain Control</h2>
+                    <p>Dynamic Ventilation &amp; Passive Fail-Safe Architecture • Scapush Precision</p>
+                </div>
+            </div>
+            <button onclick="toggleVisionAudio()" id="audio-btn" class="audio-btn" style="background: var(--accent-amber);"><span>▶</span> Listen to Curtain Directive</button>
+        </div>
+
+        <div class="vision-quote">
+            <p>
+                <strong style="color: var(--accent-amber);">Sovereign Mechanical Intent:</strong> 
+                "The dwarf wall PVC curtain is the breathing membrane of our pods. Driven by automated winches during normal operation, it meters airflow above the concrete boundary. Under power loss, electromagnetic latches drop the curtain instantly, turning gravity into an unbeatable fail-safe."
+            </p>
+        </div>
+    </div>
+
+    <div class="scada-grid">
+        <div class="panel">
+            <h3>🎛️ Wind, Thermal &amp; Fail-Safe Controls</h3>
+            
+            <div class="control-group">
+                <label>Crosswind Velocity: <span id="wind-val">59</span> km/h</label>
+                <input type="range" id="wind-input" min="0" max="60" value="12" oninput="updateSCADA()">
+                <div class="teaching-note">
+                    💡 <strong>Initiate Script:</strong> "Slide wind speed above 35 km/h. Show initiates how the winches raise the curtain to protect livestock from direct high-velocity wind drafts."
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label>Static House Pressure ΔP: <span id="pressure-val">50</span> Pa</label>
+                <input type="range" id="pressure-input" min="5" max="50" value="22" oninput="updateSCADA()">
+                <div class="teaching-note">
+                    💡 <strong>Initiate Script:</strong> "Demonstrate how curtain openings dynamically adjust to maintain static vacuum pressure for uniform air distribution."
+                </div>
+            </div>
+
+            <button class="trip-btn" onclick="toggleElectromagnet()">
+                ⚡ TRIP ELECTROMAGNETIC HOLD-OPEN LATCH (SIMULATE POWER CUT)
+            </button>
+        </div>
+
+        <div class="panel">
+            <h3>⚙️ Winch Position &amp; Magnet Status</h3>
+            
+            <div>
+                <span style="font-size: 12px; color: #8b949e;">Electromagnetic Latch State</span>
+                <div id="magnet-status" class="telemetry-value" style="color: var(--accent-red);">DE-ENERGIZED (RELEASED)</div>
+            </div>
+
+            <div style="margin-top: 15px;">
+                <span style="font-size: 12px; color: #8b949e;">Motorized Winch Position</span>
+                <div id="winch-status" class="telemetry-value">100% DROP OPEN (FULL GRAVITY)</div>
+            </div>
+
+            <div style="margin-top: 15px;">
+                <span style="font-size: 12px; color: #8b949e;">Aerodynamic Protection Mode</span>
+                <div id="protection-status" class="telemetry-value" style="font-size: 18px;">PASSIVE EMERGENCY AIRFLOW</div>
+            </div>
+
+            <div style="margin-top: 15px;">
+                <span id="system-badge" class="status-badge status-danger">FAIL-SAFE ENGAGED: GRAVITY DROP ACTIVE</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="audit-terminal" id="terminal-log">
+        [CURTAIN STARTUP]: Dwarf Wall PVC Winch Controller Online.<br>
+        [INTERLOCK]: Electromagnetic Latches Energized. Auto-Drop System Armed.<br>
+        [TEACHABILITY]: Ready for Wind &amp; Power Loss Simulation Drills.
+    <br>[5:22:47 PM]: Voice of Vision curtain audio started.<br>[5:24:04 PM]: ⚡ [POWER TRIP]: Magnet latches released! Curtain dropped to 100% via gravity.<br>[12:51:07 AM]: Voice of Vision curtain audio started.<br>[12:51:39 AM]: Voice of Vision curtain audio started.<br>[12:51:43 AM]: Voice of Vision audio paused.<br>[12:51:52 AM]: ⚡ [POWER TRIP]: Magnet latches released! Curtain dropped to 100% via gravity.</div>
+
+</div>
+
+<script>
+// Voice of Vision Engine
+let isSpeaking = false;
+let magnetTripped = false;
+
+const visionText = `Voice of Vision, Dwarf Wall PVC Curtain Control System. The dwarf wall PVC curtain is the breathing membrane of our pods. Driven by automated winches during normal operation, it meters airflow above the concrete boundary. Under power loss, electromagnetic latches drop the curtain instantly, turning gravity into an unbeatable fail safe. Proceed with absolute precision.`;
+
+function toggleVisionAudio() {
+    const btn = document.getElementById('audio-btn');
+    if ('speechSynthesis' in window) {
+        if (isSpeaking) {
+            window.speechSynthesis.cancel();
+            isSpeaking = false;
+            btn.innerHTML = '<span>▶</span> Listen to Curtain Directive';
+            btn.style.background = 'var(--accent-amber)';
+            logTerminal('Voice of Vision audio paused.');
+        } else {
+            const utterance = new SpeechSynthesisUtterance(visionText);
+            utterance.rate = 0.92;
+            utterance.pitch = 0.95;
+            
+            utterance.onend = function() {
+                isSpeaking = false;
+                btn.innerHTML = '<span>▶</span> Listen to Curtain Directive';
+                btn.style.background = 'var(--accent-amber)';
+            };
+
+            window.speechSynthesis.speak(utterance);
+            isSpeaking = true;
+            btn.innerHTML = '<span>⏹</span> Pause Directive';
+            btn.style.background = 'var(--accent-red)';
+            logTerminal('Voice of Vision curtain audio started.');
+        }
+    }
+}
+
+// Terminal Audit Logger
+function logTerminal(message) {
+    const log = document.getElementById('terminal-log');
+    const timestamp = new Date().toLocaleTimeString();
+    log.innerHTML += `<br>[${timestamp}]: ${message}`;
+    log.scrollTop = log.scrollHeight;
+}
+
+// Electromagnetic Power Cut Simulation
+function toggleElectromagnet() {
+    magnetTripped = !magnetTripped;
+    const magStatus = document.getElementById('magnet-status');
+    const winchStatus = document.getElementById('winch-status');
+    const protectStatus = document.getElementById('protection-status');
+    const badge = document.getElementById('system-badge');
+
+    if (magnetTripped) {
+        magStatus.innerText = "DE-ENERGIZED (RELEASED)";
+        magStatus.style.color = "var(--accent-red)";
+        winchStatus.innerText = "100% DROP OPEN (FULL GRAVITY)";
+        protectStatus.innerText = "PASSIVE EMERGENCY AIRFLOW";
+        badge.className = "status-badge status-danger";
+        badge.innerText = "FAIL-SAFE ENGAGED: GRAVITY DROP ACTIVE";
+        logTerminal('⚡ [POWER TRIP]: Magnet latches released! Curtain dropped to 100% via gravity.');
+    } else {
+        magStatus.innerText = "ENERGIZED (HOLDING)";
+        magStatus.style.color = "#3fb950";
+        logTerminal('🔄 [POWER RESTORED]: Electromagnets energized. Winch recalibration initiated.');
+        updateSCADA();
+    }
+}
+
+// Interactive SCADA Control Logic
+function updateSCADA() {
+    if (magnetTripped) return;
+
+    const wind = parseInt(document.getElementById('wind-input').value);
+    const pressure = parseInt(document.getElementById('pressure-input').value);
+
+    document.getElementById('wind-val').innerText = wind;
+    document.getElementById('pressure-val').innerText = pressure;
+
+    const winch = document.getElementById('winch-status');
+    const protect = document.getElementById('protection-status');
+    const badge = document.getElementById('system-badge');
+
+    if (wind > 35) {
+        winch.innerText = "10% OPEN (50 mm)";
+        protect.innerText = "HIGH WIND SHIELDING ENGAGED";
+        badge.className = "status-badge status-warning";
+        badge.innerText = "WIND DRAFT PREVENTION ACTIVE";
+    } else if (pressure > 30) {
+        winch.innerText = "50% OPEN (250 mm)";
+        protect.innerText = "PRESSURE RELIEF VENTILATION";
+        badge.className = "status-badge status-optimal";
+        badge.innerText = "STATIC PRESSURE EQUILIBRIUM";
+    } else {
+        winch.innerText = "30% OPEN (150 mm)";
+        protect.innerText = "NORMAL CROSS-VENTILATION";
+        badge.className = "status-badge status-optimal";
+        badge.innerText = "SYSTEM NOMINAL • AUTOMATED WINCH ACTIVE";
+    }
+}
+
+// Initial Run
+updateSCADA();
+</script>
+
+
+</body></html>

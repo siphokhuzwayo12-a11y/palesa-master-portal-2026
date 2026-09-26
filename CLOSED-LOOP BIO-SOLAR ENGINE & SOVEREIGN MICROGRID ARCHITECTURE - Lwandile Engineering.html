@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<!-- saved from url=(0062)file:///C:/Users/ASUS/Downloads/gemini-code-1790283375009.html -->
+<html lang="en" style="--font-scale: 1.1rem;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CLOSED-LOOP BIO-SOLAR ENGINE &amp; SOVEREIGN MICROGRID ARCHITECTURE - Lwandile Engineering</title>
+<style>
+  :root {
+    --bg-superwhite: #FFFFFF;
+    --navy-blue: #0A192F;
+    --dark-green: #143628;
+    --sunny-gold: #9E7900; /* Darkened for higher AAA contrast against white */
+    --gold-accent: #D4AF37;
+    --teal: #006666; /* Darkened for higher AAA contrast */
+    --text-primary: #111827;
+    --text-muted: #374151;
+    --card-bg: #F8FAFC;
+    --border-color: #CBD5E1;
+    --focus-outline: #005FCC;
+    --font-scale: 1rem;
+  }
+
+  /* High Contrast Accessibility Mode */
+  body.high-contrast {
+    --bg-superwhite: #000000;
+    --navy-blue: #000000;
+    --dark-green: #000000;
+    --sunny-gold: #FFFF00;
+    --gold-accent: #FFFF00;
+    --teal: #00FFFF;
+    --text-primary: #FFFFFF;
+    --text-muted: #FFFFFF;
+    --card-bg: #121212;
+    --border-color: #FFFFFF;
+    --focus-outline: #FFFF00;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background-color: var(--bg-superwhite);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: var(--font-scale);
+    line-height: 1.8;
+    padding: 20px;
+  }
+
+  /* Skip to Main Content Link */
+  .skip-link {
+    position: absolute;
+    top: -50px;
+    left: 10px;
+    background: #000000;
+    color: #FFFFFF;
+    padding: 10px 16px;
+    z-index: 1000;
+    font-weight: bold;
+    text-decoration: underline;
+    transition: top 0.2s ease-in-out;
+  }
+
+  .skip-link:focus {
+    top: 10px;
+  }
+
+  /* Universal Focus Styling */
+  a:focus, button:focus, [tabindex]:focus {
+    outline: 3px solid var(--focus-outline) !important;
+    outline-offset: 3px !important;
+  }
+
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: var(--bg-superwhite);
+  }
+
+  /* Accessibility Toolbar */
+  .a11y-toolbar {
+    background-color: var(--card-bg);
+    border: 2px solid var(--border-color);
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .a11y-toolbar h2 {
+    font-size: 1.05rem;
+    margin: 0 10px 0 0;
+    color: var(--text-primary);
+    border: none;
+    padding: 0;
+  }
+
+  .a11y-toolbar h2::before {
+    display: none;
+  }
+
+  .a11y-btn {
+    background-color: var(--dark-green);
+    color: #FFFFFF;
+    border: 1px solid var(--border-color);
+    padding: 8px 14px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  body.high-contrast .a11y-btn {
+    background-color: #000000;
+    color: #FFFF00;
+    border: 2px solid #FFFF00;
+  }
+
+  /* Ownership Top Badge */
+  .ownership-bar {
+    background: var(--dark-green);
+    color: #FFFFFF;
+    padding: 12px 20px;
+    border-radius: 6px 6px 0 0;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid var(--gold-accent);
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .ownership-bar span {
+    color: var(--gold-accent);
+  }
+
+  /* Main Heading Block */
+  .header-block {
+    background-color: var(--navy-blue);
+    color: #FFFFFF;
+    padding: 40px 30px;
+    border-radius: 0 0 8px 8px;
+    border-bottom: 5px solid var(--gold-accent);
+    margin-bottom: 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  }
+
+  .header-block h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    line-height: 1.3;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+  }
+
+  .header-block .subtitle {
+    font-size: 1.15rem;
+    color: var(--gold-accent);
+    font-weight: 600;
+    margin-bottom: 18px;
+  }
+
+  .header-block .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 0.85rem;
+  }
+
+  .header-block .tag {
+    background: rgba(255, 255, 255, 0.15);
+    color: #FFFFFF;
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid var(--gold-accent);
+    font-weight: 600;
+  }
+
+  /* Section Styles */
+  section {
+    margin-bottom: 45px;
+  }
+
+  h2 {
+    color: var(--navy-blue);
+    font-size: 1.5rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  body.high-contrast h2 {
+    color: #FFFF00;
+    border-bottom-color: #FFFFFF;
+  }
+
+  h2::before {
+    content: '';
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background-color: var(--teal);
+    border-radius: 2px;
+  }
+
+  p {
+    color: var(--text-muted);
+    margin-bottom: 15px;
+  }
+
+  /* Executive Overview Cards */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: 768px) {
+    .grid-2 {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .card {
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 6px;
+    padding: 20px;
+  }
+
+  .card-header {
+    font-weight: bold;
+    color: var(--dark-green);
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+  }
+
+  body.high-contrast .card-header {
+    color: #00FFFF;
+  }
+
+  /* Bullet Lists */
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  ul li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 10px;
+    color: var(--text-muted);
+  }
+
+  ul li::before {
+    content: '■';
+    position: absolute;
+    left: 0;
+    color: var(--sunny-gold);
+    font-size: 0.9rem;
+    top: 2px;
+  }
+
+  body.high-contrast ul li::before {
+    color: #FFFF00;
+  }
+
+  /* Pillars Grid */
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
+  }
+
+  .pillar-card {
+    background: var(--bg-superwhite);
+    border-left: 6px solid var(--teal);
+    border-top: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 18px;
+    border-radius: 0 6px 6px 0;
+  }
+
+  .pillar-title {
+    font-weight: bold;
+    color: var(--navy-blue);
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+  }
+
+  body.high-contrast .pillar-title {
+    color: #FFFF00;
+  }
+
+  /* Infographics / Diagrams */
+  .infographic-container {
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    padding: 25px;
+    margin: 25px 0;
+    text-align: center;
+  }
+
+  .infographic-title {
+    font-weight: bold;
+    color: var(--dark-green);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 1px;
+  }
+
+  body.high-contrast .infographic-title {
+    color: #00FFFF;
+  }
+
+  .flow-diagram {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .flow-node {
+    background: var(--navy-blue);
+    color: #FFFFFF;
+    padding: 14px 22px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    border: 1px solid var(--border-color);
+  }
+
+  body.high-contrast .flow-node {
+    background: #000000;
+    color: #FFFFFF;
+    border: 2px solid #FFFFFF;
+  }
+
+  .flow-node.highlight {
+    background: var(--dark-green);
+    border: 2px solid var(--gold-accent);
+  }
+
+  body.high-contrast .flow-node.highlight {
+    border-color: #FFFF00;
+  }
+
+  .flow-arrow {
+    color: var(--sunny-gold);
+    font-weight: bold;
+    font-size: 1.4rem;
+  }
+
+  body.high-contrast .flow-arrow {
+    color: #FFFF00;
+  }
+
+  /* Accessible Tables */
+  .table-container {
+    overflow-x: auto;
+    margin: 20px 0;
+  }
+
+  .styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    background: var(--bg-superwhite);
+    text-align: left;
+  }
+
+  .styled-table thead tr {
+    background-color: var(--navy-blue);
+    color: #FFFFFF;
+  }
+
+  body.high-contrast .styled-table thead tr {
+    background-color: #1a1a1a;
+  }
+
+  .styled-table th, .styled-table td {
+    padding: 14px 16px;
+    border: 1px solid var(--border-color);
+    vertical-align: top;
+  }
+
+  .styled-table th {
+    font-weight: 700;
+  }
+
+  .styled-table tbody tr:nth-of-type(even) {
+    background-color: var(--card-bg);
+  }
+
+  .styled-table .total-row {
+    font-weight: bold;
+    background-color: #E2F0D9;
+    color: var(--dark-green);
+  }
+
+  body.high-contrast .styled-table .total-row {
+    background-color: #222222;
+    color: #FFFF00;
+  }
+
+  /* Footer / Institutional Block */
+  .institutional-block {
+    background-color: var(--navy-blue);
+    color: #FFFFFF;
+    padding: 30px;
+    border-radius: 8px;
+    margin-top: 40px;
+    border-top: 5px solid var(--dark-green);
+  }
+
+  .institutional-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    font-size: 0.95rem;
+  }
+
+  .institutional-item strong {
+    color: var(--gold-accent);
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .contact-link {
+    color: #FFFFFF;
+    text-decoration: underline;
+    font-weight: bold;
+  }
+
+  .contact-link:hover, .contact-link:focus {
+    color: var(--gold-accent);
+  }
+</style>
+</head>
+<body class="">
+
+<!-- Keyboard Navigation Skip Link -->
+<a href="file:///C:/Users/ASUS/Downloads/gemini-code-1790283375009.html#main-content" class="skip-link">Skip to main content</a>
+
+<div class="container">
+
+  <!-- Accessibility Controls Suite -->
+  <section class="a11y-toolbar" aria-label="Accessibility Options">
+    <h2>Accessibility Controls</h2>
+    <button id="toggle-contrast" class="a11y-btn" type="button" aria-pressed="false">Toggle High Contrast</button>
+    <button id="increase-text" class="a11y-btn" type="button" aria-label="Increase text size">A+</button>
+    <button id="decrease-text" class="a11y-btn" type="button" aria-label="Decrease text size">A-</button>
+    <button id="read-aloud" class="a11y-btn" type="button" aria-pressed="false">🔊 Read Document Aloud</button>
+  </section>
+
+  <!-- Ownership Header Bar -->
+  <aside class="ownership-bar" aria-label="Document Ownership and Classification">
+    <div>PROPRIETARY &amp; CONFIDENTIAL — <span>LWANDILE ENGINEERING PROJECTS</span></div>
+    <div>SCAPUSH PRECISION STANDARD</div>
+  </aside>
+
+  <!-- Header Block -->
+  <header class="header-block">
+    <h1>CLOSED-LOOP BIO‑SOLAR ENGINE &amp; SOVEREIGN MICROGRID ARCHITECTURE</h1>
+    <p class="subtitle">Master Concept, Methodology &amp; Implementation Framework</p>
+    <div class="tags" aria-label="Key Target Populations and Frameworks">
+      <span class="tag">Academic Population</span>
+      <span class="tag">Youth Stewardship</span>
+      <span class="tag">Technical Authorization</span>
+      <span class="tag">Corporate Execution</span>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main id="main-content">
+
+    <!-- 1. Executive Overview & Strategic Vision -->
+    <section aria-labelledby="heading-executive">
+      <h2 id="heading-executive">1. Executive Overview &amp; Strategic Vision</h2>
+      <div class="grid-2">
+        <article class="card">
+          <h3 class="card-header">Mission Statement</h3>
+          <p>Establish regenerative bio-solar hubs transforming organic waste streams into sovereign baseload energy, anchoring communities in food security, clean mobility, and inclusive governance. Empower youth, women, and persons with disabilities through cooperative ownership and circular economics.</p>
+        </article>
+        <article class="card">
+          <h3 class="card-header">Executive Summary</h3>
+          <p>Integrates localized circular bio-energy with heavy-duty off-grid infrastructure across South Africa and the SADC region. Combines anaerobic digestion, solar PV, battery storage (BESS), microclimate nurseries, and ultra-fast EV charging to achieve complete food and energy sovereignty.</p>
+        </article>
+      </div>
+
+      <article class="card">
+        <h3 class="card-header">Core Strategic Objectives</h3>
+        <ul>
+          <li><strong>100% Off-Grid Independence:</strong> Complete utility grid insulation with a baseline tariff shield target of ZAR 1.80/kWh.</li>
+          <li><strong>Zero-Mortality Livestock Protection:</strong> Eliminate livestock hypothermia and airborne pathogen risks via continuous thermal controls.</li>
+          <li><strong>Accredited JET Framework:</strong> Deploy accredited Just Energy Transition (JET) technical training.</li>
+          <li><strong>Institutional Rigor:</strong> Ensure complete funder-readiness, ESG compliance, and zero-leak governance.</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- Infographic: System Integration -->
+    <section class="infographic-container" aria-labelledby="heading-infographic">
+      <h3 id="heading-infographic" class="infographic-title">Bio-Solar Engine Integration Architecture Diagram</h3>
+      <div class="flow-diagram" role="img" aria-label="System flow chart starting from Organic Waste to Anaerobic Digester, creating Bio-Gas &amp; Co-Gen, combined with Solar PV + BESS, resulting in a 24/7 Sovereign Grid">
+        <div class="flow-node">Organic Waste</div>
+        <span class="flow-arrow" aria-hidden="true">→</span>
+        <div class="flow-node highlight">Anaerobic Digester</div>
+        <span class="flow-arrow" aria-hidden="true">→</span>
+        <div class="flow-node">Bio-Gas &amp; Co-Gen</div>
+        <span class="flow-arrow" aria-hidden="true">+</span>
+        <div class="flow-node highlight">Solar PV + BESS</div>
+        <span class="flow-arrow" aria-hidden="true">→</span>
+        <div class="flow-node">24/7 Sovereign Grid</div>
+      </div>
+    </section>
+
+    <!-- 2. The Seven Pillars -->
+    <section aria-labelledby="heading-pillars">
+      <h2 id="heading-pillars">2. The Seven Pillars of Multi-Dimensional Sovereignty</h2>
+      <div class="pillars-grid">
+        <article class="pillar-card">
+          <h3 class="pillar-title">1. Energy Sovereignty</h3>
+          <p>Continuous bio-thermal and solar integration fully insulated from utility grid failures.</p>
+        </article>
+        <article class="pillar-card">
+          <h3 class="pillar-title">2. Food Sovereignty</h3>
+          <p>Agrivoltaics and waste-heat hydronic loops eliminating livestock mortality and chemical inputs.</p>
+        </article>
+        <article class="pillar-card">
+          <h3 class="pillar-title">3. Mobility Sovereignty</h3>
+          <p>Off-grid EV charging hubs for heavy-haul trucks and local transit systems.</p>
+        </article>
+        <article class="pillar-card">
+          <h3 class="pillar-title">4. Accessibility Independency</h3>
+          <p>Zero-step gradients, ergonomic controls, and universal wheelchair charging bays.</p>
+        </article>
+        <article class="pillar-card">
+          <h3 class="pillar-title">5. Financial Autonomy</h3>
+          <p>Fixed tariffs, closed reinvestment loops, and carbon-credit monetization.</p>
+        </article>
+        <article class="pillar-card">
+          <h3 class="pillar-title">6. Social Impact</h3>
+          <p>Cooperative ownership prioritizing youth employment and women's leadership.</p>
+        </article>
+        <article class="pillar-card" style="grid-column: span 1 / -1;">
+          <h3 class="pillar-title">7. Environmental Stewardship</h3>
+          <p>Closed-loop waste-to-wealth capturing up to 95% of methane emissions.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 3. Technical Matrix Table -->
+    <section aria-labelledby="heading-matrix">
+      <h2 id="heading-matrix">3. SADC Corridor Technical &amp; Component Matrix</h2>
+      <div class="table-container">
+        <table class="styled-table" aria-label="SADC Corridor Technical and Component Matrix">
+          <thead>
+            <tr>
+              <th scope="col">Component</th>
+              <th scope="col">Technical Specifications</th>
+              <th scope="col">Strategic Role &amp; Target Outcome</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Bio-Solar Engine</th>
+              <td>Anaerobic digester + Solar PV array</td>
+              <td>24/7 baseload co-generation; total grid insulation</td>
+            </tr>
+            <tr>
+              <th scope="row">Containerized BESS</th>
+              <td>High-density lithium buffer storage</td>
+              <td>Microgrid balancing, frequency regulation, peak shaving</td>
+            </tr>
+            <tr>
+              <th scope="row">Microclimate Nurseries</th>
+              <td>ArIoT-monitored zero-mortality enclosures</td>
+              <td>Continuous food production; reduced community costs</td>
+            </tr>
+            <tr>
+              <th scope="row">DC Fast Chargers</th>
+              <td>Containerized charging skids</td>
+              <td>Rapid fleet charging for heavy haulers and mining equipment</td>
+            </tr>
+            <tr>
+              <th scope="row">Turn-Key EPC &amp; Civil</th>
+              <td>Lwandile Engineering execution</td>
+              <td>SANS compliance, NERSA licensing, regulatory de-risking</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 4. Technical Operations -->
+    <section aria-labelledby="heading-operations">
+      <h2 id="heading-operations">4. Technical Methodology &amp; Operations</h2>
+      <div class="grid-2">
+        <article class="card">
+          <h3 class="card-header">Zero-Mortality Microclimate &amp; Biomass</h3>
+          <ul>
+            <li><strong>Hydronic HVAC Control:</strong> Maintains 28°C–32°C zones, achieving 0% cold-snap mortality.</li>
+            <li><strong>Automated Environmental Controls:</strong> Extracts ammonia and moisture to mitigate respiratory hazards.</li>
+            <li><strong>Biomass Co-Digestion:</strong> Manure &amp; residues at C:N 25:1–30:1 yield 60–70% CH4 concentration.</li>
+            <li><strong>Phase Separation:</strong> Produces liquid fertilizer and solid soil conditioners.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3 class="card-header">ArIoT Telemetry &amp; SCADA Architecture</h3>
+          <ul>
+            <li><strong>LoRaWAN Sensor Sink:</strong> Monitors temperature, gas/pH, pressure, and battery voltages.</li>
+            <li><strong>Industrial SCADA:</strong> Triggers solenoid diverters to isolate faults without interrupting operations.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- 5. Human Capital & Roadmap -->
+    <section aria-labelledby="heading-roadmap">
+      <h2 id="heading-roadmap">5. Human Capital &amp; Phased Execution</h2>
+      <p><strong>Workforce Readiness Program:</strong> Recruitment explicitly prioritizes youth, women, and persons with disabilities. Core curriculum covers Bio-Solar operations, SCADA maintenance, microclimate management, high-voltage safety, and 100 hours of interactive plant simulation.</p>
+      
+      <div class="flow-diagram" style="margin-top: 25px; justify-content: space-between;" role="img" aria-label="Phased execution diagram: Phase 1 Siting and Filings leading to Phase 2 Civil Execution and Landing, leading to Phase 3 Certification and Launch">
+        <div class="flow-node" style="flex: 1; min-width: 200px;">
+          <div style="color: var(--gold-accent); font-size: 0.85rem; text-transform: uppercase;">Phase 1</div>
+          Siting &amp; Filings
+        </div>
+        <span class="flow-arrow" aria-hidden="true">→</span>
+        <div class="flow-node" style="flex: 1; min-width: 200px;">
+          <div style="color: var(--gold-accent); font-size: 0.85rem; text-transform: uppercase;">Phase 2</div>
+          Civil Execution &amp; Landing
+        </div>
+        <span class="flow-arrow" aria-hidden="true">→</span>
+        <div class="flow-node" style="flex: 1; min-width: 200px;">
+          <div style="color: var(--gold-accent); font-size: 0.85rem; text-transform: uppercase;">Phase 3</div>
+          Certification &amp; Launch
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Capital Allocation Table -->
+    <section aria-labelledby="heading-capital">
+      <h2 id="heading-capital">6. Capital Allocation Model (ZAR 3,100,000 MVP)</h2>
+      <div class="table-container">
+        <table class="styled-table" aria-label="Capital Allocation Model Table for 3.1 Million ZAR MVP">
+          <thead>
+            <tr>
+              <th scope="col">Allocation Module</th>
+              <th scope="col">Share (%)</th>
+              <th scope="col">Capital (ZAR)</th>
+              <th scope="col">Implementation Scope</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Energy Microgrid</th>
+              <td>45%</td>
+              <td>R 1 395 000</td>
+              <td>Solar PV, BESS, conversion units</td>
+            </tr>
+            <tr>
+              <th scope="row">Infrastructure</th>
+              <td>30%</td>
+              <td>R 930 000</td>
+              <td>Biogas digester, thermal loops, climate housing</td>
+            </tr>
+            <tr>
+              <th scope="row">Working Capital</th>
+              <td>15%</td>
+              <td>R 465 000</td>
+              <td>Hydro-feed, seed inventory, livestock stocking</td>
+            </tr>
+            <tr>
+              <th scope="row">Compliance &amp; Contingency</th>
+              <td>10%</td>
+              <td>R 310 000</td>
+              <td>Permits, approvals, emergency reserve</td>
+            </tr>
+            <tr class="total-row">
+              <th scope="row">Total MVP Deployment</th>
+              <td>100%</td>
+              <td>R 3 100 000</td>
+              <td>Target Payback ≈ 2.6 Years</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 7. Governance Table -->
+    <section aria-labelledby="heading-governance">
+      <h2 id="heading-governance">7. Zero-Leak Governance &amp; Institutional Framework</h2>
+      <div class="table-container">
+        <table class="styled-table" aria-label="Zero-Leak Governance and Institutional Framework">
+          <thead>
+            <tr>
+              <th scope="col">Governance Pillar</th>
+              <th scope="col">Operational &amp; Financial Firewall</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Thermodynamic Zero-Leak</th>
+              <td>Captures 100% of engine exhaust for sub-floor heating loops.</td>
+            </tr>
+            <tr>
+              <th scope="row">Biosecurity Zero-Leak</th>
+              <td>4-Pod firewall barriers limit biological risk to a 25% radius.</td>
+            </tr>
+            <tr>
+              <th scope="row">Financial Zero-Leak</th>
+              <td>Utility cost savings are auto-directed into designated sinking reserves.</td>
+            </tr>
+            <tr>
+              <th scope="row">Knowledge &amp; IP Zero-Leak</th>
+              <td>Courseware and microgrid IP locked under joint institutional governance.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Institutional Profile Footer Block -->
+  <footer class="institutional-block" aria-label="Institutional Contacts and Leadership Info">
+    <div class="institutional-grid">
+      <div class="institutional-item">
+        <strong>Executive Leadership &amp; Consortium</strong>
+        Sipho Wiseman Khuzwayo (Founder, Lwandile Engineering) &amp; Joint Venture Consortium: Insephe Projects - Senzo Innocent Mkhize (Founder)
+      </div>
+      <div class="institutional-item">
+        <strong>Execution Entity &amp; Standard</strong>
+        Lwandile Engineering Projects<br>
+        Scapush Precision Execution Standard
+      </div>
+      <div class="institutional-item">
+        <strong>Operational Footprint</strong>
+        Kinross &amp; Secunda Industrial Corridors, Mpumalanga, South Africa
+      </div>
+      <div class="institutional-item">
+        <strong>Primary Contact &amp; Network</strong>
+        <a href="mailto:siphokhuzwayo12@gmail.com" class="contact-link">siphokhuzwayo12@gmail.com</a><br>
+        <a href="https://www.linkedin.com/search/results/all/?keywords=sipho%20wiseman%20khuzwayo" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="LinkedIn Profile for Sipho Wiseman Khuzwayo (opens in a new tab)">LinkedIn Profile (Opens in new tab)</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<!-- Accessibility Engine Script -->
+<script>
+  // High Contrast Mode Toggle
+  const contrastBtn = document.getElementById('toggle-contrast');
+  contrastBtn.addEventListener('click', () => {
+    document.body.classList.toggle('high-contrast');
+    const isContrast = document.body.classList.contains('high-contrast');
+    contrastBtn.setAttribute('aria-pressed', isContrast);
+  });
+
+  // Dynamic Font Resizing Engine
+  let currentScale = 1.0;
+  const root = document.documentElement;
+
+  document.getElementById('increase-text').addEventListener('click', () => {
+    if (currentScale < 1.5) {
+      currentScale += 0.1;
+      root.style.setProperty('--font-scale', `${currentScale}rem`);
+    }
+  });
+
+  document.getElementById('decrease-text').addEventListener('click', () => {
+    if (currentScale > 0.85) {
+      currentScale -= 0.1;
+      root.style.setProperty('--font-scale', `${currentScale}rem`);
+    }
+  });
+
+  // Web Speech API Read Aloud Engine
+  const readBtn = document.getElementById('read-aloud');
+  let synth = window.speechSynthesis;
+
+  readBtn.addEventListener('click', () => {
+    if (!('speechSynthesis' in window)) {
+      alert('Text-to-speech functionality is not supported by your current web browser.');
+      return;
+    }
+
+    if (synth.speaking) {
+      synth.cancel();
+      readBtn.textContent = '🔊 Read Document Aloud';
+      readBtn.setAttribute('aria-pressed', 'false');
+      return;
+    }
+
+    const mainContent = document.getElementById('main-content').innerText;
+    const utterance = new SpeechSynthesisUtterance(mainContent);
+    utterance.rate = 0.95; // Deliberate speed for optimal accessibility comprehension
+
+    utterance.onend = () => {
+      readBtn.textContent = '🔊 Read Document Aloud';
+      readBtn.setAttribute('aria-pressed', 'false');
+    };
+
+    synth.speak(utterance);
+    readBtn.textContent = '⏹ Stop Reading';
+    readBtn.setAttribute('aria-pressed', 'true');
+  });
+</script>
+
+
+</body></html>

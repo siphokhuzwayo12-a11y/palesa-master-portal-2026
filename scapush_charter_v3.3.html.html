@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scapush Precision Execution Protocol Charter (v3.3 - Green Mineral & Cocco Edition)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        obsidian: '#070b14',
+                        cardDark: '#0f172a',
+                        goldAccent: '#f59e0b',
+                        goldDark: '#b45309',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3, .serif-title {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Luxury scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.3);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #b45309;
+            border-radius: 4px;
+        }
+
+        /* Print optimization styling */
+        @media print {
+            body {
+                background: white !important;
+                color: black !important;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .print-card {
+                border: 1px solid #cbd5e1 !important;
+                background: white !important;
+                color: black !important;
+                box-shadow: none !important;
+                margin-bottom: 20px !important;
+                page-break-inside: avoid;
+            }
+            .print-text {
+                color: #0f172a !important;
+            }
+            details {
+                max-height: none !important;
+            }
+            details[open] summary ~ * {
+                display: block !important;
+            }
+        }
+    </style>
+</head>
+<body id="app-body" class="bg-obsidian text-slate-100 min-h-screen transition-colors duration-300">
+
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-obsidian/90 border-b border-amber-500/20 px-4 py-3 shadow-2xl no-print">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            
+            <!-- Branding & Title -->
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center shadow-lg shadow-amber-500/20 text-obsidian font-bold text-xl">
+                    S
+                </div>
+                <div>
+                    <span class="text-xs tracking-widest uppercase text-amber-400 font-semibold">Sipho Wiseman Khuzwayo Protocol</span>
+                    <h1 class="text-lg font-bold text-white tracking-wide">Scapush Precision Charter v3.3</h1>
+                </div>
+            </div>
+
+            <!-- Live Clock & Status Bar -->
+            <div class="flex items-center space-x-4 bg-slate-900/80 px-4 py-1.5 rounded-full border border-slate-800 text-xs text-slate-300">
+                <span class="flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span id="live-clock">Loading Clock...</span>
+                </span>
+                <span class="text-slate-600">|</span>
+                <span class="text-amber-400 font-medium">Green Mineral & Cocco Sovereign Edition</span>
+            </div>
+
+            <!-- Control Actions & Theme/Language Switcher -->
+            <div class="flex items-center space-x-2 flex-wrap justify-center">
+                <!-- Theme Switcher -->
+                <select id="theme-selector" onchange="switchTheme(this.value)" class="bg-slate-900 border border-slate-700 text-xs rounded-lg px-2.5 py-2 text-slate-200 focus:outline-none focus:border-amber-500 cursor-pointer">
+                    <option value="dark-obsidian">Obsidian Gold (Dark)</option>
+                    <option value="high-contrast">High Contrast Light</option>
+                    <option value="executive-navy">Executive Navy</option>
+                </select>
+
+                <!-- Language Narrator Selector for Nando Cocco -->
+                <select id="lang-selector" onchange="updateSelectedLanguage(this.value)" class="bg-slate-900 border border-amber-500/40 text-xs rounded-lg px-2.5 py-2 text-amber-300 font-medium focus:outline-none focus:border-amber-500 cursor-pointer" title="Select Voice Language for Nando Cocco">
+                    <option value="it-IT" selected>🇮🇹 Italiano (Nando Cocco)</option>
+                    <option value="en-US">🇬🇧 English (Global)</option>
+                </select>
+
+                <!-- Global Narrator Control -->
+                <button onclick="toggleGlobalNarration()" id="global-narrate-btn" class="flex items-center space-x-1.5 bg-amber-600 hover:bg-amber-500 text-obsidian px-3 py-2 rounded-lg text-xs font-semibold transition-all shadow-md shadow-amber-600/20 cursor-pointer">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+                    <span id="global-narrate-text">Leggi Tutto (Read All)</span>
+                </button>
+
+                <!-- Print Button -->
+                <button onclick="window.print()" title="Print Charter" class="p-2 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-lg text-xs transition-all border border-slate-700 cursor-pointer">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-10 space-y-8">
+        
+        <div class="text-center space-y-4 print-card bg-slate-900/40 p-8 rounded-2xl border border-amber-500/10 shadow-2xl backdrop-blur-sm">
+            <span class="inline-block px-3.5 py-1 rounded-full bg-amber-500/10 text-amber-400 text-xs font-semibold tracking-widest uppercase border border-amber-500/20">
+                Green Mineral Giant Partnership • Inclusive Accessibility Protocol
+            </span>
+            <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-white serif-title">
+                The Scapush Precision Execution Protocol Charter
+            </h1>
+            <p class="text-sm md:text-base text-slate-400 max-w-2xl mx-auto font-light leading-relaxed">
+                Operating Entity: <strong class="text-amber-400 font-medium">Sipho Wiseman Khuzwayo</strong> in Scapush Precision. In partnership with <strong class="text-amber-400 font-medium">Nando Cocco</strong>.
+            </p>
+        </div>
+
+        <section class="print-card bg-slate-900/60 border border-slate-800 rounded-xl p-6 md:p-8 shadow-xl relative overflow-hidden transition-all duration-300 hover:border-amber-500/30">
+            <div class="absolute top-0 left-0 w-1.5 h-full bg-amber-500"></div>
+            
+            <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center space-x-3">
+                    <span class="text-amber-400 font-serif font-bold text-lg">Preamble</span>
+                    <h2 class="text-xl font-bold text-white serif-title">The Flow of the Sovereign River</h2>
+                </div>
+                <button onclick="narrateText('preamble-content', this)" class="no-print flex items-center space-x-1 px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-amber-400 rounded-lg text-xs font-medium border border-slate-700 transition-all cursor-pointer">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+                    <span>🔊 Leggi / Read</span>
+                </button>
+            </div>
+
+            <div id="preamble-content" class="text-slate-300 space-y-4 font-light leading-relaxed text-sm md:text-base print-text">
+                <p>
+                    Like the steady, life-giving rivers of the rainforest that carve majestic paths through ancient mountains to reveal breathtaking vistas beyond, true technological architecture should never feel like a barrier. It must hum with natural grace, drawing every seeker forward with an irresistible curiosity to look over the ridge and discover what operational mastery looks like.
+                </p>
+                <p>
+                    Under the banner of <strong>Scapush Precision</strong>, this charter flows smoothly from foundational philosophy to technical execution, designed with absolute teachability so that any traveler—whether seasoned IT architect or community builder of any ability—can grasp, replicate, and master the craft.
+                </p>
+            </div>
+        </section>
+
+        <details class="print-card bg-slate-900/60 border border-slate-800 rounded-xl shadow-xl overflow-hidden group transition-all duration-300 hover:border-amber-500/30" open>
+            <summary class="p-6 md:p-8 flex items-center justify-between cursor-pointer select-none bg-slate-900/80 hover:bg-slate-900 transition-colors">
+                <div class="flex items-center space-x-3">
+                    <span class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold text-sm border border-amber-500/20">I</span>
+                    <h2 class="text-xl font-bold text-white serif-title">The Sacred Meaning of S-C-A-P-U-S-H</h2>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <button type="button" onclick="event.preventDefault(); narrateText('sec1-content', this);" class="no-print flex items-center space-x-1 px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-amber-400 rounded-lg text-xs font-medium border border-slate-700 transition-all cursor-pointer">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+                        <span>🔊 Leggi / Read</span>
+                    </button>
+                    <svg class="w-5 h-5 text-amber-400 transform group-open:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+            </summary>
+
+            <div id="sec1-content" class="p-6 md:p-8 pt-0 border-t border-slate-800/60 space-y-4 text-slate-300 font-light text-sm md:text-base print-text mt-4">
+                <p class="mb-4">At the beating heart of our architecture lies our defining creed. Each letter stands as an immutable pillar guiding our hands, our code, and our human connections:</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-slate-900/40 p-4 rounded-xl border border-slate-800">
+                        <strong class="text-amber-400 block text-base mb-1">S — Steadfast in Will</strong>
+                        <span class="text-slate-400 text-xs md:text-sm">Unyielding dedication to our core vision, refusing to let platform limitations or technical friction compromise our standard.</span>
+                    </div>
+                    <div class="bg-slate-900/40 p-4 rounded-xl border border-slate-800">
+                        <strong class="text-amber-400 block text-base mb-1">C — Composed in Motion</strong>
+                        <span class="text-slate-400 text-xs md:text-sm">Maintaining absolute clarity, calm, and structural elegance even when executing under high-pressure executive timelines.</span>
+                    </div>
+                    <div class="bg-slate-900/40 p-4 rounded-xl border border-slate-800">
+                        <strong class="text-amber-400 block text-base mb-1">A — Aligned Through Action</strong>
+                        <span class="text-slate-400 text-xs md:text-sm">Translating strategy directly into clean, functioning files without dilution or delay.</span>
+                    </div>
+                    <div class="bg-slate-900/40 p-4 rounded-xl border border-slate-800">
+                        <strong class="text-amber-400 block text-base mb-1">P — Principled in Heart</strong>
+                        <span class="text-slate-400 text-xs md:text-sm">Honoring ethical engineering, transparency, and deep respect for the people who interact with our systems.</span>
+                    </div>
+                    <div class="bg-slate-900/40 p-4 rounded-xl border border-slate-800">
+                        <strong class="text-amber-400 block text-base mb-1">U — Unbound by Time Matrix</strong>
+                        <span class="text-slate-400 text-xs md:text-sm">Building enduring, sovereign solutions that outlive temporary platform locks and restrictive third-party throttles.</span>
+                    </div>
+                    <div class="bg-slate-900/40 p-4 rounded-xl border border-slate-800">
+                        <strong class="text-amber-400 block text-base mb-1">S — Selfless Service</strong>
+                        <span class="text-slate-400 text-xs md:text-sm">Architecting tools that elevate everyone in the ecosystem, ensuring our work serves the broader community with grace.</span>
+                    </div>
+                </div>
+                <div class="bg-amber-500/5 p-4 rounded-xl border border-amber-500/20 mt-4">
+                    <strong class="text-amber-400 block text-base mb-1">H — Honored through Inclusivity</strong>
+                    <span class="text-slate-300 text-xs md:text-sm">Designing every interface to be completely accessible, welcoming all communities—including those with disabilities—with dignity and ease.</span>
+                </div>
+            </div>
+        </details>
+
+        <details class="print-card bg-slate-900/60 border border-slate-800 rounded-xl shadow-xl overflow-hidden group transition-all duration-300 hover:border-amber-500/30" open>
+            <summary class="p-6 md:p-8 flex items-center justify-between cursor-pointer select-none bg-slate-900/80 hover:bg-slate-900 transition-colors">
+                <div class="flex items-center space-x-3">
+                    <span class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold text-sm border border-amber-500/20">II</span>
+                    <h2 class="text-xl font-bold text-white serif-title">Lwandile Engineering Closed-Loop Bio-Solar Thermal Engine</h2>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <button type="button" onclick="event.preventDefault(); narrateText('sec-lwandile-content', this);" class="no-print flex items-center space-x-1 px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-amber-400 rounded-lg text-xs font-medium border border-slate-700 transition-all cursor-pointer">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+                        <span>🔊 Leggi / Read</span>
+                    </button>
+                    <svg class="w-5 h-5 text-amber-400 transform group-open:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+            </summary>
+
+            <div id="sec-lwandile-content" class="p-6 md:p-8 pt-0 border-t border-slate-800/60 space-y-4 text-slate-300 font-light text-sm md:text-base print-text mt-4">
+                <p>
+                    The cornerstone of our physical and agricultural execution is the <strong class="text-amber-400">Lwandile Engineering Closed-Loop Bio-Solar Thermal Engine</strong>. This revolutionary framework integrates solar thermal capture with biological waste-to-energy conversion to achieve absolute food and energy sovereignty.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-4">
+                    <div class="bg-slate-900/40 p-4 rounded-xl border border-slate-800">
+                        <strong class="text-amber-400 block text-base mb-1">Urban Environments</strong>
+                        <span class="text-slate-400 text-xs md:text-sm">Compact rooftop bio-solar pods and vertical microclimate loops maximizing municipal space efficiency.</span>
+                    </div>
+                    <div class="bg-slate-900/40 p-4 rounded-xl border border-slate-800">
+                        <strong class="text-amber-400 block text-base mb-1">Semi-Urban Sectors</strong>
+                        <span class="text-slate-400 text-xs md:text-sm">Modular agro-industrial hubs balancing local grid independence with high-density protein and crop yields.</span>
+                    </div>
+                    <div class="bg-slate-900/40 p-4 rounded-xl border border-slate-800">
+                        <strong class="text-amber-400 block text-base mb-1">Rural Communities</strong>
+                        <span class="text-slate-400 text-xs md:text-sm">Autonomous decentralized thermal loops delivering zero-input heating, power, and food security.</span>
+                    </div>
+                </div>
+                <p class="mt-4">
+                    <strong class="text-white">Swine & Poultry Zero-Mortality Microclimate Nurseries:</strong> Engineered specifically for optimum yield, our precision thermal nurseries regulate ambient temperature, humidity, and air purity in real-time, completely eliminating early-stage livestock mortality and maximizing economic returns for investors.
+                </p>
+            </div>
+        </details>
+
+        <details class="print-card bg-slate-900/60 border border-amber-500/40 rounded-xl shadow-2xl overflow-hidden group transition-all duration-300 hover:border-amber-400" open>
+            <summary class="p-6 md:p-8 flex items-center justify-between cursor-pointer select-none bg-gradient-to-r from-amber-950/30 to-slate-900/90 hover:from-amber-900/40 transition-colors">
+                <div class="flex items-center space-x-3">
+                    <span class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-sm border border-amber-500/40">III</span>
+                    <h2 class="text-xl font-bold text-white serif-title">Green Mineral Giant Landfill Transformation (Nando Cocco Partnership)</h2>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <button type="button" onclick="event.preventDefault(); narrateText('sec-green-mineral-content', this);" class="no-print flex items-center space-x-1 px-3 py-1.5 bg-amber-600 hover:bg-amber-500 text-obsidian font-semibold rounded-lg text-xs transition-all cursor-pointer shadow-md">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+                        <span>🔊 Leggi / Read</span>
+                    </button>
+                    <svg class="w-5 h-5 text-amber-400 transform group-open:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+            </summary>
+
+            <div id="sec-green-mineral-content" class="p-6 md:p-8 pt-0 border-t border-amber-500/20 space-y-4 text-slate-300 font-light text-sm md:text-base print-text mt-4">
+                <div class="bg-amber-500/10 border-l-4 border-amber-500 p-4 rounded-r-xl my-4">
+                    <p class="text-amber-200 font-medium">
+                        "Our landfills are burning, polluting our atmosphere in silence—a silent killer of our biosphere. Through the Nando Cocco Green Mineral Patent, municipal landfills finally breathe life."
+                    </p>
+                </div>
+                <p>
+                    By intercepting bulk organic and inorganic waste streams before toxic accumulation occurs, the <strong class="text-amber-400">Green Mineral Giant</strong> framework redirects hazardous refuse directly into our advanced aggregate dome processing units.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-4">
+                    <div class="bg-slate-900/40 p-4 rounded-xl border border-slate-800">
+                        <strong class="text-amber-400 block text-base mb-1">Aggregate Domes</strong>
+                        <span class="text-slate-400 text-xs md:text-sm">Converting municipal waste streams into high-grade structural building materials and eco-bricks.</span>
+                    </div>
+                    <div class="bg-slate-900/40 p-4 rounded-xl border border-slate-800">
+                        <strong class="text-amber-400 block text-base mb-1">Ceramic Tiles</strong>
+                        <span class="text-slate-400 text-xs md:text-sm">Upcycling mineral-heavy refuse into premium architectural floor and wall ceramic products.</span>
+                    </div>
+                    <div class="bg-slate-900/40 p-4 rounded-xl border border-slate-800">
+                        <strong class="text-amber-400 block text-base mb-1">Glass Products</strong>
+                        <span class="text-slate-400 text-xs md:text-sm">Thermal reformation of silica-rich waste into durable commercial glass goods and industrial insulation.</span>
+                    </div>
+                </div>
+                <p class="mt-4 text-slate-200 font-medium">
+                    This partnership closes the loop permanently, transforming environmental liabilities into sovereign industrial assets for communities worldwide.
+                </p>
+            </div>
+        </details>
+
+        <details class="print-card bg-slate-900/60 border border-slate-800 rounded-xl shadow-xl overflow-hidden group transition-all duration-300 hover:border-amber-500/30">
+            <summary class="p-6 md:p-8 flex items-center justify-between cursor-pointer select-none bg-slate-900/80 hover:bg-slate-900 transition-colors">
+                <div class="flex items-center space-x-3">
+                    <span class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold text-sm border border-amber-500/20">IV</span>
+                    <h2 class="text-xl font-bold text-white serif-title">The Structural Architecture (The Law of Lean Directory Trees)</h2>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <button type="button" onclick="event.preventDefault(); narrateText('sec4-content', this);" class="no-print flex items-center space-x-1 px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-amber-400 rounded-lg text-xs font-medium border border-slate-700 transition-all cursor-pointer">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+                        <span>🔊 Leggi / Read</span>
+                    </button>
+                    <svg class="w-5 h-5 text-amber-400 transform group-open:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+            </summary>
+
+            <div id="sec4-content" class="p-6 md:p-8 pt-0 border-t border-slate-800/60 space-y-4 text-slate-300 font-light text-sm md:text-base print-text mt-4">
+                <p>To ensure our digital river flows without obstruction, every sovereign portal adheres to strict spatial boundaries:</p>
+                <ul class="space-y-3 pl-4 list-disc text-slate-300">
+                    <li><strong class="text-white">The Rule of 3 to 5:</strong> A maximum of 3 to 5 primary operational files are permitted per folder directory, maintaining instant scannability and a clear view of the landscape.</li>
+                    <li><strong class="text-white">Pure Markup Integrity:</strong> Built exclusively on pure, semantic HTML and CSS. Zero JavaScript dependencies are utilized, guaranteeing universal stability and bulletproof browser compatibility.</li>
+                    <li><strong class="text-white">Relative Path Sovereignty:</strong> Absolute local paths (<code class="bg-slate-800 px-1.5 py-0.5 rounded text-amber-300 text-xs">file:///C:/</code>) are banned. Clean relative directory links (<code class="bg-slate-800 px-1.5 py-0.5 rounded text-amber-300 text-xs">folder-name/index.html</code>) ensure seamless deployment across any server on Earth.</li>
+                </ul>
+            </div>
+        </details>
+
+        <details class="print-card bg-slate-900/60 border border-slate-800 rounded-xl shadow-xl overflow-hidden group transition-all duration-300 hover:border-amber-500/30">
+            <summary class="p-6 md:p-8 flex items-center justify-between cursor-pointer select-none bg-slate-900/80 hover:bg-slate-900 transition-colors">
+                <div class="flex items-center space-x-3">
+                    <span class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold text-sm border border-amber-500/20">V</span>
+                    <h2 class="text-xl font-bold text-white serif-title">The Inclusive Accessibility Standard</h2>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <button type="button" onclick="event.preventDefault(); narrateText('sec5-content', this);" class="no-print flex items-center space-x-1 px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-amber-400 rounded-lg text-xs font-medium border border-slate-700 transition-all cursor-pointer">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+                        <span>🔊 Leggi / Read</span>
+                    </button>
+                    <svg class="w-5 h-5 text-amber-400 transform group-open:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+            </summary>
+
+            <div id="sec5-content" class="p-6 md:p-8 pt-0 border-t border-slate-800/60 space-y-4 text-slate-300 font-light text-sm md:text-base print-text mt-4">
+                <p>Scapush Precision is a sanctuary for all users, designed specifically to accommodate Nando Cocco and inclusive communities worldwide:</p>
+                <ul class="space-y-3 pl-4 list-disc text-slate-300">
+                    <li><strong class="text-white">Semantic Landmark Hierarchy:</strong> Standardized tags (<code class="bg-slate-800 px-1.5 py-0.5 rounded text-amber-300 text-xs">&lt;header&gt;</code>, <code class="bg-slate-800 px-1.5 py-0.5 rounded text-amber-300 text-xs">&lt;main&gt;</code>, <code class="bg-slate-800 px-1.5 py-0.5 rounded text-amber-300 text-xs">&lt;section&gt;</code>, <code class="bg-slate-800 px-1.5 py-0.5 rounded text-amber-300 text-xs">&lt;footer&gt;</code>) allow screen readers and assistive tech to navigate the environment intuitively.</li>
+                    <li><strong class="text-white">High-Contrast Typography & Italian Voice Synthesis:</strong> Deep institutional backgrounds paired with high-legibility text and bilingual Italian (<code class="bg-slate-800 px-1.5 py-0.5 rounded text-amber-300 text-xs">it-IT</code>) voice narration.</li>
+                </ul>
+            </div>
+        </details>
+
+        <details class="print-card bg-slate-900/60 border border-slate-800 rounded-xl shadow-xl overflow-hidden group transition-all duration-300 hover:border-amber-500/30">
+            <summary class="p-6 md:p-8 flex items-center justify-between cursor-pointer select-none bg-slate-900/80 hover:bg-slate-900 transition-colors">
+                <div class="flex items-center space-x-3">
+                    <span class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold text-sm border border-amber-500/20">VI</span>
+                    <h2 class="text-xl font-bold text-white serif-title">Workspace Hygiene & Stewardship</h2>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <button type="button" onclick="event.preventDefault(); narrateText('sec6-content', this);" class="no-print flex items-center space-x-1 px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-amber-400 rounded-lg text-xs font-medium border border-slate-700 transition-all cursor-pointer">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+                        <span>🔊 Leggi / Read</span>
+                    </button>
+                    <svg class="w-5 h-5 text-amber-400 transform group-open:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+            </summary>
+
+            <div id="sec6-content" class="p-6 md:p-8 pt-0 border-t border-slate-800/60 space-y-4 text-slate-300 font-light text-sm md:text-base print-text mt-4">
+                <ul class="space-y-3 pl-4 list-disc text-slate-300">
+                    <li><strong class="text-white">Just-in-Time Retrieval:</strong> We bypass messy legacy mountains by pulling verified assets forward precisely when needed.</li>
+                    <li><strong class="text-white">Timestamped Archiving:</strong> Historical iterations are swept into dated directories and safely secured off-site (via MEGA) before any new deployment.</li>
+                    <li><strong class="text-white">The Single Source of Truth:</strong> One definitive file per sector guarantees zero version confusion during executive transmission.</li>
+                </ul>
+            </div>
+        </details>
+
+        <footer class="text-center pt-8 pb-12 text-slate-500 text-xs space-y-2 border-t border-slate-800/60 mt-12 print-card">
+            <p class="font-medium text-slate-400">Operating Entity: Sipho Wiseman Khuzwayo in Scapush Precision</p>
+            <p class="text-amber-500/80 tracking-widest uppercase text-[10px]">Scapush Protocol v3.3 — Absolute Precision & Sovereign Stability for Nando Cocco</p>
+        </footer>
+
+    </main>
+
+    <script>
+        // Live Clock Initialization
+        function updateClock() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+            const dateString = now.toLocaleDateString([], { month: 'short', day: 'numeric', year: 'numeric' });
+            document.getElementById('live-clock').textContent = `${dateString} | ${timeString}`;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        // Theme Switcher Logic
+        function switchTheme(theme) {
+            const body = document.getElementById('app-body');
+            if (theme === 'dark-obsidian') {
+                body.className = 'bg-[#070b14] text-slate-100 min-h-screen transition-colors duration-300';
+            } else if (theme === 'high-contrast') {
+                body.className = 'bg-white text-slate-900 min-h-screen transition-colors duration-300';
+            } else if (theme === 'executive-navy') {
+                body.className = 'bg-[#070d1d] text-sky-100 min-h-screen transition-colors duration-300';
+            }
+        }
+
+        // Active Voice Language State
+        let selectedLanguage = 'it-IT'; // Default to Italian for Nando Cocco
+        function updateSelectedLanguage(lang) {
+            selectedLanguage = lang;
+        }
+
+        // Web Speech API Narrator State with Crystal-Clear Italian Voice Matching
+        let synth = window.speechSynthesis;
+        let currentUtterance = null;
+        let isSpeaking = false;
+
+        // Helper to find the best available Italian voice
+        function getItalianVoice() {
+            if (!synth) return null;
+            const voices = synth.getVoices();
+            // Try to find a precise Italian voice
+            let italianVoice = voices.find(v => v.lang === 'it-IT' || v.lang === 'it_IT' || v.lang.startsWith('it'));
+            return italianVoice || null;
+        }
+
+        // Preload voices if available
+        if (synth && typeof synth.onvoiceschanged !== 'undefined') {
+            synth.onvoiceschanged = getItalianVoice;
+        }
+
+        function narrateText(elementId, btnElement) {
+            if (!synth) {
+                alert('Text-to-speech is not supported in this browser.');
+                return;
+            }
+
+            if (synth.speaking) {
+                synth.cancel();
+                if (isSpeaking) {
+                    isSpeaking = false;
+                    resetNarratorButtons();
+                    return;
+                }
+            }
+
+            const targetEl = document.getElementById(elementId);
+            if (!targetEl) return;
+
+            const textToRead = targetEl.innerText;
+            currentUtterance = new SpeechSynthesisUtterance(textToRead);
+            
+            // Set language explicitly
+            currentUtterance.lang = selectedLanguage;
+            
+            // If Italian is selected, ensure we attach an Italian voice for crystal-clear accent
+            if (selectedLanguage === 'it-IT') {
+                const bestVoice = getItalianVoice();
+                if (bestVoice) {
+                    currentUtterance.voice = bestVoice;
+                }
+            }
+
+            currentUtterance.rate = 0.90; // Calibrated for clear listening
+            currentUtterance.pitch = 1.0;
+
+            currentUtterance.onstart = () => {
+                isSpeaking = true;
+                if (btnElement) {
+                    btnElement.innerHTML = `<span>⏹ Stop</span>`;
+                    btnElement.classList.add('bg-amber-500', 'text-obsidian');
+                }
+            };
+
+            currentUtterance.onend = () => {
+                isSpeaking = false;
+                resetNarratorButtons();
+            };
+
+            synth.speak(currentUtterance);
+        }
+
+        function toggleGlobalNarration() {
+            if (!synth) return;
+
+            if (synth.speaking) {
+                synth.cancel();
+                isSpeaking = false;
+                resetNarratorButtons();
+                document.getElementById('global-narrate-text').textContent = 'Leggi Tutto (Read All)';
+                return;
+            }
+
+            const fullText = document.querySelector('main').innerText;
+            currentUtterance = new SpeechSynthesisUtterance(fullText);
+            
+            currentUtterance.lang = selectedLanguage;
+            if (selectedLanguage === 'it-IT') {
+                const bestVoice = getItalianVoice();
+                if (bestVoice) {
+                    currentUtterance.voice = bestVoice;
+                }
+            }
+            currentUtterance.rate = 0.90;
+
+            currentUtterance.onstart = () => {
+                isSpeaking = true;
+                document.getElementById('global-narrate-text').textContent = 'Ferma (Stop)';
+            };
+
+            currentUtterance.onend = () => {
+                isSpeaking = false;
+                document.getElementById('global-narrate-text').textContent = 'Leggi Tutto (Read All)';
+            };
+
+            synth.speak(currentUtterance);
+        }
+
+        function resetNarratorButtons() {
+            document.querySelectorAll('button').forEach(btn => {
+                if (btn.textContent.includes('Stop') || btn.textContent.includes('Ferma')) {
+                    btn.innerHTML = `<span>🔊 Leggi / Read</span>`;
+                    btn.classList.remove('bg-amber-500', 'text-obsidian');
+                }
+            });
+            const globalBtnText = document.getElementById('global-narrate-text');
+            if (globalBtnText) globalBtnText.textContent = 'Leggi Tutto (Read All)';
+        }
+    </script>
+</body>
+</html>

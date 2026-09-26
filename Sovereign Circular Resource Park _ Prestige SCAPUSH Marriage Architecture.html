@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<!-- saved from url=(0062)file:///C:/Users/ASUS/Downloads/gemini-code-1790286162492.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sovereign Circular Resource Park | Prestige SCAPUSH Marriage Architecture</title>
+<style>
+:root{
+  --navy:#071A2B;
+  --navy2:#0B2A43;
+  --teal:#00A6A6;
+  --teal2:#72E0D2;
+  --gold:#D4AF37;
+  --gold2:#F4D77A;
+  --white:#F9FBFC;
+  --muted:#B8C8D4;
+  --ink:#102333;
+  --panel:rgba(255,255,255,.075);
+  --line:rgba(212,175,55,.28);
+  --focus-ring: #58a6ff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:
+    radial-gradient(circle at 82% 8%,rgba(0,166,166,.22),transparent 28%),
+    radial-gradient(circle at 12% 18%,rgba(212,175,55,.12),transparent 25%),
+    linear-gradient(135deg,#061522 0%,#0A2439 48%,#061522 100%);
+  color:var(--white);
+  font-family:Segoe UI,Inter,Arial,sans-serif;
+  line-height:1.55;
+}
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  opacity:.16;
+  background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
+  background-size:48px 48px;
+}
+
+/* Accessibility Utilities & Focus Styles */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.skip-link {
+  position: absolute;
+  top: -60px;
+  left: 20px;
+  background: var(--gold);
+  color: var(--navy);
+  padding: 12px 20px;
+  font-weight: bold;
+  z-index: 10000;
+  border-radius: 0 0 8px 8px;
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus-ring) !important;
+  outline-offset: 4px !important;
+}
+
+/* High Contrast & Reduced Motion Media Queries */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (forced-colors: active) {
+  .pill, .card, .node, .phase, .t, .lang-toggle-btn {
+    border: 2px solid CanvasText !important;
+  }
+  .skip-link:focus {
+    outline: 3px solid CanvasText !important;
+  }
+}
+
+a{color:inherit}
+.wrap{max-width:1250px;margin:auto;padding:0 42px}
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;width:680px;height:680px;border:1px solid rgba(0,166,166,.28);border-radius:50%;right:-260px;bottom:-290px;box-shadow:0 0 0 70px rgba(212,175,55,.035),0 0 0 140px rgba(0,166,166,.025)}
+
+/* Language & Narrator Control Panel Header Bar */
+.control-bar {
+  position: absolute;
+  top: 24px;
+  right: 42px;
+  z-index: 1000;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.lang-toggle-btn, .narrator-btn {
+  background: rgba(11, 42, 67, 0.85);
+  border: 1px solid var(--line);
+  color: var(--gold2);
+  padding: 10px 18px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.25s ease;
+}
+
+.lang-toggle-btn:hover, .narrator-btn:hover {
+  background: var(--teal);
+  color: var(--navy);
+  border-color: var(--teal2);
+}
+
+.narrator-btn.speaking {
+  background: var(--gold);
+  color: var(--navy);
+  animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.05); }
+}
+
+.kicker{letter-spacing:5px;color:var(--gold2);font-weight:700;font-size:14px;text-transform:uppercase}
+h1{font-size:clamp(48px,7vw,92px);line-height:.95;margin:18px 0;color:var(--white);max-width:1000px}
+h1 span{color:var(--teal2)}
+.hero-sub{font-size:clamp(20px,2.2vw,30px);max-width:900px;color:#DCE8EF}
+.signature{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+.pill{padding:10px 16px;border:1px solid var(--line);border-radius:100px;background:rgba(255,255,255,.05);font-size:13px;letter-spacing:1.5px}
+.gold{color:var(--gold2)} .teal{color:var(--teal2)}
+section{padding:100px 0}
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;margin-bottom:42px}
+.eyebrow{color:var(--teal2);letter-spacing:3px;font-weight:800;font-size:13px;text-transform:uppercase}
+h2{font-size:clamp(34px,4.5vw,58px);line-height:1.03;margin:8px 0;color:var(--white)}
+h3{font-size:25px;margin:0 0 12px;color:var(--gold2)}
+p{color:#D5E0E7;font-size:18px}
+.lead{font-size:24px;color:#EEF5F8;max-width:920px}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:20px}
+.card{background:linear-gradient(145deg,rgba(255,255,255,.10),rgba(255,255,255,.035));border:1px solid rgba(255,255,255,.10);border-radius:22px;padding:28px;backdrop-filter:blur(10px);box-shadow:0 18px 50px rgba(0,0,0,.16)}
+.card:hover{border-color:rgba(0,166,166,.5);transform:translateY(-2px);transition:.25s}
+.span4{grid-column:span 4}.span6{grid-column:span 6}.span8{grid-column:span 8}.span12{grid-column:span 12}
+.num{font-size:48px;font-weight:800;color:rgba(212,175,55,.35);line-height:1;margin-bottom:18px}
+
+.flow-container {
+  overflow-x: auto;
+  padding: 10px 0;
+}
+.flow{display:flex;align-items:center;gap:10px;flex-wrap:nowrap;margin:35px 0;min-width:max-content;}
+.node{padding:17px 21px;border-radius:14px;border:1px solid rgba(0,166,166,.42);background:rgba(0,166,166,.09);font-weight:700}
+.arrow{font-size:24px;color:var(--gold2)}
+.phase{position:relative;padding:36px;border-radius:26px;overflow:hidden;background:linear-gradient(135deg,rgba(0,166,166,.17),rgba(212,175,55,.10));border:1px solid rgba(212,175,55,.35)}
+.phase:before{content:attr(data-watermark);position:absolute;right:-20px;top:18px;font-size:70px;font-weight:900;color:rgba(255,255,255,.035)}
+.phase h2{max-width:700px}
+.quote{border-left:4px solid var(--gold);padding:20px 28px;margin:28px 0;background:rgba(212,175,55,.055);border-radius:0 16px 16px 0}
+.quote p{font-size:25px;color:#fff;margin:0}
+
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,.1);
+}
+.matrix{width:100%;border-collapse:collapse}
+.matrix th,.matrix td{padding:16px;border-bottom:1px solid rgba(255,255,255,.09);text-align:left;vertical-align:top}
+.matrix th{color:var(--gold2);font-size:13px;letter-spacing:1.5px;text-transform:uppercase;background:rgba(212,175,55,.07)}
+.matrix td{color:#DCE6EB}
+
+.timeline{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:35px}
+.t{padding:24px 18px;border-top:3px solid var(--teal);background:rgba(255,255,255,.055);min-height:170px}
+.t:nth-child(2),.t:nth-child(4){border-color:var(--gold)}
+.t strong{display:block;font-size:17px;color:#fff;margin-bottom:10px}
+.t small{color:var(--muted)}
+footer{padding:70px 0 100px;border-top:1px solid rgba(255,255,255,.1)}
+.footer-title{font-size:34px;font-weight:800}
+.meta{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:var(--muted);margin-top:25px;font-size:13px}
+.badge{color:var(--gold2);font-weight:800;letter-spacing:2px}
+
+@media(max-width:850px){
+  .wrap{padding:0 22px}.span4,.span6,.span8{grid-column:span 12}.timeline{grid-template-columns:1fr}.hero{min-height:88vh}
+  .control-bar { top: 12px; right: 12px; flex-direction: column; }
+}
+@media print{
+  body{background:#071A2B}.card{break-inside:avoid}section{padding:60px 0}.hero{min-height:720px}
+  .control-bar { display: none !important; }
+}
+</style>
+</head>
+<body>
+
+<a href="file:///C:/Users/ASUS/Downloads/gemini-code-1790286162492.html#main-content" class="skip-link">Skip to Main Content</a>
+
+<div class="control-bar">
+  <button id="lang-toggle" class="lang-toggle-btn" aria-label="Switch language to Italian / Passa alla lingua italiana">
+    <span aria-hidden="true">🌐</span> <span id="lang-label">IT / EN</span>
+  </button>
+  <button id="narrator-toggle" class="narrator-btn" aria-label="Toggle Speech Narrator / Attiva Narratore Vocale">
+    <span aria-hidden="true">🔊</span> <span id="narrator-label">Narrator Off</span>
+  </button>
+</div>
+
+<header class="hero" role="banner">
+  <div class="wrap">
+    <div class="kicker" data-en="Prestige SCAPUSH Precision Execution Architecture" data-it="Architettura di Esecuzione di Precisione Prestige SCAPUSH">Prestige SCAPUSH Precision Execution Architecture</div>
+    <h1><span data-en="SOVEREIGN" data-it="PARCO">SOVEREIGN</span><br><span data-en="CIRCULAR RESOURCE PARK" data-it="SOVRANO DI RISORSE CIRCOLARI">CIRCULAR RESOURCE PARK</span></h1>
+    <p class="hero-sub" data-en="Green Minerals × Bio-Solar × Circular Resource Infrastructure" data-it="Minerali Ecologici × Bio-Solare × Infrastruttura di Risorse Circolari">Green Minerals × Bio-Solar × Circular Resource Infrastructure</p>
+    <p class="lead" data-en="A sequenced marriage architecture in which the Bio-Solar Engine becomes Phase One — establishing the first physical and operational SCRP node while the Green Minerals platform advances through its own technical, municipal and commercial pathway." data-it="Un'architettura matrimoniale sequenziata in cui il Motore Bio-Solare diventa la Fase Uno — stabilendo il primo nodo fisico e operativo SCRP mentre la piattaforma Green Minerals avanza attraverso il proprio percorso tecnico, municipale e commerciale.">A sequenced marriage architecture in which the <span class="gold">Bio-Solar Engine becomes Phase One</span> — establishing the first physical and operational SCRP node while the Green Minerals platform advances through its own technical, municipal and commercial pathway.</p>
+    <div class="signature" role="list" aria-label="Key Project Stakeholders">
+      <div class="pill" role="listitem">NANDO COCCO · GREEN MINERALS</div>
+      <div class="pill" role="listitem">SIPHO WISEMAN KHUZWAYO · LWANDILE</div>
+      <div class="pill" role="listitem">SENZO INNOCENT MKHIZE · INSEPHE</div>
+    </div>
+  </div>
+</header>
+
+<main id="main-content" role="main">
+
+<section aria-labelledby="sec1-title">
+<div class="wrap">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow" data-en="01 · The strategic decision" data-it="01 · La decisione strategica">01 · The strategic decision</div>
+      <h2 id="sec1-title" data-en="One marriage. Sequenced execution." data-it="Un unico matrimonio. Esecuzione sequenziata.">One marriage.<br>Sequenced execution.</h2>
+    </div>
+  </div>
+  <p class="lead" data-en="The SCRP is not presented as two unrelated ventures. It is a single circular-resource platform with implementation layers. Bio-Solar receives Phase-One implementation priority because it can establish the first operating infrastructure node; Green Minerals remains a principal strategic pillar and advances in parallel toward its own validation and engagement gates." data-it="L'SCRP non si presenta come due imprese non correlate. È un'unica piattaforma di risorse circolari con livelli di implementazione. Il Bio-Solare riceve la priorità di implementazione della Fase Uno perché può stabilire il primo nodo infrastrutturale operativo; Green Minerals rimane un pilastro strategico principale e avanza in parallelo verso le proprie fasi di validazione e coinvolgimento.">The SCRP is not presented as two unrelated ventures. It is a single circular-resource platform with implementation layers. Bio-Solar receives Phase-One implementation priority because it can establish the first operating infrastructure node; Green Minerals remains a principal strategic pillar and advances in parallel toward its own validation and engagement gates.</p>
+  <div class="quote" role="region" aria-label="Strategic Quote">
+    <p data-en="“The Bio-Solar Engine establishes the first physical and operational foundation of the SOVEREIGN CIRCULAR RESOURCE PARK.”" data-it="“Il Motore Bio-Solare stabilisce la prima fondazione fisica e operativa del PARCO SOVRANO DI RISORSE CIRCOLARI.”">“The Bio-Solar Engine establishes the first physical and operational foundation of the SOVEREIGN CIRCULAR RESOURCE PARK.”</p>
+  </div>
+</div>
+</section>
+
+<section aria-labelledby="sec2-title">
+<div class="wrap">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow" data-en="02 · The three pillars" data-it="02 · I tre pilastri">02 · The three pillars</div>
+      <h2 id="sec2-title" data-en="The marriage architecture" data-it="L'architettura del matrimonio">The marriage architecture</h2>
+    </div>
+  </div>
+  <div class="grid">
+    <div class="card span4">
+      <div class="num" aria-hidden="true">01</div>
+      <h3>Nando Cocco</h3>
+      <p class="badge">GREEN MINERALS</p>
+      <p data-en="Green Minerals technology, intellectual-property platform and strategic capital pathway." data-it="Tecnologia Green Minerals, piattaforma di proprietà intellettuale e percorso di capitale strategico.">Green Minerals technology, intellectual-property platform and strategic capital pathway.</p>
+    </div>
+    <div class="card span4">
+      <div class="num" aria-hidden="true">02</div>
+      <h3>Sipho Wiseman Khuzwayo</h3>
+      <p class="badge">LWANDILE ENGINEERING</p>
+      <p data-en="Bio-Solar Engine, energy architecture, engineering, EPC and execution capability." data-it="Motore Bio-Solare, architettura energetica, ingegneria, EPC e capacità di esecuzione.">Bio-Solar Engine, energy architecture, engineering, EPC and execution capability.</p>
+    </div>
+    <div class="card span4">
+      <div class="num" aria-hidden="true">03</div>
+      <h3>Senzo Innocent Mkhize</h3>
+      <p class="badge">INSEPHE PROJECTS</p>
+      <p data-en="Strategic consortium development, implementation coordination and commercial expansion." data-it="Sviluppo di consorzi strategici, coordinamento dell'implementazione ed espansione commerciale.">Strategic consortium development, implementation coordination and commercial expansion.</p>
+    </div>
+  </div>
+
+  <div class="flow-container" tabindex="0" role="region" aria-label="Circular Process Flow Chart">
+    <div class="flow" role="list">
+      <div class="node" role="listitem" data-en="RESOURCE" data-it="RISORSA">RESOURCE</div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="node" role="listitem" data-en="ENERGY" data-it="ENERGIA">ENERGY</div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="node" role="listitem" data-en="PROCESS" data-it="PROCESSO">PROCESS</div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="node" role="listitem" data-en="PRODUCT" data-it="PRODOTTO">PRODUCT</div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="node" role="listitem" data-en="REVENUE" data-it="RICAVI">REVENUE</div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="node" role="listitem" data-en="REINVESTMENT" data-it="REINVESTIMENTO">REINVESTMENT</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section aria-labelledby="sec3-title">
+<div class="wrap">
+  <div class="phase" data-watermark="PHASE ONE" id="phase-card">
+    <div class="eyebrow" data-en="03 · Phase One" data-it="03 · Fase Uno">03 · Phase One</div>
+    <h2 id="sec3-title" data-en="Bio-Solar becomes the first SCRP node." data-it="Il Bio-Solare diventa il primo nodo SCRP.">Bio-Solar becomes the first SCRP node.</h2>
+    <p class="lead" data-en="The first implementation is designed to demonstrate the operating principle of the wider platform: resource recovery supports energy generation; energy supports productive infrastructure; productive infrastructure creates commercial value; value supports reinvestment." data-it="La prima implementazione è progettata per dimostrare il principio operativo della piattaforma più ampia: il recupero delle risorse supporta la generazione di energia; l'energia supporta le infrastrutture produttive; l'infrastruttura produttiva crea valore commerciale; il valore supporta il reinvestimento.">The first implementation is designed to demonstrate the operating principle of the wider platform: resource recovery supports energy generation; energy supports productive infrastructure; productive infrastructure creates commercial value; value supports reinvestment.</p>
+    
+    <div class="flow-container" tabindex="0" role="region" aria-label="Phase One Integration Flow">
+      <div class="flow" role="list">
+        <div class="node" role="listitem" data-en="Organic Resources" data-it="Risorse Organiche">Organic Resources</div>
+        <div class="arrow" aria-hidden="true">→</div>
+        <div class="node" role="listitem" data-en="Anaerobic Digestion" data-it="Digestione Anaerobica">Anaerobic Digestion</div>
+        <div class="arrow" aria-hidden="true">→</div>
+        <div class="node" role="listitem" data-en="Biogas + Co-Gen" data-it="Biogas + Cogenerazione">Biogas + Co-Gen</div>
+        <div class="arrow" aria-hidden="true">+</div>
+        <div class="node" role="listitem" data-en="Solar PV + BESS" data-it="Solare Fotovoltaico + BESS">Solar PV + BESS</div>
+        <div class="arrow" aria-hidden="true">→</div>
+        <div class="node" role="listitem" data-en="Microgrid" data-it="Microrete">Microgrid</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section aria-labelledby="sec4-title">
+<div class="wrap">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow" data-en="04 · Phase One system" data-it="04 · Sistema Fase Uno">04 · Phase One system</div>
+      <h2 id="sec4-title" data-en="The energy spine." data-it="La spina dorsale energetica.">The energy spine.</h2>
+    </div>
+  </div>
+  <div class="grid">
+    <div class="card span6">
+      <h3>Bio-Solar Engine</h3>
+      <p data-en="Anaerobic digestion, biogas and co-generation integrated with Solar PV to create a resilient local energy platform." data-it="Digestione anaerobica, biogas e cogenerazione integrati con il solare fotovoltaico per creare una piattaforma energetica locale resiliente.">Anaerobic digestion, biogas and co-generation integrated with Solar PV to create a resilient local energy platform.</p>
+    </div>
+    <div class="card span6">
+      <h3>Battery Energy Storage</h3>
+      <p data-en="High-density storage supporting microgrid balancing, peak management and continuity." data-it="Accumulo ad alta densità a supporto del bilanciamento della microrete, della gestione dei picchi e della continuità.">High-density storage supporting microgrid balancing, peak management and continuity.</p>
+    </div>
+    <div class="card span4">
+      <h3>Productive Use</h3>
+      <p data-en="Food-production and productive infrastructure anchored to reliable energy." data-it="Produzione alimentare e infrastrutture produttive ancorate a un'energia affidabile.">Food-production and productive infrastructure anchored to reliable energy.</p>
+    </div>
+    <div class="card span4">
+      <h3>Mobility</h3>
+      <p data-en="EV and heavy-duty charging as a future productive load and mobility interface." data-it="Ricarica per veicoli elettrici e mezzi pesanti come futuro carico produttivo e interfaccia di mobilità.">EV and heavy-duty charging as a future productive load and mobility interface.</p>
+    </div>
+    <div class="card span4">
+      <h3>Digital Control</h3>
+      <p data-en="SCADA, telemetry and operating intelligence supporting the execution architecture." data-it="SCADA, telemetria e intelligenza operativa a supporto dell'architettura di esecuzione.">SCADA, telemetry and operating intelligence supporting the execution architecture.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<section aria-labelledby="sec5-title">
+<div class="wrap">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow" data-en="05 · Municipal interface" data-it="05 · Interfaccia municipale">05 · Municipal interface</div>
+      <h2 id="sec5-title" data-en="Engagement is an implementation pathway." data-it="Il coinvolgimento è un percorso di attuazione.">Engagement is an<br>implementation pathway.</h2>
+    </div>
+  </div>
+  <p class="lead" data-en="Where municipal participation is required, it should be incorporated into the project architecture from the beginning rather than treated as a late-stage approval exercise." data-it="Laddove è richiesta la partecipazione municipale, essa dovrebbe essere incorporata nell'architettura del progetto fin dall'inizio piuttosto che trattata come un esercizio di approvazione in fase avanzata.">Where municipal participation is required, it should be incorporated into the project architecture from the beginning rather than treated as a late-stage approval exercise.</p>
+  
+  <div class="table-wrapper" tabindex="0" role="region" aria-label="Municipal Interface Specification Table">
+    <table class="matrix">
+      <caption>Municipal Alignment and Technical Requirements Matrix</caption>
+      <thead>
+        <tr>
+          <th scope="col" id="col-interface" data-en="Potential interface" data-it="Interfaccia potenziale">Potential interface</th>
+          <th scope="col" id="col-relevance" data-en="SCRP relevance" data-it="Rilevanza SCRP">SCRP relevance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row" headers="col-interface" data-en="Land / site access" data-it="Accesso al terreno / sito">Land / site access</th>
+          <td headers="col-relevance" data-en="Defines the physical location and development envelope of the node." data-it="Definisce la posizione fisica e l'involucro di sviluppo del nodo.">Defines the physical location and development envelope of the node.</td>
+        </tr>
+        <tr>
+          <th scope="row" headers="col-interface" data-en="Organic resource streams" data-it="Flussi di risorse organiche">Organic resource streams</th>
+          <td headers="col-relevance" data-en="Potential feedstock pathway for circular bio-resource recovery." data-it="Potenziale percorso di materia prima per il recupero circolare delle bio-risorse.">Potential feedstock pathway for circular bio-resource recovery.</td>
+        </tr>
+        <tr>
+          <th scope="row" headers="col-interface" data-en="Electricity interface" data-it="Interfaccia elettrica">Electricity interface</th>
+          <td headers="col-relevance" data-en="Grid connection, distribution and embedded-generation requirements where applicable." data-it="Connessione alla rete, distribuzione e requisiti di generazione incorporata, se applicabile.">Grid connection, distribution and embedded-generation requirements where applicable.</td>
+        </tr>
+        <tr>
+          <th scope="row" headers="col-interface" data-en="Off-take / productive demand" data-it="Off-take / Domanda produttiva">Off-take / productive demand</th>
+          <td headers="col-relevance" data-en="Potential municipal or local demand supporting the commercial model." data-it="Potenziale domanda municipale o locale a supporto del modello commerciale.">Potential municipal or local demand supporting the commercial model.</td>
+        </tr>
+        <tr>
+          <th scope="row" headers="col-interface" data-en="Planning / environmental pathway" data-it="Pianificazione / Percorso ambientale">Planning / environmental pathway</th>
+          <td headers="col-relevance" data-en="Site-specific statutory and institutional requirements." data-it="Requisiti statutari e istituzionali specifici del sito.">Site-specific statutory and institutional requirements.</td>
+        </tr>
+        <tr>
+          <th scope="row" headers="col-interface" data-en="Local economic participation" data-it="Partecipazione economica locale">Local economic participation</th>
+          <td headers="col-relevance" data-en="Skills, enterprise, employment and development opportunities subject to the applicable framework." data-it="Competenze, impresa, occupazione e opportunità di sviluppo soggette al quadro applicabile.">Skills, enterprise, employment and development opportunities subject to the applicable framework.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-size:14px;color:var(--muted);margin-top:18px" data-en="The exact approval and commercial pathway remains site-, capacity- and configuration-dependent and must be validated during project development." data-it="L'esatto percorso commerciale e di approvazione rimane dipendente dal sito, dalla capacità e dalla configurazione e deve essere convalidato durante lo sviluppo del progetto.">The exact approval and commercial pathway remains site-, capacity- and configuration-dependent and must be validated during project development.</p>
+</div>
+</section>
+
+<section aria-labelledby="sec6-title">
+<div class="wrap">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow" data-en="06 · Green Minerals integration" data-it="06 · Integrazione Green Minerals">06 · Green Minerals integration</div>
+      <h2 id="sec6-title" data-en="Phase Two without strategic separation." data-it="Fase Due senza separazione strategica.">Phase Two without<br>strategic separation.</h2>
+    </div>
+  </div>
+  <p class="lead" data-en="Green Minerals is not “put on hold”. Its technology and commercial pathway can develop in parallel while Phase One creates the infrastructure, relationships and operating environment into which subsequent resource-processing capabilities may be integrated." data-it="Green Minerals non viene messo “in attesa”. La sua tecnologia e il suo percorso commerciale possono svilupparsi in parallelo mentre la Fase Uno crea l'infrastruttura, le relazioni e l'ambiente operativo in cui le successive capacità di elaborazione delle risorse possono essere integrate.">Green Minerals is not “put on hold”. Its technology and commercial pathway can develop in parallel while Phase One creates the infrastructure, relationships and operating environment into which subsequent resource-processing capabilities may be integrated.</p>
+  
+  <div class="flow-container" tabindex="0" role="region" aria-label="Green Minerals Phase Integration Flow">
+    <div class="flow" role="list">
+      <div class="node" role="listitem" data-en="Bio-Solar Node" data-it="Nodo Bio-Solare">Bio-Solar Node</div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="node" role="listitem" data-en="Energy + Infrastructure" data-it="Energia + Infrastruttura">Energy + Infrastructure</div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="node" role="listitem" data-en="Green Minerals Demonstration" data-it="Dimostrazione Green Minerals">Green Minerals Demonstration</div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="node" role="listitem" data-en="Circular Processing" data-it="Elaborazione Circolare">Circular Processing</div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="node" role="listitem" data-en="Industrial Platform" data-it="Piattaforma Industriale">Industrial Platform</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section aria-labelledby="sec7-title">
+<div class="wrap">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow" data-en="07 · Development gates" data-it="07 · Fasi di sviluppo">07 · Development gates</div>
+      <h2 id="sec7-title" data-en="SCAPUSH precision control." data-it="Controllo di precisione SCAPUSH.">SCAPUSH precision control.</h2>
+    </div>
+  </div>
+  <div class="timeline" role="list" aria-label="Development Gates Timeline">
+    <div class="t" role="listitem">
+      <strong data-en="01 · Strategic Alignment" data-it="01 · Allineamento Strategico">01 · Strategic Alignment</strong>
+      <small data-en="Confirm the marriage, roles, objectives and site logic." data-it="Confermare l'unione, i ruoli, gli obiettivi e la logica del sito.">Confirm the marriage, roles, objectives and site logic.</small>
+    </div>
+    <div class="t" role="listitem">
+      <strong data-en="02 · Technology Integration" data-it="02 · Integrazione Tecnologica">02 · Technology Integration</strong>
+      <small data-en="Validate interfaces between Bio-Solar, Green Minerals and supporting systems." data-it="Convalidare le interfacce tra Bio-Solare, Green Minerals e i sistemi di supporto.">Validate interfaces between Bio-Solar, Green Minerals and supporting systems.</small>
+    </div>
+    <div class="t" role="listitem">
+      <strong data-en="03 · Municipal / Institutional" data-it="03 · Municipale / Istituzionale">03 · Municipal / Institutional</strong>
+      <small data-en="Map site-specific stakeholder, planning and regulatory pathways." data-it="Mappare i percorsi regolatori, di pianificazione e degli stakeholder specifici del sito.">Map site-specific stakeholder, planning and regulatory pathways.</small>
+    </div>
+    <div class="t" role="listitem">
+      <strong data-en="04 · Commercial Architecture" data-it="04 · Architettura Commerciale">04 · Commercial Architecture</strong>
+      <small data-en="Define customers, revenues, capital requirements and operating model." data-it="Definire clienti, ricavi, requisiti di capitale e modello operativo.">Define customers, revenues, capital requirements and operating model.</small>
+    </div>
+    <div class="t" role="listitem">
+      <strong data-en="05 · Investment Readiness" data-it="05 · Prontezza agli Investimenti">05 · Investment Readiness</strong>
+      <small data-en="Evidence pack, validation, risk register and execution-ready decision gate." data-it="Pacchetto di prove, validazione, registro dei rischi e fase decisionale pronta per l'esecuzione.">Evidence pack, validation, risk register and execution-ready decision gate.</small>
+    </div>
+  </div>
+</div>
+</section>
+
+<section aria-labelledby="sec8-title">
+<div class="wrap">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow" data-en="08 · The long view" data-it="08 · La visione a lungo termine">08 · The long view</div>
+      <h2 id="sec8-title" data-en="From one node to a replicable platform." data-it="Da un nodo a una piattaforma replicabile.">From one node<br>to a replicable platform.</h2>
+    </div>
+  </div>
+  <div class="grid">
+    <div class="card span4">
+      <div class="num" aria-hidden="true">01</div>
+      <h3>Bio-Solar Node</h3>
+      <p data-en="Establish the first operating SCRP environment." data-it="Stabilire il primo ambiente operativo SCRP.">Establish the first operating SCRP environment.</p>
+    </div>
+    <div class="card span4">
+      <div class="num" aria-hidden="true">02</div>
+      <h3>Green Minerals</h3>
+      <p data-en="Validate and introduce the strategic mineral-processing layer." data-it="Convalidare e introdurre il livello strategico di lavorazione dei minerali.">Validate and introduce the strategic mineral-processing layer.</p>
+    </div>
+    <div class="card span4">
+      <div class="num" aria-hidden="true">03</div>
+      <h3>Circular Processing</h3>
+      <p data-en="Expand resource streams and value-added products." data-it="Espandere i flussi di risorse e i prodotti a valore aggiunto.">Expand resource streams and value-added products.</p>
+    </div>
+    <div class="card span6">
+      <div class="num" aria-hidden="true">04</div>
+      <h3>Industrial Park</h3>
+      <p data-en="Integrate energy, resources, technology, people, capital and markets." data-it="Integrare energia, risorse, tecnologia, persone, capitale e mercati.">Integrate energy, resources, technology, people, capital and markets.</p>
+    </div>
+    <div class="card span6">
+      <div class="num" aria-hidden="true">05</div>
+      <h3>Replication</h3>
+      <p data-en="Replicate the architecture across suitable industrial and resource corridors following evidence and site validation." data-it="Replicare l'architettura attraverso corridoi industriali e di risorse idonei a seguito di prove e convalida del sito.">Replicate the architecture across suitable industrial and resource corridors following evidence and site validation.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<section aria-labelledby="sec9-title">
+<div class="wrap">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow" data-en="09 · SCAPUSH evidence discipline" data-it="09 · Disciplina delle prove SCAPUSH">09 · SCAPUSH evidence discipline</div>
+      <h2 id="sec9-title" data-en="Precision before promotion." data-it="Precisione prima della promozione.">Precision before promotion.</h2>
+    </div>
+  </div>
+  <p class="lead" data-en="The marriage document distinguishes between what is confirmed, sourced, calculated, assumed and still requires validation. Patent, technical, financial and regulatory claims are not promoted beyond their evidence status." data-it="Il documento matrimoniale distingue tra ciò che è confermato, reperito, calcolato, ipotizzato e richiede ancora convalida. Le rivendicazioni di brevetto, tecniche, finanziarie e normative non vengono promosse oltre il loro stato di evidenza.">The marriage document distinguishes between what is confirmed, sourced, calculated, assumed and still requires validation. Patent, technical, financial and regulatory claims are not promoted beyond their evidence status.</p>
+  <div class="grid">
+    <div class="card span4">
+      <h3 data-en="CONFIRMED" data-it="CONFERMATO">CONFIRMED</h3>
+      <p data-en="Directly evidenced and accepted within the working record." data-it="Direttamente evidenziato e accettato all'interno del verbale di lavoro.">Directly evidenced and accepted within the working record.</p>
+    </div>
+    <div class="card span4">
+      <h3 data-en="SOURCED" data-it="FONTE VERIFICATA">SOURCED</h3>
+      <p data-en="Supported by a named external or documentary source." data-it="Supportato da una fonte documentale o esterna nominata.">Supported by a named external or documentary source.</p>
+    </div>
+    <div class="card span4">
+      <h3 data-en="CALCULATED" data-it="CALCOLATO">CALCULATED</h3>
+      <p data-en="Derived transparently from defined inputs and assumptions." data-it="Derivato in modo trasparente da input e ipotesi definiti.">Derived transparently from defined inputs and assumptions.</p>
+    </div>
+    <div class="card span4">
+      <h3 data-en="ASSUMED" data-it="IPOTIZZATO">ASSUMED</h3>
+      <p data-en="Working premise requiring subsequent confirmation." data-it="Premessa di lavoro che richiede successiva conferma.">Working premise requiring subsequent confirmation.</p>
+    </div>
+    <div class="card span4">
+      <h3 data-en="VALIDATION REQUIRED" data-it="VALIDAZIONE RICHIESTA">VALIDATION REQUIRED</h3>
+      <p data-en="Technical, commercial, legal or regulatory verification outstanding." data-it="Verifica tecnica, commerciale, legale o normativa in sospeso.">Technical, commercial, legal or regulatory verification outstanding.</p>
+    </div>
+    <div class="card span4">
+      <h3 data-en="REGULATORY DEPENDENT" data-it="DIPENDENTE DA NORMATIVA">REGULATORY DEPENDENT</h3>
+      <p data-en="Outcome depends on site-specific authority and applicable requirements." data-it="L'esito dipende dall'autorità specifica del sito e dai requisiti applicabili.">Outcome depends on site-specific authority and applicable requirements.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+</main>
+
+<footer role="contentinfo">
+<div class="wrap">
+  <div class="eyebrow" data-en="SOVEREIGN CIRCULAR RESOURCE PARK" data-it="PARCO SOVRANO DI RISORSE CIRCOLARI">SOVEREIGN CIRCULAR RESOURCE PARK</div>
+  <div class="footer-title" data-en="GREEN MINERALS × BIO-SOLAR × CIRCULAR RESOURCE INFRASTRUCTURE" data-it="MINERALI ECOLOGICI × BIO-SOLARE × INFRASTRUTTURA DI RISORSE CIRCOLARI">GREEN MINERALS × BIO-SOLAR × CIRCULAR RESOURCE INFRASTRUCTURE</div>
+  <p data-en="Prestige SCAPUSH Precision Execution Architecture" data-it="Architettura di Esecuzione di Precisione Prestige SCAPUSH">Prestige SCAPUSH Precision Execution Architecture</p>
+  <div class="meta">
+    <span>LWANDILE ENGINEERING PROJECTS · EXECUTION ARCHITECTURE</span>
+    <span>INSEPHE PROJECTS · STRATEGIC CONSORTIUM</span>
+    <span>NANDO COCCO · GREEN MINERALS STRATEGIC PILLAR</span>
+  </div>
+</div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  let currentLang = 'en';
+  let isSpeaking = false;
+  let synth = window.speechSynthesis;
+  let utterance = null;
+
+  const langBtn = document.getElementById('lang-toggle');
+  const langLabel = document.getElementById('lang-label');
+  const narratorBtn = document.getElementById('narrator-toggle');
+  const narratorLabel = document.getElementById('narrator-label');
+  const phaseCard = document.getElementById('phase-card');
+
+  // Toggle Language Mechanism
+  langBtn.addEventListener('click', () => {
+    currentLang = currentLang === 'en' ? 'it' : 'en';
+    document.documentElement.lang = currentLang;
+    langLabel.textContent = currentLang === 'en' ? 'IT / EN' : 'EN / IT';
+
+    // Translate attributes
+    document.querySelectorAll('[data-en]').forEach(el => {
+      const text = el.getAttribute(`data-${currentLang}`);
+      if (text) {
+        if (el.children.length === 0 || el.tagName === 'P' || el.tagName === 'H1' || el.tagName === 'H2' || el.tagName === 'H3' || el.tagName === 'STRONG' || el.tagName === 'SMALL' || el.tagName === 'TH' || el.tagName === 'TD' || el.tagName === 'DIV') {
+          el.textContent = text;
+        }
+      }
+    });
+
+    // Update watermark text
+    if (phaseCard) {
+      phaseCard.setAttribute('data-watermark', currentLang === 'en' ? 'PHASE ONE' : 'FASE UNO');
+    }
+
+    // Restart speech if active
+    if (isSpeaking) {
+      stopNarrator();
+      startNarrator();
+    }
+  });
+
+  // Native Speech Synthesis Narrator Mechanism
+  function startNarrator() {
+    if (!synth) {
+      alert('Speech Synthesis not supported on this browser.');
+      return;
+    }
+    synth.cancel();
+
+    const mainText = document.querySelector('main').innerText;
+    utterance = new SpeechSynthesisUtterance(mainText);
+    utterance.lang = currentLang === 'it' ? 'it-IT' : 'en-US';
+    utterance.rate = 0.95;
+
+    // Retrieve Italian or English native voices if available
+    const voices = synth.getVoices();
+    const targetVoice = voices.find(v => v.lang.startsWith(currentLang));
+    if (targetVoice) {
+      utterance.voice = targetVoice;
+    }
+
+    utterance.onend = () => {
+      stopNarrator();
+    };
+
+    synth.speak(utterance);
+    isSpeaking = true;
+    narratorBtn.classList.add('speaking');
+    narratorLabel.textContent = currentLang === 'en' ? 'Narrator Active' : 'Narratore Attivo';
+  }
+
+  function stopNarrator() {
+    if (synth) {
+      synth.cancel();
+    }
+    isSpeaking = false;
+    narratorBtn.classList.remove('speaking');
+    narratorLabel.textContent = currentLang === 'en' ? 'Narrator Off' : 'Narratore Spento';
+  }
+
+  narratorBtn.addEventListener('click', () => {
+    if (isSpeaking) {
+      stopNarrator();
+    } else {
+      startNarrator();
+    }
+  });
+
+  // Pre-load voices for SpeechSynthesis
+  if (synth && synth.onvoiceschanged !== undefined) {
+    synth.onvoiceschanged = () => synth.getVoices();
+  }
+});
+</script>
+
+
+</body></html>

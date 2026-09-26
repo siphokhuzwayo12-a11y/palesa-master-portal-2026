@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<!-- saved from url=(0239)file:///C:/Users/ASUS/OneDrive/Documents/Lwandile%20Engineering%20Projects%20Teachabilitry%20Modules/Lwandile%20Engineering%20Projects%20Bio-Engine%20Specification%20Matrix/Master%20Specifications%20Matrix%20_%20Sovereign%20Bio-Engine.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Specifications Matrix | Sovereign Bio-Engine</title>
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --panel-bg: #161b22;
+            --border-color: #30363d;
+            --accent-green: #238636;
+            --accent-blue: #58a6ff;
+            --accent-amber: #d29922;
+            --accent-red: #da3633;
+            --text-main: #c9d1d9;
+            --text-bright: #f0f6fc;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 24px;
+        }
+
+        .container {
+            max-width: 1250px;
+            margin: 0 auto;
+        }
+
+        /* Header Drawer */
+        .matrix-header {
+            background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--accent-blue);
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .matrix-title h1 {
+            margin: 0;
+            color: var(--text-bright);
+            font-size: 22px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .matrix-title p {
+            margin: 6px 0 0 0;
+            color: #8b949e;
+            font-size: 14px;
+        }
+
+        .badge-sovereign {
+            background: rgba(88, 166, 255, 0.15);
+            color: var(--accent-blue);
+            border: 1px solid var(--accent-blue);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        /* Matrix Table Styling */
+        .table-container {
+            background: var(--panel-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow-x: auto;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 13px;
+        }
+
+        th {
+            background-color: #1c2128;
+            color: var(--text-bright);
+            padding: 16px;
+            font-weight: 600;
+            border-bottom: 2px solid var(--border-color);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 11px;
+        }
+
+        td {
+            padding: 16px;
+            border-bottom: 1px solid var(--border-color);
+            vertical-align: top;
+            line-height: 1.5;
+        }
+
+        tr:hover {
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+
+        .category-cell {
+            font-weight: 700;
+            color: var(--text-bright);
+            white-space: nowrap;
+        }
+
+        .category-cell span {
+            display: block;
+            font-size: 11px;
+            color: var(--accent-blue);
+            font-weight: 400;
+            margin-top: 2px;
+        }
+
+        .param-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .param-list li {
+            margin-bottom: 4px;
+        }
+
+        .fail-safe-text {
+            color: #f85149;
+            font-weight: 500;
+            background: rgba(218, 54, 51, 0.1);
+            padding: 8px 10px;
+            border-radius: 4px;
+            border-left: 3px solid var(--accent-red);
+        }
+
+        .scada-badge {
+            display: inline-block;
+            background: rgba(35, 134, 54, 0.15);
+            color: #3fb950;
+            border: 1px solid var(--accent-green);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        /* Footer Audit Bar */
+        .matrix-footer {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 12px;
+            color: #8b949e;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="matrix-header">
+        <div class="matrix-title">
+            <h1>🏛️ Sovereign Bio-Engine Specification Matrix</h1>
+            <p>Master Operational Parameters, Physical Interlocks &amp; Edge SCADA Architecture • Scapush Precision</p>
+        </div>
+        <div class="badge-sovereign">SCAPUSH PRECISION VERIFIED</div>
+    </div>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 18%;">Architecture Category</th>
+                    <th style="width: 20%;">Operational Hardware</th>
+                    <th style="width: 22%;">Core Parameters / Range</th>
+                    <th style="width: 22%;">Automated Fail-Safe Interlock</th>
+                    <th style="width: 18%;">Edge SCADA Integration</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="category-cell">
+                        Swine Microclimate Controller
+                        <span>Pod Level Air Quality</span>
+                    </td>
+                    <td>Variable-Speed Exhaust Fans, Evaporative Cooling Pads, Heated Concrete Slabs</td>
+                    <td>
+                        <ul class="param-list">
+                            <li>• Temp: 18°C – 24°C</li>
+                            <li>• Humidity: 50% – 70%</li>
+                            <li>• NH₃ Ceiling: &lt; 10 ppm</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <div class="fail-safe-text">
+                            Emergency Air-Purge triggers automatically if NH₃ &gt; 15 ppm or temp &gt; 28°C.
+                        </div>
+                    </td>
+                    <td><span class="scada-badge">Local JS Engine / PWM</span></td>
+                </tr>
+
+                <tr>
+                    <td class="category-cell">
+                        Broiler Microclimate Simulator
+                        <span>Avian Stress Avoidance</span>
+                    </td>
+                    <td>Tunnel Ventilation Arrays, High-Pressure Mist Rings (70 bar), Radiant Brooders</td>
+                    <td>
+                        <ul class="param-list">
+                            <li>• Brooding Temp: 32°C → 21°C</li>
+                            <li>• Static ΔP: 20 – 37.5 Pa</li>
+                            <li>• Air Velocity: 2.5 m/s</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <div class="fail-safe-text">
+                            Gravity-drop air inlets engage instantly on power cut or fan differential pressure drop.
+                        </div>
+                    </td>
+                    <td><span class="scada-badge">Voice of Vision / Telemetry</span></td>
+                </tr>
+
+                <tr>
+                    <td class="category-cell">
+                        4-Pod Thermal Manifold Engine
+                        <span>Hydronic Distribution</span>
+                    </td>
+                    <td>Hydronic Heat Exchange Loop, Motorized Solenoid Valves, Circulator Pumps</td>
+                    <td>
+                        <ul class="param-list">
+                            <li>• Water Supply: 45°C – 55°C</li>
+                            <li>• Delta T (ΔT): 5°C – 8°C</li>
+                            <li>• Pressure: 1.5 – 2.5 bar</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <div class="fail-safe-text">
+                            Thermal Over-Temp Lockout (&gt;60°C) executes to prevent pad thermal shock.
+                        </div>
+                    </td>
+                    <td><span class="scada-badge">Synchronized Valve Ratio</span></td>
+                </tr>
+
+                <tr>
+                    <td class="category-cell">
+                        Dwarf Wall PVC Curtain
+                        <span>Passive Survival Boundary</span>
+                    </td>
+                    <td>Geared Motorized Winch, Steel Cables, Electromagnetic Holding Latches</td>
+                    <td>
+                        <ul class="param-list">
+                            <li>• Concrete Wall: 0.6 m</li>
+                            <li>• Curtain Drop: 1.2 m</li>
+                            <li>• Crosswind Limit: &gt;35 km/h</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <div class="fail-safe-text">
+                            Electromagnetic Latches release on power loss for 100% passive gravity-drop airflow.
+                        </div>
+                    </td>
+                    <td><span class="scada-badge">Wind Vector Loop</span></td>
+                </tr>
+
+                <tr>
+                    <td class="category-cell">
+                        Bio-Gen Feedstock Mechanism
+                        <span>Anaerobic Slurry Prep</span>
+                    </td>
+                    <td>High-Shear Macerator, Progressive Cavity Pump, Thermal Heating Jacket</td>
+                    <td>
+                        <ul class="param-list">
+                            <li>• Slurry Density: 8% – 12% TS</li>
+                            <li>• Digester pH: 6.8 – 7.4</li>
+                            <li>• Pre-Heat Temp: 37°C – 40°C</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <div class="fail-safe-text">
+                            Volatile Acid Buffer: Dosing halts if pH &lt; 6.2 and recirculates alkaline digestate.
+                        </div>
+                    </td>
+                    <td><span class="scada-badge">CH₄ Yield Prediction</span></td>
+                </tr>
+
+                <tr>
+                    <td class="category-cell">
+                        Borehole &amp; Reservoir Control
+                        <span>Gravity Pressure Storage</span>
+                    </td>
+                    <td>Submersible Multi-Stage Pump, Variable Frequency Drive (VFD), Level Sensors</td>
+                    <td>
+                        <ul class="param-list">
+                            <li>• Hydro-Head: 1.0 – 2.5 bar</li>
+                            <li>• Tank Level: 30% Start / 95% Stop</li>
+                            <li>• Elevation: 10m = 1 bar</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <div class="fail-safe-text">
+                            Aquifer Dry-Run Lockout engages if dynamic drawdown level surpasses 30 m.
+                        </div>
+                    </td>
+                    <td><span class="scada-badge">Solar-Peak Shaving Logic</span></td>
+                </tr>
+
+                <tr>
+                    <td class="category-cell">
+                        Zero-Mortality Prestige Lighting
+                        <span>Photopic Circadian Matrix</span>
+                    </td>
+                    <td>Dual-Spectrum LED Strips (480nm/630nm), High-Frequency PWM Drivers</td>
+                    <td>
+                        <ul class="param-list">
+                            <li>• PWM Freq: &gt;10,000 Hz</li>
+                            <li>• Broiler Intensity: 5 – 30 Lux</li>
+                            <li>• Swine Intensity: 20 – 100 Lux</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <div class="fail-safe-text">
+                            Panic/Cortisol Dimming: Shifts spectrum to calming 480nm blue on stress alarms.
+                        </div>
+                    </td>
+                    <td><span class="scada-badge">Zero-Flicker Matrix</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="matrix-footer">
+        <div>SYSTEM STATUS: 100% OPERATIONAL • EDGE READY</div>
+        <div>VAULT REPOSITORY: siphokhuzwayo12-a11y / prototypes</div>
+    </div>
+
+</div>
+
+
+</body></html>

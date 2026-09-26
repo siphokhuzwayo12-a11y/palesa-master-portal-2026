@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<!-- saved from url=(0153)file:///C:/Users/ASUS/OneDrive/Documents/MEGA/Voice%20of%20Vision/Sovereign%20Microgrid%20&%20Energy%20SCADA%20_%20Lwandile%20Engineering%20Projects.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sovereign Microgrid &amp; Energy SCADA | Lwandile Engineering Projects</title>
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --panel-bg: #161b22;
+            --border-color: #30363d;
+            --accent-green: #238636;
+            --accent-blue: #58a6ff;
+            --accent-amber: #d29922;
+            --accent-purple: #bc8cff;
+            --accent-red: #da3633;
+            --text-main: #c9d1d9;
+            --text-bright: #f0f6fc;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 24px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .sovereign-header {
+            text-align: center;
+            padding: 14px;
+            background: rgba(35, 134, 54, 0.1);
+            border: 1px solid var(--accent-green);
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            color: #3fb950;
+            letter-spacing: 1.5px;
+            font-size: 15px;
+            text-transform: uppercase;
+        }
+
+        .vision-drawer {
+            background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--accent-green);
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+
+        .vision-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 16px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .vision-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .vision-title h2 {
+            margin: 0;
+            color: var(--text-bright);
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .vision-title p {
+            margin: 4px 0 0 0;
+            color: #8b949e;
+            font-size: 13px;
+        }
+
+        .audio-btn {
+            background: var(--accent-green);
+            color: #ffffff;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .vision-quote {
+            line-height: 1.7;
+            font-size: 14px;
+            color: var(--text-bright);
+        }
+
+        .scada-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        @media (max-width: 900px) {
+            .scada-grid { grid-template-columns: 1fr; }
+        }
+
+        .panel {
+            background: var(--panel-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 18px;
+        }
+
+        .panel h3 {
+            margin-top: 0;
+            color: var(--text-bright);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+            font-size: 15px;
+        }
+
+        .control-group {
+            margin-bottom: 16px;
+            background: var(--bg-dark);
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+        }
+
+        .control-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-bright);
+        }
+
+        .control-group input[type="range"] {
+            width: 100%;
+            accent-color: var(--accent-green);
+            padding: 0;
+        }
+
+        .steward-teaching-box {
+            margin-top: 8px;
+            font-size: 12px;
+            color: #3fb950;
+            line-height: 1.4;
+            border-left: 3px solid var(--accent-green);
+            padding: 6px 10px;
+            background: rgba(35, 134, 54, 0.05);
+            border-radius: 0 4px 4px 0;
+        }
+
+        .telemetry-value {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-bright);
+            margin: 4px 0;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 6px 10px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .status-optimal { background: rgba(35, 134, 54, 0.2); color: #3fb950; border: 1px solid var(--accent-green); }
+
+        .audit-terminal {
+            background: #040d12;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 14px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 12px;
+            color: #3fb950;
+            height: 120px;
+            overflow-y: auto;
+            margin-top: 20px;
+        }
+
+        .narrator-toggle {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 10px;
+            font-size: 12px;
+            color: var(--text-bright);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="sovereign-header">
+        ⚡ LWANDILE ENGINEERING PROJECTS • 30kWp PV (W/m² Baseline) &amp; 60kWh BATTERY SCADA
+    </div>
+
+    <div class="vision-drawer">
+        <div class="vision-header">
+            <div class="vision-title">
+                <span style="font-size: 28px;">☀️</span>
+                <div>
+                    <h2>Overview | Microgrid &amp; Power Autonomy SCADA Module</h2>
+                    <p>Scapush Precision • 30kWp Bifacial Trackers (1,000 W/m² Baseline) &amp; 60kWh Battery Bank</p>
+                </div>
+            </div>
+            <button onclick="toggleVisionAudio()" id="audio-btn" class="audio-btn" style="background: var(--accent-green);"><span>▶</span> Listen to Summary</button>
+        </div>
+
+        <div class="vision-quote">
+            <p>
+                <strong style="color: #3fb950;">Steward's Inscription:</strong> 
+                "Honorable, our sovereign microgrid integrates 30 kWp bifacial albedo PV trackers calibrated to a 1,000 Watts-per-square-meter baseline, paired with our 60 kWh battery storage bank and biogas generator for absolute off-grid independence."
+            </p>
+        </div>
+
+        <div class="narrator-toggle">
+            <input type="checkbox" id="voice-activation-toggle" checked="">
+            <label for="voice-activation-toggle"><strong>Enable Voice Narrator on Adjustments</strong></label>
+        </div>
+    </div>
+
+    <div class="scada-grid">
+        <div class="panel">
+            <h3>☀️ 30kWp Bifacial Trackers (W/m² Baseline)</h3>
+
+            <div class="control-group">
+                <label>Solar Irradiance Baseline: <span id="irr-val">600</span> W/m² (STC Standard)</label>
+                <input type="range" id="irr-input" min="200" max="1150" step="50" value="1000" oninput="updateMicrogridSCADA()">
+                <div class="steward-teaching-box">
+                    📜 <strong>Baseline Guide:</strong> 1,000 W/m² represents peak STC irradiance. Bifacial albedo gain provides up to 1,150 W/m² effective intensity.
+                </div>
+            </div>
+
+            <div style="margin-bottom: 12px;">
+                <span style="font-size: 11px; color: #8b949e;">Bifacial PV Generation Output</span>
+                <div id="pv-output" class="telemetry-value" style="color: #3fb950;">18.0 kW</div>
+            </div>
+
+            <div>
+                <span style="font-size: 11px; color: #8b949e;">Biogas CHP Generator Baseline</span>
+                <div class="telemetry-value" style="color: var(--accent-blue);">45.0 kW (Active Offset)</div>
+            </div>
+        </div>
+
+        <div class="panel">
+            <h3>🔋 60kWh Battery Storage Bank &amp; Load</h3>
+
+            <div class="control-group">
+                <label>Facility Power Consumption Load: <span id="load-val">55</span> kW</label>
+                <input type="range" id="load-input" min="20" max="85" step="5" value="50" oninput="updateMicrogridSCADA()">
+                <div class="steward-teaching-box">
+                    📜 <strong>Storage Guide:</strong> 60 kWh lithium storage bank dynamically buffers generation deltas against facility load.
+                </div>
+            </div>
+
+            <div style="margin-bottom: 12px;">
+                <span style="font-size: 11px; color: #8b949e;">Battery State-of-Charge (SoC) / 60kWh Capacity</span>
+                <div id="battery-soc" class="telemetry-value" style="color: var(--accent-amber);">47.4 kWh / 79.0%</div>
+            </div>
+
+            <div>
+                <span class="status-badge status-optimal">100% OFF-GRID SOVEREIGN ISLAND MODE</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="audit-terminal" id="terminal-log">
+        [SYSTEM STARTUP]: Microgrid &amp; Power Autonomy SCADA Module Initialized.<br>
+        [PV TRACKERS]: 30kWp Bifacial Albedo Array (1,000 W/m² Baseline) online.<br>
+        [BATTERY BANK]: 60kWh Storage Bank synchronized.<br>
+        [SCAPUSH PRECISION]: Autonomous load balancing active, honorable.
+    <br>[04:31:57]: [SCADA UPDATE]: Irradiance: 1000W/m² | PV: 30.0kW | Load: 50kW | Battery SoC: 87.5%<br>[04:32:25]: [SCADA UPDATE]: Irradiance: 1000W/m² | PV: 30.0kW | Load: 55kW | Battery SoC: 85.0%<br>[04:32:27]: [SCADA UPDATE]: Irradiance: 1000W/m² | PV: 30.0kW | Load: 50kW | Battery SoC: 87.5%<br>[4:42:29 PM]: [SCADA UPDATE]: Irradiance: 1000W/m² | PV: 30.0kW | Load: 50kW | Battery SoC: 87.5%<br>[4:42:41 PM]: [NARRATOR ACTIVATION]: Summary audio engaged.<br>[4:43:04 PM]: [SCADA UPDATE]: Irradiance: 1000W/m² | PV: 30.0kW | Load: 70kW | Battery SoC: 77.5%<br>[4:43:15 PM]: [SCADA UPDATE]: Irradiance: 1000W/m² | PV: 30.0kW | Load: 80kW | Battery SoC: 72.5%<br>[4:43:20 PM]: [SCADA UPDATE]: Irradiance: 1000W/m² | PV: 30.0kW | Load: 55kW | Battery SoC: 85.0%<br>[4:43:22 PM]: [SCADA UPDATE]: Irradiance: 600W/m² | PV: 18.0kW | Load: 55kW | Battery SoC: 79.0%</div>
+
+</div>
+
+<script>
+let isSpeakingDirective = false;
+let speechDebounceTimer = null;
+
+const visionText = `Sovereign microgrid and power autonomy SCADA module by Lwandile Engineering Projects. Monitoring thirty kilowatt peak bifacial albedo trackers at a one thousand watts per square meter baseline, forty-five kilowatt biogas generation, and the sixty kilowatt-hour battery storage bank.`;
+
+function speakText(text) {
+    const isVoiceEnabled = document.getElementById('voice-activation-toggle').checked;
+    if (!isVoiceEnabled || !('speechSynthesis' in window)) return;
+
+    window.speechSynthesis.cancel();
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.rate = 1.0;
+    utterance.pitch = 0.95;
+    window.speechSynthesis.speak(utterance);
+}
+
+function logTerminal(message) {
+    const log = document.getElementById('terminal-log');
+    const timestamp = new Date().toLocaleTimeString();
+    log.innerHTML += `<br>[${timestamp}]: ${message}`;
+    log.scrollTop = log.scrollHeight;
+}
+
+function toggleVisionAudio() {
+    const btn = document.getElementById('audio-btn');
+    if ('speechSynthesis' in window) {
+        if (isSpeakingDirective) {
+            window.speechSynthesis.cancel();
+            isSpeakingDirective = false;
+            btn.innerHTML = '<span>▶</span> Listen to Summary';
+            btn.style.background = 'var(--accent-green)';
+            logTerminal('[NARRATOR]: Summary audio paused.');
+        } else {
+            const utterance = new SpeechSynthesisUtterance(visionText);
+            utterance.rate = 0.92;
+            utterance.pitch = 0.95;
+            
+            utterance.onend = function() {
+                isSpeakingDirective = false;
+                btn.innerHTML = '<span>▶</span> Listen to Summary';
+                btn.style.background = 'var(--accent-green)';
+            };
+
+            window.speechSynthesis.speak(utterance);
+            isSpeakingDirective = true;
+            btn.innerHTML = '<span>⏹</span> Pause Summary';
+            btn.style.background = 'var(--accent-red)';
+            logTerminal('[NARRATOR ACTIVATION]: Summary audio engaged.');
+        }
+    }
+}
+
+function updateMicrogridSCADA() {
+    const irr = parseFloat(document.getElementById('irr-input').value);
+    const load = parseFloat(document.getElementById('load-input').value);
+
+    document.getElementById('irr-val').innerText = irr;
+    document.getElementById('load-val').innerText = load;
+
+    // 30 kWp array scaled with W/m2 baseline (1000 W/m2 = 30 kW) with 1.15 albedo cap factor
+    const pvPower = (30 * (irr / 1000)).toFixed(1);
+    const chpPower = 45.0; // Biogas baseline contribution
+    const totalGen = parseFloat(pvPower) + chpPower;
+    const netPower = totalGen - load;
+
+    // 60 kWh battery bank calculation
+    let socKwh = 45 + (netPower * 0.3);
+    if (socKwh > 60) socKwh = 60;
+    if (socKwh < 5) socKwh = 5;
+    const socPercent = ((socKwh / 60) * 100).toFixed(1);
+
+    document.getElementById('pv-output').innerText = pvPower + " kW";
+    document.getElementById('battery-soc').innerText = socKwh.toFixed(1) + " kWh / " + socPercent + "%";
+
+    clearTimeout(speechDebounceTimer);
+    speechDebounceTimer = setTimeout(() => {
+        const text = `Solar irradiance updated to ${irr} watts per square meter. PV generation is ${pvPower} kilowatts, facility load is ${load} kilowatts, and battery state of charge is ${socPercent} percent.`;
+        speakText(text);
+        logTerminal(`[SCADA UPDATE]: Irradiance: ${irr}W/m² | PV: ${pvPower}kW | Load: ${load}kW | Battery SoC: ${socPercent}%`);
+    }, 450);
+}
+
+updateMicrogridSCADA();
+</script>
+
+
+</body></html>

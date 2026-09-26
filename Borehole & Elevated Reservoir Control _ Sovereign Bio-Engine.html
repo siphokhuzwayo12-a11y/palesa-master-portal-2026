@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<!-- saved from url=(0261)file:///C:/Users/ASUS/OneDrive/Documents/MEGA/Agri-Tech%20Training%20for%20Youth%20&%20Disability%20-%20Google%20Gemini_files/Lwandile%20Engineering%20Projects%20Voice%20of%20Vision/Borehole%20&%20Elevated%20Reservoir%20Control%20_%20Sovereign%20Bio-Engine.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borehole &amp; Elevated Reservoir Control | Sovereign Bio-Engine</title>
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --panel-bg: #161b22;
+            --border-color: #30363d;
+            --accent-green: #238636;
+            --accent-blue: #58a6ff;
+            --accent-amber: #d29922;
+            --accent-red: #da3633;
+            --text-main: #c9d1d9;
+            --text-bright: #f0f6fc;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 24px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .vision-drawer {
+            background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--accent-blue);
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+
+        .vision-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 16px;
+            margin-bottom: 16px;
+        }
+
+        .vision-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .vision-title h2 {
+            margin: 0;
+            color: var(--text-bright);
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .vision-title p {
+            margin: 4px 0 0 0;
+            color: #8b949e;
+            font-size: 13px;
+        }
+
+        .audio-btn {
+            background: var(--accent-blue);
+            color: #ffffff;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .vision-quote {
+            line-height: 1.7;
+            font-size: 15px;
+            color: var(--text-bright);
+        }
+
+        .scada-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .panel {
+            background: var(--panel-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .panel h3 {
+            margin-top: 0;
+            color: var(--text-bright);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .control-group {
+            margin-bottom: 18px;
+            background: var(--bg-dark);
+            padding: 14px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+        }
+
+        .control-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-bright);
+        }
+
+        .control-group input[type="range"] {
+            width: 100%;
+            accent-color: var(--accent-blue);
+        }
+
+        .teaching-note {
+            margin-top: 8px;
+            font-size: 12px;
+            color: var(--accent-amber);
+            line-height: 1.4;
+            border-left: 2px solid var(--accent-amber);
+            padding-left: 8px;
+            font-style: italic;
+        }
+
+        .trip-btn {
+            width: 100%;
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid var(--accent-red);
+            background: rgba(218, 54, 51, 0.15);
+            color: var(--accent-red);
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: all 0.2s;
+        }
+
+        .trip-btn:hover {
+            background: var(--accent-red);
+            color: #ffffff;
+        }
+
+        .telemetry-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-bright);
+            margin: 6px 0;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .status-optimal { background: rgba(35, 134, 54, 0.2); color: #3fb950; border: 1px solid var(--accent-green); }
+        .status-warning { background: rgba(210, 153, 34, 0.2); color: var(--accent-amber); border: 1px solid var(--accent-amber); }
+        .status-danger { background: rgba(218, 54, 51, 0.2); color: var(--accent-red); border: 1px solid var(--accent-red); }
+
+        .audit-terminal {
+            background: #040d12;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 16px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 12px;
+            color: #3fb950;
+            height: 130px;
+            overflow-y: auto;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Voice of Vision Header -->
+    <div class="vision-drawer">
+        <div class="vision-header">
+            <div class="vision-title">
+                <span style="font-size: 28px;">🚰</span>
+                <div>
+                    <h2>Voice of Vision | Borehole &amp; Reservoir Logic</h2>
+                    <p>Aquifer Interlock &amp; Gravity Hydro-Head Management • Scapush Precision</p>
+                </div>
+            </div>
+            <button onclick="toggleVisionAudio()" id="audio-btn" class="audio-btn" style="background: var(--accent-blue);"><span>▶</span> Listen to Directive</button>
+        </div>
+
+        <div class="vision-quote">
+            <p>
+                <strong style="color: var(--accent-blue);">Sovereign Hydrological Intent:</strong> 
+                "Water elevated is power stored. By pumping groundwater into high reservoirs during solar surplus, gravity delivers pressurized water to every pod without spending a single watt of peak grid energy. Protect the aquifer first, let elevation do the rest."
+            </p>
+        </div>
+    </div>
+
+    <!-- SCADA Hydro Grid -->
+    <div class="scada-grid">
+        <!-- Controls -->
+        <div class="panel">
+            <h3>🎛️ Water Table &amp; Elevated Tank Levels</h3>
+            
+            <div class="control-group">
+                <label>Elevated Tank Level: <span id="tank-val">84</span>%</label>
+                <input type="range" id="tank-input" min="0" max="100" value="45" oninput="updateSCADA()">
+                <div class="teaching-note">
+                    💡 <strong>Initiate Script:</strong> "Slide tank level below 30% to trigger automatic VFD pump engagement. Slide to 95% to observe automatic cut-off."
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label>Aquifer Drawdown Level: <span id="aquifer-val">22</span> m below static</label>
+                <input type="range" id="aquifer-input" min="5" max="40" value="18" oninput="updateSCADA()">
+                <div class="teaching-note">
+                    💡 <strong>Initiate Script:</strong> "Drag drawdown level past 30 meters. Observe how the dry-run interlock shuts down the pump to preserve dynamic aquifer head."
+                </div>
+            </div>
+
+            <button class="trip-btn" onclick="triggerOverpressureTrip()">
+                ⚠️ SIMULATE PIPE BLOCKAGE / OVERPRESSURE TRIP
+            </button>
+        </div>
+
+        <!-- Telemetry Output -->
+        <div class="panel">
+            <h3>⚙️ VFD Pump Drive &amp; Gravity Hydro-Head</h3>
+            
+            <div>
+                <span style="font-size: 12px; color: #8b949e;">VFD Pump State</span>
+                <div id="vfd-status" class="telemetry-value" style="color: var(--accent-red);">TRIPPED (0 Hz - OVERPRESSURE)</div>
+            </div>
+
+            <div style="margin-top: 15px;">
+                <span style="font-size: 12px; color: #8b949e;">Gravity Delivery Hydro-Head Pressure</span>
+                <div id="head-status" class="telemetry-value" style="color: var(--accent-blue);">2.7 BAR (PUMP-FREE DELIVERY)</div>
+            </div>
+
+            <div style="margin-top: 15px;">
+                <span style="font-size: 12px; color: #8b949e;">Aquifer Protection Status</span>
+                <div id="aquifer-status" class="telemetry-value" style="font-size: 18px; color: rgb(63, 185, 80);">DYNAMIC HEAD STABLE</div>
+            </div>
+
+            <div style="margin-top: 15px;">
+                <span id="system-badge" class="status-badge status-danger">ALARM: PIPE BLOCKAGE DETECTED • VFD SHUTDOWN</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Terminal Audit Trail -->
+    <div class="audit-terminal" id="terminal-log">
+        [HYDRO STARTUP]: Borehole Hydro-Level &amp; Tank Telemetry Online.<br>
+        [INTERLOCK]: Submersible Hydrostatic Sensor &amp; VFD Interlocked.<br>
+        [TEACHABILITY]: Ready for Tank Level and Aquifer Drawdown Drills.
+    <br>[5:19:31 PM]: Voice of Vision borehole audio started.<br>[5:20:08 PM]: Voice of Vision borehole audio started.<br>[5:20:15 PM]: 🚨 [PRESSURE TRIP]: High line pressure detected (&gt;6 Bar)! VFD soft-stop executed.<br>[12:55:52 AM]: Voice of Vision borehole audio started.<br>[12:56:22 AM]: ⚠️ [AQUIFER LOCKOUT]: Dynamic drawdown surpassed 30m safe limit.<br>[12:56:28 AM]: ⚠️ [AQUIFER LOCKOUT]: Dynamic drawdown surpassed 30m safe limit.<br>[12:56:29 AM]: ⚠️ [AQUIFER LOCKOUT]: Dynamic drawdown surpassed 30m safe limit.<br>[12:56:33 AM]: ⚠️ [AQUIFER LOCKOUT]: Dynamic drawdown surpassed 30m safe limit.<br>[12:57:04 AM]: ⚠️ [AQUIFER LOCKOUT]: Dynamic drawdown surpassed 30m safe limit.<br>[12:57:09 AM]: ⚠️ [AQUIFER LOCKOUT]: Dynamic drawdown surpassed 30m safe limit.<br>[12:57:13 AM]: ⚠️ [AQUIFER LOCKOUT]: Dynamic drawdown surpassed 30m safe limit.<br>[12:57:15 AM]: ⚠️ [AQUIFER LOCKOUT]: Dynamic drawdown surpassed 30m safe limit.<br>[12:57:16 AM]: ⚠️ [AQUIFER LOCKOUT]: Dynamic drawdown surpassed 30m safe limit.<br>[12:57:18 AM]: ⚠️ [AQUIFER LOCKOUT]: Dynamic drawdown surpassed 30m safe limit.<br>[12:57:45 AM]: 🚨 [PRESSURE TRIP]: High line pressure detected (&gt;6 Bar)! VFD soft-stop executed.</div>
+
+</div>
+
+<script>
+let isSpeaking = false;
+let pipeTripped = false;
+
+const visionText = `Voice of Vision, Borehole and Elevated Reservoir Master Control Logic. Water elevated is power stored. By pumping groundwater into high reservoirs during solar surplus, gravity delivers pressurized water to every pod without spending a single watt of peak grid energy. Protect the aquifer first, let elevation do the rest. Proceed with absolute precision.`;
+
+function toggleVisionAudio() {
+    const btn = document.getElementById('audio-btn');
+    if ('speechSynthesis' in window) {
+        if (isSpeaking) {
+            window.speechSynthesis.cancel();
+            isSpeaking = false;
+            btn.innerHTML = '<span>▶</span> Listen to Directive';
+            btn.style.background = 'var(--accent-blue)';
+            logTerminal('Voice of Vision audio paused.');
+        } else {
+            const utterance = new SpeechSynthesisUtterance(visionText);
+            utterance.rate = 0.92;
+            utterance.pitch = 0.95;
+            
+            utterance.onend = function() {
+                isSpeaking = false;
+                btn.innerHTML = '<span>▶</span> Listen to Directive';
+                btn.style.background = 'var(--accent-blue)';
+            };
+
+            window.speechSynthesis.speak(utterance);
+            isSpeaking = true;
+            btn.innerHTML = '<span>⏹</span> Pause Directive';
+            btn.style.background = 'var(--accent-red)';
+            logTerminal('Voice of Vision borehole audio started.');
+        }
+    }
+}
+
+function logTerminal(message) {
+    const log = document.getElementById('terminal-log');
+    const timestamp = new Date().toLocaleTimeString();
+    log.innerHTML += `<br>[${timestamp}]: ${message}`;
+    log.scrollTop = log.scrollHeight;
+}
+
+function triggerOverpressureTrip() {
+    pipeTripped = !pipeTripped;
+    const vfd = document.getElementById('vfd-status');
+    const badge = document.getElementById('system-badge');
+
+    if (pipeTripped) {
+        vfd.innerText = "TRIPPED (0 Hz - OVERPRESSURE)";
+        vfd.style.color = "var(--accent-red)";
+        badge.className = "status-badge status-danger";
+        badge.innerText = "ALARM: PIPE BLOCKAGE DETECTED • VFD SHUTDOWN";
+        logTerminal('🚨 [PRESSURE TRIP]: High line pressure detected (>6 Bar)! VFD soft-stop executed.');
+    } else {
+        logTerminal('🔄 [TRIP RESET]: Line pressure normalized. VFD standby ready.');
+        updateSCADA();
+    }
+}
+
+function updateSCADA() {
+    if (pipeTripped) return;
+
+    const tank = parseInt(document.getElementById('tank-input').value);
+    const aquifer = parseInt(document.getElementById('aquifer-input').value);
+
+    document.getElementById('tank-val').innerText = tank;
+    document.getElementById('aquifer-val').innerText = aquifer;
+
+    const vfd = document.getElementById('vfd-status');
+    const head = document.getElementById('head-status');
+    const aquStatus = document.getElementById('aquifer-status');
+    const badge = document.getElementById('system-badge');
+
+    // Calculate Hydro Pressure based on tank fill (Assumes 20m tower = 2.0 bar max)
+    const currentBar = ((20 * (tank / 100)) / 10 + 1.0).toFixed(1);
+    head.innerText = currentBar + " BAR (PUMP-FREE DELIVERY)";
+
+    if (aquifer > 30) {
+        vfd.innerText = "LOCKOUT (0 Hz - DRY RUN)";
+        vfd.style.color = "var(--accent-red)";
+        aquStatus.innerText = "CRITICAL DRAWDOWN DETECTED";
+        aquStatus.style.color = "var(--accent-red)";
+        badge.className = "status-badge status-danger";
+        badge.innerText = "AQUIFER DRY-RUN LOCKOUT ENGAGED";
+        logTerminal('⚠️ [AQUIFER LOCKOUT]: Dynamic drawdown surpassed 30m safe limit.');
+    } else if (tank >= 95) {
+        vfd.innerText = "STANDBY (0 Hz - TANK FULL)";
+        vfd.style.color = "#3fb950";
+        aquStatus.innerText = "DYNAMIC HEAD STABLE";
+        aquStatus.style.color = "#3fb950";
+        badge.className = "status-badge status-optimal";
+        badge.innerText = "RESERVOIR CAPACITY MAXIMIZED";
+    } else if (tank <= 30) {
+        vfd.innerText = "ACTIVE (50 Hz - SOLAR BOOST)";
+        vfd.style.color = "#3fb950";
+        aquStatus.innerText = "DYNAMIC HEAD STABLE";
+        aquStatus.style.color = "#3fb950";
+        badge.className = "status-badge status-warning";
+        badge.innerText = "LOW TANK FILL • PUMPING ENGAGED";
+    } else {
+        vfd.innerText = "OPTIMAL (35 Hz - TRICKLE CHARGE)";
+        vfd.style.color = "#3fb950";
+        aquStatus.innerText = "DYNAMIC HEAD STABLE";
+        aquStatus.style.color = "#3fb950";
+        badge.className = "status-badge status-optimal";
+        badge.innerText = "HYDRO-SYSTEM NOMINAL";
+    }
+}
+
+updateSCADA();
+</script>
+
+
+</body></html>

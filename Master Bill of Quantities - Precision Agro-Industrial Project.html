@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<!-- saved from url=(0109)file:///C:/Users/ASUS/OneDrive/Documents/MEGA/New%20folder/Cocco/boq-investments-returns/master_boq.html.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Master Bill of Quantities - Precision Agro-Industrial Project</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 12mm 10mm 12mm 10mm;
+            background-color: #fafbfc;
+            @bottom-right {
+                content: "Page " counter(page) " of " counter(pages);
+                font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                font-size: 8pt;
+                color: #6c757d;
+            }
+            @bottom-left {
+                content: "Scapush Precision • Comprehensive BOQ & Financial Model";
+                font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                font-size: 8pt;
+                color: #6c757d;
+            }
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #1a252c;
+            background-color: #fafbfc;
+            font-size: 9.5pt;
+            line-height: 1.35;
+        }
+
+        .header-banner {
+            background-color: #1b365d;
+            color: #ffffff;
+            padding: 20px 15mm 15px 15mm;
+            border-bottom: 4px solid #c59b27;
+        }
+
+        .header-title {
+            font-size: 18pt;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            margin: 0 0 4px 0;
+            text-transform: uppercase;
+        }
+
+        .header-subtitle {
+            font-size: 10.5pt;
+            color: #d1e0f0;
+            margin: 0 0 10px 0;
+            font-weight: 300;
+        }
+
+        .meta-grid {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 8px;
+        }
+
+        .meta-grid td {
+            font-size: 8.5pt;
+            color: #e2e8f0;
+            padding: 2px 0;
+        }
+
+        .meta-grid td strong {
+            color: #ffffff;
+        }
+
+        h2 {
+            font-size: 12pt;
+            color: #1b365d;
+            border-left: 4px solid #c59b27;
+            padding-left: 8px;
+            margin: 16px 0 8px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        p {
+            margin: 0 0 8px 0;
+            font-size: 9pt;
+            color: #334155;
+        }
+
+        .executive-summary {
+            background-color: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+            padding: 10px 12px;
+            margin-bottom: 15px;
+        }
+
+        .summary-box-grid {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 8px;
+            margin-bottom: 12px;
+        }
+
+        .stat-card {
+            background-color: #f1f5f9;
+            border-top: 3px solid #1b365d;
+            padding: 8px 10px;
+            text-align: center;
+            border-radius: 3px;
+        }
+
+        .stat-card.highlight {
+            background-color: #fefce8;
+            border-top: 3px solid #c59b27;
+        }
+
+        .stat-val {
+            font-size: 13pt;
+            font-weight: bold;
+            color: #0f172a;
+        }
+
+        .stat-lbl {
+            font-size: 7.5pt;
+            color: #64748b;
+            text-transform: uppercase;
+            margin-top: 2px;
+        }
+
+        table.boq-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 14px;
+            background-color: #ffffff;
+            font-size: 8.5pt;
+        }
+
+        table.boq-table th {
+            background-color: #1b365d;
+            color: #ffffff;
+            font-weight: 600;
+            text-align: left;
+            padding: 6px 8px;
+            border: 1px solid #1b365d;
+            font-size: 8pt;
+            text-transform: uppercase;
+        }
+
+        table.boq-table td {
+            padding: 5px 8px;
+            border: 1px solid #cbd5e1;
+            vertical-align: top;
+        }
+
+        table.boq-table tr:nth-child(even) td {
+            background-color: #f8fafc;
+        }
+
+        table.boq-table td.num {
+            text-align: right;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 600;
+        }
+
+        table.boq-table tr.wp-header td {
+            background-color: #e2e8f0;
+            font-weight: bold;
+            color: #0f172a;
+            font-size: 9pt;
+            border-top: 2px solid #94a3b8;
+        }
+
+        table.boq-table tr.wp-subtotal td {
+            background-color: #f1f5f9;
+            font-weight: bold;
+            color: #1b365d;
+            border-top: 1.5px solid #cbd5e1;
+            border-bottom: 2px solid #94a3b8;
+        }
+
+        .ip-highlight {
+            color: #854d0e;
+            font-weight: bold;
+            background-color: #fefce8;
+        }
+
+        .grand-total-box {
+            background-color: #1b365d;
+            color: #ffffff;
+            padding: 12px;
+            border-radius: 4px;
+            margin-top: 15px;
+            margin-bottom: 20px;
+        }
+
+        .grand-total-table {
+            width: 100%;
+            border-collapse: collapse;
+            color: #ffffff;
+        }
+
+        .grand-total-table td {
+            padding: 4px 0;
+            font-size: 9.5pt;
+        }
+
+        .grand-total-table tr.master-line td {
+            font-size: 13pt;
+            font-weight: bold;
+            color: #fef08a;
+            border-top: 1px solid #475569;
+            padding-top: 8px;
+        }
+
+        .note-box {
+            background-color: #f0fdf4;
+            border-left: 3px solid #16a34a;
+            padding: 8px 12px;
+            margin: 10px 0;
+            font-size: 8.5pt;
+            color: #166534;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-banner">
+        <div class="header-title">Master Bill of Quantities (BOQ)</div>
+        <div class="header-subtitle">Integrated Agro-Industrial Micro-Grid &amp; Dual Barn Infrastructure (8 Pods) — Gravity Feed &amp; Reservoir Enhanced</div>
+        <table class="meta-grid">
+            <tbody><tr>
+                <td style="width: 33%;"><strong>Project Lead:</strong> Sipho Wiseman Khuzwayo</td>
+                <td style="width: 33%;"><strong>Location:</strong> Secunda / Kinross, Highveld, SA</td>
+                <td style="width: 34%;"><strong>Framework:</strong> Scapush Precision Execution</td>
+            </tr>
+            <tr>
+                <td><strong>Strategy Selected:</strong> Option 1 (Max Yield Day 1)</td>
+                <td><strong>Budget Status:</strong> Locked @ R3,100,000.00</td>
+                <td><strong>Date:</strong> March 2026</td>
+            </tr>
+        </tbody></table>
+    </div>
+
+    <div class="executive-summary">
+        <div style="font-weight: bold; color: #1b365d; margin-bottom: 4px; font-size: 10pt;">EXECUTIVE SUMMARY &amp; FEATURE RECONCILIATION</div>
+        <p>This upgraded BOQ explicitly isolates key mechanical differentiators: <strong>Outdoor Bulk Feed Silos with Overhead Gravity Chutes</strong>, a <strong>3m Elevated Structural Steel Water Reservoir Tower</strong>, <strong>Dwarf Auto-Winch Curtain Assemblies</strong>, <strong>2% Precision Anti-Microbial Floor Tilt</strong>, and <strong>Direct Gravity Slurry Feed Pipelines</strong>. Fully funded under Option 1 at <strong>R3,100,000.00</strong>, this architecture guarantees zero-power gravity distribution while preserving a <strong>R170,000.00 (5.48%) execution reserve</strong>.</p>
+    </div>
+
+    <table class="summary-box-grid">
+        <tbody><tr>
+            <td class="stat-card" style="width: 20%;">
+                <div class="stat-val">R 3.10M</div>
+                <div class="stat-lbl">Master CAPEX Cap</div>
+            </td>
+            <td class="stat-card" style="width: 20%;">
+                <div class="stat-val">R 2.74M</div>
+                <div class="stat-lbl">WP1-6 Turnkey Infra</div>
+            </td>
+            <td class="stat-card highlight" style="width: 20%;">
+                <div class="stat-val">R 190,000</div>
+                <div class="stat-lbl">WP7 Local Intake</div>
+            </td>
+            <td class="stat-card" style="width: 20%;">
+                <div class="stat-val">R 170,000</div>
+                <div class="stat-lbl">Execution Reserve</div>
+            </td>
+            <td class="stat-card highlight" style="width: 20%;">
+                <div class="stat-val">94.61 T</div>
+                <div class="stat-lbl">Annual Meat Yield</div>
+            </td>
+        </tr>
+    </tbody></table>
+
+    <h2>Work Package Itemized Cost Breakdown (WP1 – WP7)</h2>
+
+    <table class="boq-table">
+        <thead>
+            <tr>
+                <th style="width: 8%;">Ref</th>
+                <th style="width: 47%;">Description &amp; Detailed Specifications</th>
+                <th style="width: 15%;">Qty / Unit</th>
+                <th style="width: 15%;">Unit Rate (ZAR)</th>
+                <th style="width: 15%;">Total Cost (ZAR)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- WP1 -->
+            <tr class="wp-header">
+                <td>WP1</td>
+                <td colspan="3">SITE PREPARATION, BIOCONTROLS &amp; CIVIL INFRASTRUCTURE</td>
+                <td class="num">R 305,000.00</td>
+            </tr>
+            <tr>
+                <td>1.1</td>
+                <td>Earthworks, <span class="ip-highlight">2% precision floor tilt base-grading</span>, sub-base compaction &amp; gravel sheeting</td>
+                <td>3,200 m²</td>
+                <td>R 35.94</td>
+                <td class="num">115,000.00</td>
+            </tr>
+            <tr>
+                <td>1.2</td>
+                <td>Clear-Vu perimeter security fencing (2.1m high), motorized gate &amp; biosecure buffer zone</td>
+                <td>380 m</td>
+                <td>R 368.42</td>
+                <td class="num">140,000.00</td>
+            </tr>
+            <tr>
+                <td>1.3</td>
+                <td>Stormwater management channels, bio-swales, EIA &amp; civil compliance sign-off fees</td>
+                <td>1 Lot</td>
+                <td>R 50,000.00</td>
+                <td class="num">50,000.00</td>
+            </tr>
+
+            <!-- WP2 -->
+            <tr class="wp-header">
+                <td>WP2</td>
+                <td colspan="3">70m³ BIO-DIGESTER &amp; DIRECT POD MANURE FEED SYSTEM</td>
+                <td class="num">R 610,000.00</td>
+            </tr>
+            <tr>
+                <td>2.1</td>
+                <td>70m³ Continuous Stirred-Tank Bio-Digester (CSTR) double-membrane dome &amp; insulation</td>
+                <td>1 Unit</td>
+                <td>R 280,000.00</td>
+                <td class="num">280,000.00</td>
+            </tr>
+            <tr>
+                <td>2.2</td>
+                <td><span class="ip-highlight">[STANDALONE IP FEATURE] Direct Gravity Slurry Feed Pipelines</span> from pod gutters to digester (zero-handling pathogen elimination line)</td>
+                <td>1 Package</td>
+                <td>R 45,000.00</td>
+                <td class="num">45,000.00</td>
+            </tr>
+            <tr>
+                <td>2.3</td>
+                <td>Heavy-duty manure slurry macerator pump, submerged mechanical agitators, H2S scrubbing skid</td>
+                <td>1 Package</td>
+                <td>R 100,000.00</td>
+                <td class="num">100,000.00</td>
+            </tr>
+            <tr>
+                <td>2.4</td>
+                <td>15 kW Biogas Combined Heat &amp; Power (CHP) engine, thermal heat exchangers &amp; ATS switch</td>
+                <td>1 Unit</td>
+                <td>R 185,000.00</td>
+                <td class="num">185,000.00</td>
+            </tr>
+
+            <!-- WP3 -->
+            <tr class="wp-header">
+                <td>WP3</td>
+                <td colspan="3">OFF-GRID SOLAR PV &amp; BESS HYBRID MICROGRID</td>
+                <td class="num">R 660,000.00</td>
+            </tr>
+            <tr>
+                <td>3.1</td>
+                <td>Tier-1 TOPCon 580W Solar Panels (30.16 kWp array) &amp; roof-mounting structures</td>
+                <td>52 Units</td>
+                <td>R 3,461.54</td>
+                <td class="num">180,000.00</td>
+            </tr>
+            <tr>
+                <td>3.2</td>
+                <td>60 kWh High-grade LiFePO4 Battery Energy Storage System (BESS) (rack-mounted)</td>
+                <td>60 kWh</td>
+                <td>R 5,333.33</td>
+                <td class="num">320,000.00</td>
+            </tr>
+            <tr>
+                <td>3.3</td>
+                <td>30 kVA Hybrid Three-Phase Inverter, DC protection DB boards &amp; heavy copper cabling grid balance</td>
+                <td>1 Package</td>
+                <td>R 160,000.00</td>
+                <td class="num">160,000.00</td>
+            </tr>
+
+            <!-- WP4 -->
+            <tr class="wp-header">
+                <td>WP4</td>
+                <td colspan="3">DUAL CLIMATE-CONTROLLED BARNS, 8-POD FIT-OUT &amp; UNIQUE MECHANICALS</td>
+                <td class="num">R 865,000.00</td>
+            </tr>
+            <tr>
+                <td>4.1</td>
+                <td>Swine Barn Slab: <span class="ip-highlight">2% sloped 35MPa concrete floor</span>, bio-slurry gutters &amp; epoxy seal</td>
+                <td>240 m²</td>
+                <td>R 466.67</td>
+                <td class="num">112,000.00</td>
+            </tr>
+            <tr>
+                <td>4.2</td>
+                <td>Swine Barn Shell: Steel portal frame, insulated R50 IBR roof, 1.2m brick dwarf walls</td>
+                <td>240 m²</td>
+                <td>R 500.00</td>
+                <td class="num">120,000.00</td>
+            </tr>
+            <tr>
+                <td>4.3</td>
+                <td>Swine 4-Pod Division: 3x Anti-microbial floor-to-ceiling solid PVC dividers &amp; galv framing</td>
+                <td>3 Divider Sets</td>
+                <td>R 6,166.67</td>
+                <td class="num">18,500.00</td>
+            </tr>
+            <tr>
+                <td>4.4</td>
+                <td>Swine Pod Reticulation: 4-zone motorized thermal CHP manifold, heat lamps &amp; local thermostats</td>
+                <td>4 Pods</td>
+                <td>R 3,000.00</td>
+                <td class="num">12,000.00</td>
+            </tr>
+            <tr>
+                <td>4.5</td>
+                <td>Swine Feed/Water Reticulation: 4x 150kg wet-dry feeders, 4-way water manifold &amp; nipple drinkers</td>
+                <td>4 Pods</td>
+                <td>R 4,125.00</td>
+                <td class="num">16,500.00</td>
+            </tr>
+            <tr>
+                <td>4.6</td>
+                <td>Swine Climate System: Variable speed extraction fans, evaporative cooling pads &amp; louvers</td>
+                <td>1 System</td>
+                <td>R 46,000.00</td>
+                <td class="num">46,000.00</td>
+            </tr>
+            <tr>
+                <td>4.7</td>
+                <td>Broiler Slab: 96m³ 35MPa concrete floor, moisture barrier, smooth cleanout finish</td>
+                <td>384 m²</td>
+                <td>R 437.50</td>
+                <td class="num">168,000.00</td>
+            </tr>
+            <tr>
+                <td>4.8</td>
+                <td>Broiler Barn Shell: Galvanized portal frame, 50mm PIR insulated panels, curtain system</td>
+                <td>384 m²</td>
+                <td>R 500.00</td>
+                <td class="num">192,000.00</td>
+            </tr>
+            <tr>
+                <td>4.9</td>
+                <td>Broiler 4-Pod Division: 3x 850gsm heavy-duty track-mounted PVC brooding curtains with weights</td>
+                <td>3 Curtain Sets</td>
+                <td>R 4,166.67</td>
+                <td class="num">12,500.00</td>
+            </tr>
+            <tr>
+                <td>4.10</td>
+                <td><span class="ip-highlight">[STANDALONE IP FEATURE] Heavy-Duty Dwarf Auto-Winch Drives</span> &amp; automated curtain cable assemblies</td>
+                <td>4 Pod Drops</td>
+                <td>R 4,500.00</td>
+                <td class="num">18,000.00</td>
+            </tr>
+            <tr>
+                <td>4.11</td>
+                <td>Broiler Water Drops: 4x pressure regulators, 360° nipple drinker lines &amp; suspension winches</td>
+                <td>4 Pod Drops</td>
+                <td>R 3,500.00</td>
+                <td class="num">14,000.00</td>
+            </tr>
+            <tr>
+                <td>4.12</td>
+                <td><span class="ip-highlight">[STANDALONE IP FEATURE] Outdoor Bulk Feed Silos &amp; Gravity Chute Drops</span> to internal pod hoppers</td>
+                <td>2 Silo Systems</td>
+                <td>R 20,000.00</td>
+                <td class="num">40,000.00</td>
+            </tr>
+            <tr>
+                <td>4.13</td>
+                <td>Broiler Radiant Heating: 4-zone CHP hot-water heat exchanger drops + backup LPG brooders</td>
+                <td>4 Pod Drops</td>
+                <td>R 2,250.00</td>
+                <td class="num">9,000.00</td>
+            </tr>
+            <tr>
+                <td>4.14</td>
+                <td>Broiler Tunnel Ventilation: 4x 50" Cone fans, evaporative pads &amp; automated climate panel</td>
+                <td>1 System</td>
+                <td>R 86,500.00</td>
+                <td class="num">86,500.00</td>
+            </tr>
+
+            <!-- WP5 -->
+            <tr class="wp-header">
+                <td>WP5</td>
+                <td colspan="3">WATER EXTRACTION, ELEVATED RESERVOIR, DISINFECTION &amp; BIOSECURITY ARCH</td>
+                <td class="num">R 180,000.00</td>
+            </tr>
+            <tr>
+                <td>5.1</td>
+                <td>80m Deep borehole drilling, casing, heavy-duty solar-driven submersible pump skid</td>
+                <td>1 Unit</td>
+                <td>R 60,000.00</td>
+                <td class="num">60,000.00</td>
+            </tr>
+            <tr>
+                <td>5.2</td>
+                <td><span class="ip-highlight">[STANDALONE IP FEATURE] 3m Elevated Heavy-Duty Structural Steel Stand</span> + 4x 5,000L (20,000L) JoJo Water Reservoir for Gravity Feed</td>
+                <td>1 Reservoir System</td>
+                <td>R 60,000.00</td>
+                <td class="num">60,000.00</td>
+            </tr>
+            <tr>
+                <td>5.3</td>
+                <td>3,000 L/hr UV disinfection skid, filtration bank, vehicle biosecure spray arch &amp; footbaths</td>
+                <td>1 Package</td>
+                <td>R 60,000.00</td>
+                <td class="num">60,000.00</td>
+            </tr>
+
+            <!-- WP6 -->
+            <tr class="wp-header">
+                <td>WP6</td>
+                <td colspan="3">ArIoT TELEMETRY, SCADA CONTROLS &amp; STAFF TRAINING</td>
+                <td class="num">R 120,000.00</td>
+            </tr>
+            <tr>
+                <td>6.1</td>
+                <td>16x LoRaWAN wireless sensors (Temp, RH, NH3, water flow) across all 8 micro-climate pods</td>
+                <td>16 Nodes</td>
+                <td>R 2,812.50</td>
+                <td class="num">45,000.00</td>
+            </tr>
+            <tr>
+                <td>6.2</td>
+                <td>Industrial LTE Edge SCADA Gateway, cloud dashboard setup &amp; automated relay controllers</td>
+                <td>1 Package</td>
+                <td>R 35,000.00</td>
+                <td class="num">35,000.00</td>
+            </tr>
+            <tr>
+                <td>6.3</td>
+                <td>100-Hour Operator certification, biosecure SOPs, SCADA handling &amp; maintenance manual</td>
+                <td>1 Program</td>
+                <td>R 40,000.00</td>
+                <td class="num">40,000.00</td>
+            </tr>
+
+            <!-- WP7 -->
+            <tr class="wp-header">
+                <td>WP7</td>
+                <td colspan="3">LIVE ANIMAL INTAKE CAPITAL (VERIFIED SECUNDA LOCAL PRICING)</td>
+                <td class="num">R 190,000.00</td>
+            </tr>
+            <tr>
+                <td>7.1</td>
+                <td>Swine Weaner Stock (~7-10kg high genetics, 4 pods x 40 head) @ local Highveld rate</td>
+                <td>160 Head</td>
+                <td>R 600.00</td>
+                <td class="num">96,000.00</td>
+            </tr>
+            <tr>
+                <td>7.2</td>
+                <td>Day-Old Broiler Chicks (Cobb/Ross strain, 4 pods x 1,440 head) @ Secunda spot rate</td>
+                <td>5,760 Head</td>
+                <td>R 15.00</td>
+                <td class="num">86,400.00</td>
+            </tr>
+            <tr>
+                <td>7.3</td>
+                <td>Day-1 Veterinary induction kit, Newcastle/IBD vaccines, stress-pack &amp; biosecure intake sanitizers</td>
+                <td>1 Kit</td>
+                <td>R 7,600.00</td>
+                <td class="num">7,600.00</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="grand-total-box">
+        <table class="grand-total-table">
+            <tbody><tr>
+                <td>Direct Physical Infrastructure Subtotal (WP1 – WP6):</td>
+                <td style="text-align: right; font-weight: bold;">R 2,740,000.00</td>
+            </tr>
+            <tr>
+                <td>Live Seed Stock &amp; Intake Medical Capital (WP7):</td>
+                <td style="text-align: right; font-weight: bold;">R 190,000.00</td>
+            </tr>
+            <tr style="border-top: 1px solid #475569;">
+                <td style="padding-top: 6px;">Total Turnkey Capital Deployed:</td>
+                <td style="text-align: right; font-weight: bold; padding-top: 6px; color: #a5f3fc;">R 2,930,000.00</td>
+            </tr>
+            <tr>
+                <td>Unallocated Contingency &amp; Execution Reserve (5.48%):</td>
+                <td style="text-align: right; font-weight: bold; color: #fef08a;">R 170,000.00</td>
+            </tr>
+            <tr class="master-line">
+                <td>MASTER INVESTMENT BUDGET LOCK:</td>
+                <td style="text-align: right;">R 3,100,000.00</td>
+            </tr>
+        </tbody></table>
+    </div>
+
+    <h2>Year 1 Yield &amp; Cash Flow Forecast (Option 1)</h2>
+    <table class="boq-table">
+        <thead>
+            <tr>
+                <th>Enterprise</th>
+                <th>Batch Cycle Length</th>
+                <th>Cycles / Year</th>
+                <th>Annual Head Dispatched</th>
+                <th>Live Tonnage Yield</th>
+                <th>Gross Revenue (ZAR)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Swine Operations</strong></td>
+                <td>18 Wks (126 days + 2w clean)</td>
+                <td>2.536 Batches</td>
+                <td>404 Pigs (3% mort)</td>
+                <td>28.25 Tonnes</td>
+                <td class="num">R 988,624.00</td>
+            </tr>
+            <tr>
+                <td><strong>Broiler Operations</strong></td>
+                <td>35-42 Days + 14d clean</td>
+                <td>6.0 Cycles</td>
+                <td>33,178 Birds (4% mort)</td>
+                <td>66.36 Tonnes</td>
+                <td class="num">R 1,924,300.80</td>
+            </tr>
+            <tr class="wp-subtotal">
+                <td colspan="3"><strong>TOTAL ANNUAL DISPATCH YIELD</strong></td>
+                <td><strong>33,582 Units</strong></td>
+                <td><strong>94.61 Tonnes</strong></td>
+                <td class="num" style="font-size: 10pt; color: #1b365d;"><strong>R 2,912,924.80</strong></td>
+            </tr>
+        </tbody>
+    </table>
+
+
+</body></html>

@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<!-- saved from url=(0131)file:///C:/Users/ASUS/AppData/Local/Temp/MicrosoftEdgeDownloads/5e219acc-bd77-427d-b24b-a6f173883d88/gemini-code-1787564741406.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sovereign Bio-Solar Engine | SETA Proposal Masterclass</title>
+    <style>
+        :root {
+            --bg-obsidian: #0B0F19;
+            --gold-prestige: #FACC15;
+            --cyan-scapush: #38BDF8;
+            --border-slate: #1E293B;
+            --text-slate: #E2E8F0;
+            --font-mono: 'Courier New', Courier, monospace;
+            --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-obsidian);
+            color: var(--text-slate);
+            font-family: var(--font-sans);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Slide Container Setup */
+        .slide-deck {
+            width: 100%;
+            max-width: 1100px;
+            aspect-ratio: 16 / 9;
+            background-color: var(--bg-obsidian);
+            border: 2px solid var(--border-slate);
+            box-shadow: 0 0 30px rgba(56, 189, 248, 0.1);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 24px 32px;
+            overflow: hidden;
+        }
+
+        .slide {
+            display: none;
+            height: 100%;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .slide.active {
+            display: flex;
+        }
+
+        /* Top Bar Branding */
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-slate);
+            padding-bottom: 10px;
+            font-family: var(--font-mono);
+            font-size: 11px;
+            letter-spacing: 1px;
+        }
+
+        .top-bar .title-group {
+            color: var(--gold-prestige);
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .top-bar .company-group {
+            color: var(--cyan-scapush);
+            text-transform: uppercase;
+        }
+
+        .slide-badge {
+            background: var(--border-slate);
+            color: var(--cyan-scapush);
+            padding: 2px 8px;
+            border-radius: 2px;
+            font-family: var(--font-mono);
+        }
+
+        /* Main Content Styling */
+        .main-content {
+            flex-grow: 1;
+            margin: 18px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .protocol-sub {
+            font-family: var(--font-mono);
+            color: var(--cyan-scapush);
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 8px;
+        }
+
+        h1 {
+            color: var(--gold-prestige);
+            font-size: 32px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 14px;
+            line-height: 1.2;
+        }
+
+        p.description {
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--text-slate);
+            max-width: 900px;
+            margin-bottom: 20px;
+        }
+
+        /* Cards and Metadata Containers */
+        .metadata-box {
+            border: 1px solid var(--cyan-scapush);
+            padding: 16px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            background: rgba(56, 189, 248, 0.02);
+        }
+
+        .meta-item {
+            font-family: var(--font-mono);
+        }
+
+        .meta-label {
+            color: var(--cyan-scapush);
+            font-size: 10px;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .meta-value {
+            color: var(--gold-prestige);
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .meta-value.active {
+            color: #4ADE80;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+            margin-top: 10px;
+        }
+
+        th, td {
+            border: 1px solid var(--border-slate);
+            padding: 10px 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--border-slate);
+            color: var(--gold-prestige);
+            font-family: var(--font-mono);
+            font-size: 11px;
+            text-transform: uppercase;
+        }
+
+        td {
+            color: var(--text-slate);
+        }
+
+        td.highlight {
+            color: var(--cyan-scapush);
+            font-weight: bold;
+        }
+
+        /* Key-Value Lists & Grid Cards */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .content-card {
+            border: 1px solid var(--border-slate);
+            padding: 14px;
+            background: rgba(30, 41, 59, 0.3);
+        }
+
+        .content-card h3 {
+            color: var(--cyan-scapush);
+            font-size: 14px;
+            font-family: var(--font-mono);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .content-card ul {
+            list-style: none;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .content-card ul li {
+            position: relative;
+            padding-left: 16px;
+            margin-bottom: 6px;
+        }
+
+        .content-card ul li::before {
+            content: "•";
+            color: var(--gold-prestige);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Checklist */
+        .checklist-box {
+            border: 1px solid var(--border-slate);
+            padding: 16px;
+            background: rgba(30, 41, 59, 0.2);
+        }
+
+        .check-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .check-item .icon {
+            color: var(--gold-prestige);
+            font-family: var(--font-mono);
+            font-weight: bold;
+        }
+
+        /* Bottom Controls Footer */
+        .bottom-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--border-slate);
+            padding-top: 10px;
+            font-family: var(--font-mono);
+            font-size: 11px;
+        }
+
+        .nav-btn {
+            background: transparent;
+            border: 1px solid var(--gold-prestige);
+            color: var(--gold-prestige);
+            padding: 6px 14px;
+            cursor: pointer;
+            font-family: var(--font-mono);
+            font-size: 10px;
+            text-transform: uppercase;
+            transition: all 0.2s ease;
+        }
+
+        .nav-btn:hover {
+            background: var(--gold-prestige);
+            color: var(--bg-obsidian);
+            font-weight: bold;
+        }
+
+        .nav-btn:disabled {
+            border-color: var(--border-slate);
+            color: var(--border-slate);
+            cursor: not-allowed;
+            background: transparent;
+        }
+
+        .footer-status {
+            color: var(--cyan-scapush);
+            letter-spacing: 1px;
+        }
+
+        /* Print Optimization */
+        @media print {
+            body {
+                padding: 0;
+                background: none;
+            }
+            .slide-deck {
+                max-width: 100%;
+                border: none;
+                box-shadow: none;
+                aspect-ratio: auto;
+                height: 100vh;
+                page-break-after: always;
+            }
+            .slide {
+                display: flex !important;
+            }
+            .bottom-bar button {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="slide-deck">
+
+    <!-- SLIDE 1: COVER -->
+    <div class="slide" id="slide-1">
+        <div class="top-bar">
+            <span class="title-group">INCLUSIVE AGRI-TECH | SOVEREIGN BIO-SOLAR ENGINE | SETA PROPOSAL</span>
+            <span class="slide-badge">SLIDE 01 / 05</span>
+        </div>
+
+        <div class="main-content">
+            <div class="protocol-sub">SCAPUSH PRECISION EXECUTION PROTOCOL</div>
+            <h1>CLOSED-LOOP BIO-SOLAR ENGINE MASTERCLASS</h1>
+            <p class="description">
+                A rigorous engineering guide to mastering thermochemical co-generation, high-yield methane (CH4) recovery, 
+                and biosecure livestock thermal stability. Shielding digital and biological artifacts within Zone 2 zero-trust boundaries.
+            </p>
+
+            <div class="metadata-box">
+                <div class="meta-item">
+                    <span class="meta-label">OPERATOR &amp; AUTHOR</span>
+                    <span class="meta-value">SIPHO WISEMAN KHUZWAYO</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">SECURITY STANDARD</span>
+                    <span class="meta-value">SCAPUSH PRECISION CERTIFIED</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">GOVERNANCE STATUS</span>
+                    <span class="meta-value active">ACTIVE &amp; ACCREDITED</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom-bar">
+            <span class="top-bar .company-group">Lwandile Engineering Projects (Pty) Ltd</span>
+            <span class="footer-status">MASTERCLASS PROTOCOL • SLIDE 1 OF 5</span>
+            <span class="top-bar .company-group">PROPRIETARY INTELLECTUAL PROPERTY</span>
+        </div>
+    </div>
+
+    <!-- SLIDE 2: MANURE TO METHANE -->
+    <div class="slide active" id="slide-2">
+        <div class="top-bar">
+            <span class="title-group">MODULE 1: THERMOCHEMICAL &amp; BIOLOGICAL PROCESSING | SETA US 116115</span>
+            <span class="slide-badge">SLIDE 02 / 05</span>
+        </div>
+
+        <div class="main-content">
+            <div class="protocol-sub">THERMAL EQUILIBRIUM &amp; RECOVERY</div>
+            <h1>MANURE-TO-METHANE (CH4) &amp; THERMAL CASCADE</h1>
+
+            <div class="grid-2">
+                <div class="content-card">
+                    <h3>High-Purity Methane Recovery</h3>
+                    <ul>
+                        <li><strong>Feedstock Blend:</strong> 60% Swine Slurry, 25% Poultry Litter, 15% Carbon Crop Residue.</li>
+                        <li><strong>C:N Optimization:</strong> Target C:N ratio balanced to 25:1 to 30:1 for maximum mesophilic digestion.</li>
+                        <li><strong>Gas Quality Density:</strong> Maintains ≥ 68% CH4 purity post H2S and moisture stripping.</li>
+                    </ul>
+                </div>
+                <div class="content-card">
+                    <h3>Continuous Thermal Stability</h3>
+                    <ul>
+                        <li><strong>Thermal Output:</strong> 38°C – 40°C uninterrupted floor heat derived from CHP generator jacket water.</li>
+                        <li><strong>Zero-Mortality Shielding:</strong> Direct heating under piglet farrowing and poultry brooders.</li>
+                        <li><strong>Efficiency Target:</strong> System achieves &gt; 88% overall thermal energy capture efficiency.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom-bar">
+            <span class="top-bar .company-group">Lwandile Engineering Projects (Pty) Ltd</span>
+            <span class="footer-status">MASTERCLASS PROTOCOL • SLIDE 2 OF 5</span>
+            <span class="top-bar .company-group">PROPRIETARY INTELLECTUAL PROPERTY</span>
+        </div>
+    </div>
+
+    <!-- SLIDE 3: REVENUE VELOCITY -->
+    <div class="slide" id="slide-3">
+        <div class="top-bar">
+            <span class="title-group">MODULE 2: BIO-SECURITY &amp; LIVESTOCK SYSTEMS | SETA US 116274</span>
+            <span class="slide-badge">SLIDE 03 / 05</span>
+        </div>
+
+        <div class="main-content">
+            <div class="protocol-sub">CLOSED-LOOP LIVESTOCK INTEGRATION</div>
+            <h1>REVENUE VELOCITY &amp; PRODUCTION CYCLES</h1>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Enterprise</th>
+                        <th>Cycle / Velocity</th>
+                        <th>Zero-Mortality Input</th>
+                        <th>Primary Output Stream</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="highlight">Porcine Enterprise</td>
+                        <td>16–18 Weeks</td>
+                        <td>38°C–40°C CHP Underfloor Heat Loop</td>
+                        <td>Market Cuts &amp; High ADG Weaners</td>
+                    </tr>
+                    <tr>
+                        <td class="highlight">Poultry (Broilers)</td>
+                        <td>35–42 Days</td>
+                        <td>30% Live BSF Larvae Feed Substitution</td>
+                        <td>Organic High-FCR Meat Yields</td>
+                    </tr>
+                    <tr>
+                        <td class="highlight">Poultry (Layers)</td>
+                        <td>Daily Velocity</td>
+                        <td>Positive-Pressure Pathogen Shielding</td>
+                        <td>Table Eggs (92%+ Lay Rate)</td>
+                    </tr>
+                    <tr>
+                        <td class="highlight">Bio-Nutrients</td>
+                        <td>Continuous</td>
+                        <td>AD Digestate &amp; Vermi-Processing</td>
+                        <td>BSF Frass, Organic Bio-CNG</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="bottom-bar">
+            <span class="top-bar .company-group">Lwandile Engineering Projects (Pty) Ltd</span>
+            <span class="footer-status">MASTERCLASS PROTOCOL • SLIDE 3 OF 5</span>
+            <span class="top-bar .company-group">PROPRIETARY INTELLECTUAL PROPERTY</span>
+        </div>
+    </div>
+
+    <!-- SLIDE 4: SETA MATRIX -->
+    <div class="slide" id="slide-4">
+        <div class="top-bar">
+            <span class="title-group">QUALIFICATION FRAMEWORK | SETA US 116312 &amp; 119693</span>
+            <span class="slide-badge">SLIDE 04 / 05</span>
+        </div>
+
+        <div class="main-content">
+            <div class="protocol-sub">ACCREDITATION METRICS</div>
+            <h1>SETA MODULE STANDARDS &amp; WEIGHTINGS</h1>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Module Code</th>
+                        <th>Module Title &amp; Description</th>
+                        <th>SETA Standard</th>
+                        <th>Level</th>
+                        <th>Credits &amp; Weighting</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="highlight">MOD-Z2-01</td>
+                        <td>Zero-Waste Bio-Conversion &amp; Co-Gen Systems</td>
+                        <td>US 116115</td>
+                        <td>NQF 3</td>
+                        <td>12 Credits (15%)</td>
+                    </tr>
+                    <tr>
+                        <td class="highlight">MOD-Z2-02</td>
+                        <td>Bio-Security &amp; Zero-Mortality Systems</td>
+                        <td>US 116274</td>
+                        <td>NQF 4</td>
+                        <td>20 Credits (25%)</td>
+                    </tr>
+                    <tr>
+                        <td class="highlight">MOD-Z2-03</td>
+                        <td>Hydronic Reclamation &amp; Mass-Balance Cycles</td>
+                        <td>US 116312</td>
+                        <td>NQF 4</td>
+                        <td>16 Credits (20%)</td>
+                    </tr>
+                    <tr>
+                        <td class="highlight">MOD-Z2-04</td>
+                        <td>Circular Enterprise &amp; Revenue Velocity</td>
+                        <td>US 119693</td>
+                        <td>NQF 5</td>
+                        <td>32 Credits (40%)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div style="margin-top: 15px; font-family: var(--font-mono); font-size: 12px; color: var(--gold-prestige);">
+                TOTAL PROGRAM SCOPE: 800 Notional Hours | 80 Accumulated SETA Credits
+            </div>
+        </div>
+
+        <div class="bottom-bar">
+            <span class="top-bar .company-group">Lwandile Engineering Projects (Pty) Ltd</span>
+            <span class="footer-status">MASTERCLASS PROTOCOL • SLIDE 4 OF 5</span>
+            <span class="top-bar .company-group">PROPRIETARY INTELLECTUAL PROPERTY</span>
+        </div>
+    </div>
+
+    <!-- SLIDE 5: REGENERATION CHECKLIST -->
+    <div class="slide" id="slide-5">
+        <div class="top-bar">
+            <span class="title-group">GOVERNANCE &amp; ARCHIVAL PROTOCOL | ZONE 2 ARTIFACT</span>
+            <span class="slide-badge">SLIDE 05 / 05</span>
+        </div>
+
+        <div class="main-content">
+            <div class="protocol-sub">STEWARD REGENERATION</div>
+            <h1>DOMED STEWARD ON-BOARDING CHECKLIST</h1>
+
+            <div class="checklist-box">
+                <div class="check-item">
+                    <span class="icon">[✓]</span>
+                    <span><strong>Step 1: Accreditation Alignment</strong> — Align Facilitator/Assessor compliance files with SETA Unit Standards 116115, 116274, 116312, and 119693.</span>
+                </div>
+                <div class="check-item">
+                    <span class="icon">[✓]</span>
+                    <span><strong>Step 2: Thermal Loop Calibration</strong> — Verify CHP thermal loops maintain continuous 38°C–40°C floor baseline before stocking livestock.</span>
+                </div>
+                <div class="check-item">
+                    <span class="icon">[✓]</span>
+                    <span><strong>Step 3: PoE Evidence Verification</strong> — Complete and audit Portfolio of Evidence (PoE) logbooks for candidate stewards entering Zone 2.</span>
+                </div>
+                <div class="check-item">
+                    <span class="icon">[✓]</span>
+                    <span><strong>Step 4: Perimeter Access Isolation</strong> — Enforce Zone 1 to Zone 2 air-gapped security via physical FIDO2 hardware keys.</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom-bar">
+            <span class="top-bar .company-group">Lwandile Engineering Projects (Pty) Ltd</span>
+            <span class="footer-status">MASTERCLASS PROTOCOL • SLIDE 5 OF 5</span>
+            <span class="top-bar .company-group">PROPRIETARY INTELLECTUAL PROPERTY</span>
+        </div>
+    </div>
+
+    <!-- Navigation Bar Controls -->
+    <div style="position: absolute; bottom: 8px; right: 32px; display: flex; gap: 8px; z-index: 10;">
+        <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)">&lt; PREV SLIDE</button>
+        <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">NEXT SLIDE &gt;</button>
+    </div>
+
+</div>
+
+<script>
+    let currentSlide = 1;
+    const totalSlides = 5;
+
+    function changeSlide(direction) {
+        document.getElementById(`slide-${currentSlide}`).classList.remove('active');
+        currentSlide += direction;
+        
+        if (currentSlide < 1) currentSlide = 1;
+        if (currentSlide > totalSlides) currentSlide = totalSlides;
+
+        document.getElementById(`slide-${currentSlide}`).classList.add('active');
+        updateButtons();
+    }
+
+    function updateButtons() {
+        document.getElementById('prevBtn').disabled = (currentSlide === 1);
+        document.getElementById('nextBtn').disabled = (currentSlide === totalSlides);
+    }
+
+    // Keyboard Arrow Controls
+    document.addEventListener('keydown', function(event) {
+        if (event.key === "ArrowRight") changeSlide(1);
+        if (event.key === "ArrowLeft") changeSlide(-1);
+    });
+
+    updateButtons();
+</script>
+
+
+</body></html>

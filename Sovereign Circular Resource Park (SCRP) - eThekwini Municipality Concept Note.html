@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<!-- saved from url=(0062)file:///C:/Users/ASUS/Downloads/gemini-code-1790279753322.html -->
+<html lang="en" style="--font-scale: 1.5rem;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sovereign Circular Resource Park (SCRP) - eThekwini Municipality Concept Note</title>
+  <style>
+    :root {
+      --primary-navy: #0f2537;
+      --header-blue: #0088cc;
+      --card-bg: #f4f7f9;
+      --border-color: #d0dbe2;
+      --text-main: #1f2937;
+      --text-muted: #4b5563;
+      --accent-blue: #005580;
+      --white: #ffffff;
+      --badge-blue: #0077b6;
+      --focus-ring: #2563eb;
+      --active-speech: #0284c7;
+      --font-scale: 1rem;
+      --main-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body.high-contrast {
+      --primary-navy: #000000;
+      --header-blue: #00ffff;
+      --card-bg: #121212;
+      --border-color: #ffffff;
+      --text-main: #ffffff;
+      --text-muted: #dddddd;
+      --accent-blue: #00ffff;
+      --white: #000000;
+      --badge-blue: #ffff00;
+      --focus-ring: #ffff00;
+      --active-speech: #00ffff;
+    }
+
+    body.accessible-font {
+      --main-font: 'Atkinson Hyperlegible', 'OpenDyslexic', 'Arial', sans-serif;
+    }
+
+    body {
+      font-family: var(--main-font);
+      font-size: var(--font-scale);
+      background-color: #e9eef2;
+      color: var(--text-main);
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Focus styling for keyboard accessibility */
+    *:focus-visible {
+      outline: 3px solid var(--focus-ring) !important;
+      outline-offset: 3px !important;
+    }
+
+    /* Highlight class for active narration */
+    .narrating-highlight {
+      background-color: #fef08a !important;
+      color: #000000 !important;
+      border-radius: 4px;
+      box-shadow: 0 0 8px rgba(250, 204, 21, 0.8);
+      transition: all 0.2s ease-in-out;
+    }
+
+    body.high-contrast .narrating-highlight {
+      background-color: #ffff00 !important;
+      color: #000000 !important;
+    }
+
+    /* Accessibility Toolbar */
+    .a11y-toolbar {
+      width: 100%;
+      max-width: 900px;
+      background-color: var(--primary-navy);
+      color: var(--white);
+      padding: 12px 15px;
+      border-radius: 6px 6px 0 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid var(--header-blue);
+    }
+
+    .a11y-toolbar-title {
+      font-size: 0.85rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #7dd3fc;
+    }
+
+    .a11y-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .a11y-btn {
+      background-color: #1e3a5f;
+      color: #ffffff;
+      border: 1px solid #38bdf8;
+      padding: 6px 12px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      border-radius: 4px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: background-color 0.2s ease;
+    }
+
+    .a11y-btn:hover, .a11y-btn:focus {
+      background-color: #005580;
+    }
+
+    .a11y-btn.active {
+      background-color: var(--active-speech);
+      border-color: #ffffff;
+      box-shadow: 0 0 6px rgba(56, 189, 248, 0.6);
+    }
+
+    .speech-speed-select {
+      background-color: #1e3a5f;
+      color: #ffffff;
+      border: 1px solid #38bdf8;
+      padding: 5px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .document-container {
+      width: 100%;
+      max-width: 900px;
+      background-color: var(--white);
+      border: 1px solid var(--border-color);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      border-radius: 0 0 6px 6px;
+      overflow: hidden;
+    }
+
+    /* Header Styling */
+    .header-banner {
+      background-color: var(--primary-navy);
+      color: var(--white);
+      padding: 24px 30px;
+      position: relative;
+    }
+
+    .header-title {
+      color: var(--header-blue);
+      font-size: 1.4rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin: 0 0 4px 0;
+    }
+
+    .header-subtitle {
+      font-size: 1rem;
+      color: #e2e8f0;
+      margin: 0 0 12px 0;
+      font-weight: 500;
+    }
+
+    .protocol-badge {
+      display: inline-block;
+      background-color: #1e3a5f;
+      color: #7dd3fc;
+      border: 1px solid #38bdf8;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 3px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .document-body {
+      padding: 30px;
+    }
+
+    /* Metadata Grid */
+    .metadata-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+
+    .metadata-card {
+      background-color: var(--card-bg);
+      border-left: 4px solid var(--header-blue);
+      padding: 12px 16px;
+      border-radius: 2px;
+    }
+
+    .metadata-label {
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+      letter-spacing: 0.5px;
+    }
+
+    .metadata-value {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    /* Section Cards */
+    .section-card {
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      margin-bottom: 20px;
+      background-color: var(--white);
+    }
+
+    .section-header {
+      background-color: var(--card-bg);
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .section-title {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin: 0;
+    }
+
+    .section-content {
+      padding: 20px;
+    }
+
+    /* Tables */
+    .custom-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 5px;
+      font-size: 0.9rem;
+    }
+
+    .custom-table th {
+      background-color: var(--primary-navy);
+      color: var(--white);
+      text-align: left;
+      padding: 12px 14px;
+      font-weight: 700;
+    }
+
+    .custom-table td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border-color);
+      color: var(--text-main);
+    }
+
+    .custom-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Sub-grids and Features */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .feature-box {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      padding: 16px;
+      border-radius: 4px;
+    }
+
+    .feature-box-title {
+      font-size: 0.85rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--accent-blue);
+      margin-bottom: 6px;
+      letter-spacing: 0.5px;
+    }
+
+    .feature-box-desc {
+      font-size: 0.9rem;
+      color: var(--text-main);
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    /* Lists */
+    .styled-list {
+      margin: 0;
+      padding-left: 20px;
+      font-size: 0.95rem;
+      color: var(--text-main);
+    }
+
+    .styled-list li {
+      margin-bottom: 8px;
+    }
+
+    .styled-list li strong {
+      color: var(--primary-navy);
+    }
+
+    /* Notice Box */
+    .notice-box {
+      background-color: #fefce8;
+      border: 1px solid #fef08a;
+      border-left: 5px solid #ca8a04;
+      padding: 15px;
+      border-radius: 4px;
+      margin-bottom: 15px;
+      font-size: 0.9rem;
+    }
+
+    body.high-contrast .notice-box {
+      background-color: #121212;
+      border: 2px solid #ffff00;
+      color: #ffffff;
+    }
+
+    .notice-title {
+      font-weight: 800;
+      color: #854d0e;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.5px;
+    }
+
+    body.high-contrast .notice-title {
+      color: #ffff00;
+    }
+
+    /* Quote Banner */
+    .quote-banner {
+      background-color: var(--primary-navy);
+      color: var(--white);
+      text-align: center;
+      padding: 20px;
+      border-radius: 4px;
+      margin-top: 25px;
+    }
+
+    .quote-text {
+      font-style: italic;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 0 0 8px 0;
+      color: #7dd3fc;
+    }
+
+    .quote-sub {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #94a3b8;
+      margin: 0;
+    }
+
+    .signature-area {
+      margin-top: 25px;
+      padding-top: 15px;
+      border-top: 2px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9rem;
+    }
+
+    /* Screen Reader Live Region */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    @media (max-width: 768px) {
+      .metadata-grid, .feature-grid {
+        grid-template-columns: 1fr;
+      }
+      .document-body {
+        padding: 15px;
+      }
+      .a11y-toolbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body class="">
+
+  <!-- Screen Reader Announcements -->
+  <div id="a11y-announcer" class="sr-only" aria-live="polite">High contrast mode disabled.</div>
+
+  <!-- Accessibility & Audio Control Bar -->
+  <aside class="a11y-toolbar" aria-label="Accessibility and Narration Controls">
+    <div class="a11y-toolbar-title">
+      Universal Access &amp; Audio Player
+    </div>
+    <div class="a11y-controls">
+      <!-- Narration Engine Controls -->
+      <button id="narrate-btn" class="a11y-btn" onclick="toggleNarration()" aria-label="Narrate Document Aloud">
+        <span id="narrate-icon">🔊</span> <span id="narrate-label">Read Aloud</span>
+      </button>
+      <button id="pause-btn" class="a11y-btn" onclick="pauseNarration()" aria-label="Pause Narration" style="display: none;">⏸️ Pause</button>
+      <select id="speech-rate" class="speech-speed-select" onchange="changeSpeechRate()" aria-label="Narration Speed">
+        <option value="0.85">0.85x Speed</option>
+        <option value="1.0" selected="">1.0x Speed</option>
+        <option value="1.25">1.25x Speed</option>
+        <option value="1.5">1.5x Speed</option>
+      </select>
+
+      <span style="border-left: 1px solid var(--border-color); height: 20px; margin: 0 4px;"></span>
+
+      <!-- Visual Customization Controls -->
+      <button class="a11y-btn" onclick="toggleContrast()" aria-label="Toggle High Contrast Mode">High Contrast</button>
+      <button class="a11y-btn" onclick="adjustFontSize(0.1)" aria-label="Increase Text Size">Text +</button>
+      <button class="a11y-btn" onclick="adjustFontSize(-0.1)" aria-label="Decrease Text Size">Text -</button>
+      <button class="a11y-btn" onclick="resetFontSize()" aria-label="Reset Text Size">Reset Size</button>
+      <button class="a11y-btn" onclick="toggleFont()" aria-label="Toggle Legible Font">Dyslexia-Friendly Font</button>
+    </div>
+  </aside>
+
+  <main id="narrative-root" class="document-container" role="main">
+    <!-- Header Banner -->
+    <header class="header-banner">
+      <h1 class="header-title" data-read="">Office of the City Manager &amp; Executive Leadership</h1>
+      <div class="header-subtitle" data-read="">eThekwini Metropolitan Municipality</div>
+      <span class="protocol-badge" aria-label="Protocol standard" data-read="">Protocol: Scapush Precision Execution Standard</span>
+    </header>
+
+    <div class="document-body">
+      <!-- Transmission Metadata Grid -->
+      <section class="metadata-grid" aria-label="Transmission Metadata">
+        <div class="metadata-card" tabindex="0" data-read="">
+          <div class="metadata-label">From</div>
+          <div class="metadata-value">Prestige Scapush Consortium</div>
+        </div>
+        <div class="metadata-card" tabindex="0" data-read="">
+          <div class="metadata-label">Executive Engagement</div>
+          <div class="metadata-value">Office of the City Manager</div>
+        </div>
+        <div class="metadata-card" tabindex="0" data-read="">
+          <div class="metadata-label">Direction &amp; Protocol</div>
+          <div class="metadata-value">Sipho Wiseman Khuzwayo</div>
+        </div>
+      </section>
+
+      <!-- 1. Executive Snapshot -->
+      <section class="section-card" aria-labelledby="sec1-title">
+        <div class="section-header">
+          <h2 id="sec1-title" class="section-title" data-read="">1. Executive Snapshot</h2>
+        </div>
+        <div class="section-content">
+          <p style="margin-top:0; line-height: 1.6;" data-read="" class="">
+            The <strong>Sovereign Circular Resource Park (SCRP)</strong> is an integrated municipal resource recovery ecosystem designed to convert municipal waste streams and underutilized resources into productive economic assets. The framework brings together clean bio-solar generation, climate shields, circular recovery, and community economic development.
+          </p>
+        </div>
+      </section>
+
+      <!-- 2. Strategic Alignment -->
+      <section class="section-card" aria-labelledby="sec2-title">
+        <div class="section-header">
+          <h2 id="sec2-title" class="section-title" data-read="">2. Strategic Alignment (Why eThekwini Municipality)</h2>
+        </div>
+        <div class="section-content">
+          <ul class="styled-list">
+            <li data-read="" class=""><strong>Waste Diversion Objectives:</strong> Accelerated diversion of organic and inert waste from municipal landfill systems.</li>
+            <li data-read="" class=""><strong>Circular Economy Development:</strong> Transformation of waste liabilities into productive economic resources.</li>
+            <li data-read="" class=""><strong>Infrastructure Renewal:</strong> Deployment of resilient decentralized energy, water, and recovery infrastructure.</li>
+            <li data-read="" class=""><strong>Climate Adaptation:</strong> Reduction of environmental burdens through resource circulation and local energy generation.</li>
+            <li data-read="" class=""><strong>Local Economic Development:</strong> Creation of enterprise opportunities across energy, agriculture, construction recovery, and circular economy sectors.</li>
+            <li data-read=""><strong>Skills Transfer:</strong> Development of structured technical learning pathways for youth and emerging practitioners.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 3. SCRP Architecture Overview -->
+      <section class="section-card" aria-labelledby="sec3-title">
+        <div class="section-header">
+          <h2 id="sec3-title" class="section-title" data-read="">3. SCRP Architecture Overview</h2>
+        </div>
+        <div class="section-content">
+          <div class="feature-grid">
+            <article class="feature-box" tabindex="0" data-read="">
+              <div class="feature-box-title">Component 1: Bio-Solar Engine</div>
+              <p class="feature-box-desc">24-hour renewable energy generation, nutrient recovery, thermal utilization, and municipal resource recovery.</p>
+            </article>
+            <article class="feature-box" tabindex="0" data-read="">
+              <div class="feature-box-title">Component 2: Adaptive Climate Shield (ACS)</div>
+              <p class="feature-box-desc">Livestock and nursery environmental protection through controllable microclimate engineering.</p>
+            </article>
+            <article class="feature-box" tabindex="0" data-read="">
+              <div class="feature-box-title">Component 3: Agrivoltaic Production Systems</div>
+              <p class="feature-box-desc">Dual-use infrastructure supporting simultaneous food and energy generation.</p>
+            </article>
+            <article class="feature-box" tabindex="0" data-read="">
+              <div class="feature-box-title">Component 4: Municipal Resource Recovery</div>
+              <p class="feature-box-desc">Diversion and beneficiation of municipal organic waste streams.</p>
+            </article>
+            <article class="feature-box" tabindex="0" data-read="">
+              <div class="feature-box-title">Component 5: Construction &amp; Inert Waste Recovery</div>
+              <p class="feature-box-desc">Recovery and re-utilization of construction materials, aggregates, glass, ceramics, and related streams.</p>
+            </article>
+            <article class="feature-box" tabindex="0" data-read="">
+              <div class="feature-box-title">Component 6: Water Stewardship Platform</div>
+              <p class="feature-box-desc">Water capture, recovery, redistribution, and hydronic loop management.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Strategic Partnership Framework -->
+      <section class="section-card" aria-labelledby="sec4-title">
+        <div class="section-header">
+          <h2 id="sec4-title" class="section-title" data-read="">4. Strategic Partnership Framework</h2>
+        </div>
+        <div class="section-content" style="padding:0; overflow-x: auto;">
+          <table class="custom-table" aria-label="Strategic Partnership Overview">
+            <thead>
+              <tr data-read="">
+                <th scope="col">Entity</th>
+                <th scope="col">Registration / Role</th>
+                <th scope="col">Leadership</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-read="">
+                <td><strong>Lwandle Engineering Projects (Pty) Ltd</strong></td>
+                <td>Strategic Infrastructure Development</td>
+                <td>Sipho Wiseman Khuzwayo</td>
+              </tr>
+              <tr data-read="">
+                <td><strong>Insephe Projects (Pty) Ltd</strong></td>
+                <td>Project Development &amp; Execution</td>
+                <td>Senzo Innocent Mkhize</td>
+              </tr>
+              <tr data-read="">
+                <td><strong>Green Mineral S.r.l</strong></td>
+                <td>Construction &amp; Demolition Recovery Expertise</td>
+                <td>Strategic International Collaborator</td>
+              </tr>
+              <tr data-read="">
+                <td><strong>Alseco</strong></td>
+                <td>Technical Collaboration</td>
+                <td>Strategic International Collaborator</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 5. Capital Strategy & Phase Clarification -->
+      <section class="section-card" aria-labelledby="sec5-title">
+        <div class="section-header">
+          <h2 id="sec5-title" class="section-title" data-read="">5. Phase Clarification &amp; Capital Strategy</h2>
+        </div>
+        <div class="section-content">
+          <div class="notice-box" tabindex="0" role="region" aria-label="Important Framework Notice" data-read="">
+            <div class="notice-title">Important Notice — Long-Term Framework Clarification</div>
+            The Sovereign Circular Resource Park is a long-term strategic infrastructure framework. Capital allocations referenced within supporting technical documents relate exclusively to specific demonstrator phases.
+          </div>
+          <p style="margin-top:0;" data-read="">
+            The commonly referenced <strong>R3.1 Million CAPEX Buffered Ledger</strong> applies strictly to the proposed <strong>Phase 1 Bio-Solar Engine Demonstrator</strong> and does not represent the full capital requirements of the full SCRP.
+          </p>
+          <p style="color: var(--text-muted); margin-bottom:0;" data-read="">
+            Future SCRP modules (Municipal Resource Recovery, Construction Waste Recovery, Green Mineral Integration, Agrivoltaic Expansion) remain subject to Technical Studies, Municipal Review, PPP Structuring, Engineering Design, and Funding Determination.
+          </p>
+        </div>
+      </section>
+
+      <!-- 6. Universal Accessibility & Inclusion Engineering -->
+      <section class="section-card" aria-labelledby="sec6-title">
+        <div class="section-header">
+          <h2 id="sec6-title" class="section-title" data-read="">6. Universal Accessibility &amp; Inclusion Engineering</h2>
+        </div>
+        <div class="section-content">
+          <div class="feature-grid">
+            <article class="feature-box" tabindex="0" data-read="">
+              <div class="feature-box-title">Physical &amp; Mobility Access</div>
+              <p class="feature-box-desc">Zero-step access routes, height-adjusted workstations, and mobility-inclusive infrastructure.</p>
+            </article>
+            <article class="feature-box" tabindex="0" data-read="">
+              <div class="feature-box-title">Sensory &amp; Digital Integration</div>
+              <p class="feature-box-desc">Voice-guided controls, visual warning systems, and accessible user interfaces.</p>
+            </article>
+          </div>
+          <div style="margin-top: 15px; background-color: var(--card-bg); border: 1px solid var(--border-color); padding: 14px; border-radius: 4px; text-align: center;" tabindex="0" data-read="">
+            <strong>Workforce Inclusion:</strong> Minimum target of inclusive participation pathways incorporating adaptive tools, workplace support mechanisms, and technical learning opportunities.
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. Phased Development Pathway -->
+      <section class="section-card" aria-labelledby="sec7-title">
+        <div class="section-header">
+          <h2 id="sec7-title" class="section-title" data-read="">7. Phased Development Pathway</h2>
+        </div>
+        <div class="section-content" style="padding:0; overflow-x: auto;">
+          <table class="custom-table" aria-label="Phased Development Pathway Breakdown">
+            <thead>
+              <tr data-read="">
+                <th scope="col">Phase</th>
+                <th scope="col">Focus Area</th>
+                <th scope="col">Core Objectives</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-read="">
+                <td><strong>Phase 1</strong></td>
+                <td>Bio-Solar Engine Demonstrator</td>
+                <td>Renewable Energy &amp; Nutrient Recovery Validation, ACS Testing, Livestock Integration.</td>
+              </tr>
+              <tr data-read="">
+                <td><strong>Phase 2</strong></td>
+                <td>Municipal Resource Recovery</td>
+                <td>Organic Waste Diversion, Circular Economy Demonstration, Municipal Resource Utilization.</td>
+              </tr>
+              <tr data-read="">
+                <td><strong>Phase 3</strong></td>
+                <td>Construction Waste Recovery</td>
+                <td>Aggregate &amp; Mineral Recovery, Infrastructure Material Valorisation.</td>
+              </tr>
+              <tr data-read="">
+                <td><strong>Phase 4</strong></td>
+                <td>Regional Expansion</td>
+                <td>Replication, Youth Skills Development, Enterprise Growth, Municipal Scaling.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 8. Municipal Benefits & Requested Engagement -->
+      <section class="section-card" aria-labelledby="sec8-title">
+        <div class="section-header">
+          <h2 id="sec8-title" class="section-title" data-read="">8. Municipal Benefits &amp; Engagement Request</h2>
+        </div>
+        <div class="section-content">
+          <div class="feature-grid" style="margin-bottom: 15px;">
+            <div data-read="">
+              <span style="font-size: 0.85rem; font-weight:800; text-transform:uppercase; color: var(--accent-blue);">Expected Outcomes</span>
+              <ul class="styled-list" style="margin-top:8px;">
+                <li>Reduced Landfill Dependency</li>
+                <li>24/7 Renewable Energy Production</li>
+                <li>Resource Recovery &amp; Circular Growth</li>
+                <li>Local Economic Development &amp; Skills</li>
+              </ul>
+            </div>
+            <div data-read="">
+              <span style="font-size: 0.85rem; font-weight:800; text-transform:uppercase; color: var(--accent-blue);">Requested Engagement</span>
+              <ul class="styled-list" style="margin-top:8px;">
+                <li>Preliminary Technical Review</li>
+                <li>Introductory Executive Engagement</li>
+                <li>Departmental Consultation &amp; Pilot Exploration</li>
+                <li><em>Note: No direct funding requested in concept note.</em></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Interactive SCRP Circular Performance & Accessibility Simulator -->
+      <section class="section-card" aria-labelledby="sec9-title">
+        <div class="section-header">
+          <h2 id="sec9-title" class="section-title" data-read="">9. Interactive Resource Recovery &amp; Accessibility Simulator</h2>
+        </div>
+        <div class="section-content">
+          <p style="margin-top: 0; font-size: 0.9rem;" data-read="">
+            Explore predicted resource yields and inclusive labor hours for SCRP demonstrator scale deployments based on Scapush Precision operational ratios:
+          </p>
+          <div id="scrp-simulator"></div>
+        </div>
+      </section>
+
+      <!-- Quote & Closing Covenant -->
+      <div class="quote-banner" tabindex="0" data-read="">
+        <div class="quote-text">"shielded by service | ignited by inclusive legacy"</div>
+        <div class="quote-sub">Scapush Precision Execution Standard — Authorized Submission</div>
+      </div>
+
+      <!-- Authorized Signatures / Submissions -->
+      <footer class="signature-area" data-read="">
+        <div>
+          <strong>Sipho Wiseman Khuzwayo</strong><br>
+          <span style="color: var(--text-muted);">Founder &amp; Inclusive Legacy Architect</span>
+        </div>
+        <div style="text-align: right;">
+          <strong>Senzo Innocent Mkhize</strong><br>
+          <span style="color: var(--text-muted);">Project Development &amp; Execution Lead</span>
+        </div>
+      </footer>
+
+    </div>
+  </main>
+
+  <script>
+    /* ===================================================
+       1. SPEECH SYNTHESIS / NARRATION ENGINE (WCAG 2.1 AAA)
+       =================================================== */
+    let synth = window.speechSynthesis;
+    let isNarrating = false;
+    let isPaused = false;
+    let readableElements = [];
+    let currentIdx = 0;
+    let currentUtterance = null;
+    let speechRate = 1.0;
+
+    function initNarrationElements() {
+      readableElements = Array.from(document.querySelectorAll('[data-read]'));
+    }
+
+    function toggleNarration() {
+      if (!('speechSynthesis' in window)) {
+        announce("Speech synthesis is not supported on this browser.");
+        return;
+      }
+
+      if (readableElements.length === 0) initNarrationElements();
+
+      if (isNarrating) {
+        if (isPaused) {
+          synth.resume();
+          isPaused = false;
+          updateNarrationUI('playing');
+          announce("Narration resumed.");
+        } else {
+          stopNarration();
+        }
+      } else {
+        startNarration();
+      }
+    }
+
+    function startNarration() {
+      synth.cancel(); // Clear queued speech
+      isNarrating = true;
+      isPaused = false;
+      currentIdx = 0;
+      updateNarrationUI('playing');
+      announce("Starting document narration.");
+      readNextElement();
+    }
+
+    function readNextElement() {
+      if (!isNarrating || currentIdx >= readableElements.length) {
+        stopNarration();
+        announce("End of document narration.");
+        return;
+      }
+
+      // Clear previous highlights
+      clearHighlights();
+
+      const el = readableElements[currentIdx];
+      el.classList.add('narrating-highlight');
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+      // Clean text for speech
+      const textToRead = el.innerText || el.textContent;
+      currentUtterance = new SpeechSynthesisUtterance(textToRead);
+      currentUtterance.rate = speechRate;
+
+      currentUtterance.onend = () => {
+        if (isNarrating && !isPaused) {
+          currentIdx++;
+          readNextElement();
+        }
+      };
+
+      currentUtterance.onerror = (e) => {
+        console.error("SpeechSynthesis error", e);
+        if (isNarrating) {
+          currentIdx++;
+          readNextElement();
+        }
+      };
+
+      synth.speak(currentUtterance);
+    }
+
+    function pauseNarration() {
+      if (synth.speaking && !synth.paused) {
+        synth.pause();
+        isPaused = true;
+        updateNarrationUI('paused');
+        announce("Narration paused.");
+      } else if (synth.paused) {
+        synth.resume();
+        isPaused = false;
+        updateNarrationUI('playing');
+        announce("Narration resumed.");
+      }
+    }
+
+    function stopNarration() {
+      synth.cancel();
+      isNarrating = false;
+      isPaused = false;
+      currentIdx = 0;
+      clearHighlights();
+      updateNarrationUI('stopped');
+    }
+
+    function clearHighlights() {
+      document.querySelectorAll('.narrating-highlight').forEach(el => {
+        el.classList.remove('narrating-highlight');
+      });
+    }
+
+    function changeSpeechRate() {
+      const select = document.getElementById('speech-rate');
+      speechRate = parseFloat(select.value);
+      if (isNarrating && !isPaused) {
+        // Restart current element with new rate
+        synth.cancel();
+        readNextElement();
+      }
+      announce(`Narration speed set to ${speechRate} times.`);
+    }
+
+    function updateNarrationUI(state) {
+      const btn = document.getElementById('narrate-btn');
+      const label = document.getElementById('narrate-label');
+      const icon = document.getElementById('narrate-icon');
+      const pauseBtn = document.getElementById('pause-btn');
+
+      if (state === 'playing') {
+        btn.classList.add('active');
+        icon.textContent = "⏹️";
+        label.textContent = "Stop Reader";
+        pauseBtn.style.display = "inline-flex";
+        pauseBtn.textContent = "⏸️ Pause";
+      } else if (state === 'paused') {
+        btn.classList.add('active');
+        icon.textContent = "⏹️";
+        label.textContent = "Stop Reader";
+        pauseBtn.style.display = "inline-flex";
+        pauseBtn.textContent = "▶️ Resume";
+      } else {
+        btn.classList.remove('active');
+        icon.textContent = "🔊";
+        label.textContent = "Read Aloud";
+        pauseBtn.style.display = "none";
+      }
+    }
+
+    /* ===================================================
+       2. ACCESSIBILITY TOOLBAR CONTROLS
+       =================================================== */
+    let currentFontScale = 1.0;
+
+    function announce(msg) {
+      const announcer = document.getElementById('a11y-announcer');
+      if (announcer) {
+        announcer.textContent = msg;
+      }
+    }
+
+    function toggleContrast() {
+      document.body.classList.toggle('high-contrast');
+      const isHigh = document.body.classList.contains('high-contrast');
+      announce(isHigh ? "High contrast mode enabled." : "High contrast mode disabled.");
+    }
+
+    function adjustFontSize(delta) {
+      currentFontScale = Math.min(Math.max(currentFontScale + delta, 0.8), 1.5);
+      document.documentElement.style.setProperty('--font-scale', `${currentFontScale}rem`);
+      announce(`Text size set to ${Math.round(currentFontScale * 100)} percent.`);
+    }
+
+    function resetFontSize() {
+      currentFontScale = 1.0;
+      document.documentElement.style.setProperty('--font-scale', '1rem');
+      announce("Text size reset to default.");
+    }
+
+    function toggleFont() {
+      document.body.classList.toggle('accessible-font');
+      const isAccessible = document.body.classList.contains('accessible-font');
+      announce(isAccessible ? "Dyslexia-friendly legibility font enabled." : "Standard font enabled.");
+    }
+
+    // Stop speech synthesis on window unload
+    window.addEventListener('beforeunload', () => {
+      if (synth) synth.cancel();
+    });
+  </script>
+
+
+</body></html>

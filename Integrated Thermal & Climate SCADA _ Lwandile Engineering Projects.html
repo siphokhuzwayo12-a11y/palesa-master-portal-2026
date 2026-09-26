@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<!-- saved from url=(0170)file:///G:/My%20Drive/Plot_For_Farming_Artifacts/LEP-IMP-ENG-2026_Bio-Solar_Engine/Integrated%20Thermal%20&%20Climate%20SCADA%20_%20Lwandile%20Engineering%20Projects.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integrated Thermal &amp; Climate SCADA | Lwandile Engineering Projects</title>
+    <style>
+        :root {
+            --bg-dark: #0d1117;
+            --panel-bg: #161b22;
+            --border-color: #30363d;
+            --accent-green: #238636;
+            --accent-blue: #58a6ff;
+            --accent-amber: #d29922;
+            --accent-purple: #bc8cff;
+            --accent-red: #da3633;
+            --text-main: #c9d1d9;
+            --text-bright: #f0f6fc;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 24px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .sovereign-header {
+            text-align: center;
+            padding: 14px;
+            background: rgba(88, 166, 255, 0.1);
+            border: 1px solid var(--accent-blue);
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            color: var(--accent-blue);
+            letter-spacing: 1.5px;
+            font-size: 15px;
+            text-transform: uppercase;
+        }
+
+        .vision-drawer {
+            background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--accent-blue);
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+
+        .vision-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 16px;
+            margin-bottom: 16px;
+        }
+
+        .vision-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .vision-title h2 {
+            margin: 0;
+            color: var(--text-bright);
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .vision-title p {
+            margin: 4px 0 0 0;
+            color: #8b949e;
+            font-size: 13px;
+        }
+
+        .audio-btn {
+            background: var(--accent-blue);
+            color: #000000;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .vision-quote {
+            line-height: 1.7;
+            font-size: 14px;
+            color: var(--text-bright);
+        }
+
+        .scada-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 16px;
+        }
+
+        @media (max-width: 900px) {
+            .scada-grid { grid-template-columns: 1fr; }
+        }
+
+        .panel {
+            background: var(--panel-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 18px;
+        }
+
+        .panel h3 {
+            margin-top: 0;
+            color: var(--text-bright);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+            font-size: 15px;
+        }
+
+        .control-group {
+            margin-bottom: 16px;
+            background: var(--bg-dark);
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+        }
+
+        .control-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-bright);
+        }
+
+        .control-group input[type="range"] {
+            width: 100%;
+            accent-color: var(--accent-blue);
+            padding: 0;
+        }
+
+        .steward-teaching-box {
+            margin-top: 8px;
+            font-size: 12px;
+            color: var(--accent-blue);
+            line-height: 1.4;
+            border-left: 3px solid var(--accent-blue);
+            padding: 6px 10px;
+            background: rgba(88, 166, 255, 0.05);
+            border-radius: 0 4px 4px 0;
+        }
+
+        .telemetry-value {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-bright);
+            margin: 4px 0;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 6px 10px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .status-optimal { background: rgba(35, 134, 54, 0.2); color: #3fb950; border: 1px solid var(--accent-green); }
+        .status-warning { background: rgba(210, 153, 34, 0.2); color: var(--accent-amber); border: 1px solid var(--accent-amber); }
+        .status-danger { background: rgba(218, 54, 51, 0.2); color: var(--accent-red); border: 1px solid var(--accent-red); }
+
+        .audit-terminal {
+            background: #040d12;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 14px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 12px;
+            color: #58a6ff;
+            height: 120px;
+            overflow-y: auto;
+            margin-top: 20px;
+        }
+
+        .narrator-toggle {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 10px;
+            font-size: 12px;
+            color: var(--text-bright);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="sovereign-header">
+        🌡️ LWANDILE ENGINEERING PROJECTS • INTEGRATED THERMAL &amp; CLIMATE SCADA
+    </div>
+
+    <div class="vision-drawer">
+        <div class="vision-header">
+            <div class="vision-title">
+                <span style="font-size: 28px;">🔥</span>
+                <div>
+                    <h2>Voice of Vision | Combined Thermal &amp; Bio-Digester Heat Recovery SCADA</h2>
+                    <p>R3.1M MVP Engine (5,720 Broilers + 160 Swine) • Closed-Loop Waste-to-Heat Architecture</p>
+                </div>
+            </div>
+            <button onclick="toggleVisionAudio()" id="audio-btn" class="audio-btn" style="background: var(--accent-blue);"><span>▶</span> Listen to Directive</button>
+        </div>
+
+        <div class="vision-quote">
+            <p>
+                <strong style="color: var(--accent-blue);">Sovereign Thermal Inscription:</strong> 
+                "In Scapush Precision, thermal energy is fully circular. Excess heat from our biogas CHP generator is recovered to sustain mesophilic digester temperature at 38°C, while providing zero-cost brooding heat for poultry waves and swine under-floor comfort. Complete energy independence."
+            </p>
+        </div>
+
+        <div class="narrator-toggle">
+            <input type="checkbox" id="voice-activation-toggle" checked="">
+            <label for="voice-activation-toggle"><strong>Enable Voice Narrator on Every Activation &amp; Control Adjustment</strong></label>
+        </div>
+    </div>
+
+    <div class="scada-grid">
+        <div class="panel">
+            <h3>🐥 Broiler Zone Thermal SCADA</h3>
+
+            <div class="control-group">
+                <label>Broiler Flock Count: <span id="broiler-val">5,100</span> Birds</label>
+                <input type="range" id="broiler-input" min="1000" max="20000" step="100" value="5720" oninput="updateSCADA()">
+            </div>
+
+            <div class="control-group">
+                <label>Brooder Ambient Temp: <span id="broiler-amb-val">24</span> °C</label>
+                <input type="range" id="broiler-amb-input" min="15" max="38" value="30" oninput="updateSCADA()">
+            </div>
+
+            <div>
+                <span style="font-size: 11px; color: #8b949e;">Calculated Brooder Heat Load</span>
+                <div id="broiler-heat-load" class="telemetry-value" style="color: var(--accent-amber);">34.7 kWth</div>
+            </div>
+        </div>
+
+        <div class="panel">
+            <h3>🐖 Swine Zone Thermal SCADA</h3>
+
+            <div class="control-group">
+                <label>Swine Head Count: <span id="swine-val">990</span> Head</label>
+                <input type="range" id="swine-input" min="50" max="1000" step="10" value="160" oninput="updateSCADA()">
+            </div>
+
+            <div class="control-group">
+                <label>Gestation/Finisher Ambient: <span id="swine-amb-val">13</span> °C</label>
+                <input type="range" id="swine-amb-input" min="10" max="32" value="20" oninput="updateSCADA()">
+            </div>
+
+            <div>
+                <span style="font-size: 11px; color: #8b949e;">Calculated Floor Heating Load</span>
+                <div id="swine-heat-load" class="telemetry-value" style="color: var(--accent-blue);">22.3 kWth</div>
+            </div>
+        </div>
+
+        <div class="panel">
+            <h3>⚡ Digester &amp; CHP Thermal Loop</h3>
+
+            <div style="margin-bottom: 12px;">
+                <span style="font-size: 11px; color: #8b949e;">Mesophilic Digester Setpoint</span>
+                <div class="telemetry-value" style="color: #3fb950;">38.0 °C (Nominal)</div>
+            </div>
+
+            <div style="margin-bottom: 12px;">
+                <span style="font-size: 11px; color: #8b949e;">Total Recoverable CHP Heat</span>
+                <div id="chp-heat-output" class="telemetry-value" style="color: var(--accent-purple);">196.1 kWth</div>
+            </div>
+
+            <div style="margin-bottom: 12px;">
+                <span style="font-size: 11px; color: #8b949e;">Net Thermal Surplus / Deficit</span>
+                <div id="thermal-surplus" class="telemetry-value" style="color: var(--accent-green);">+ 132.6 kWth (SURPLUS - 100% RECOVERED)</div>
+            </div>
+
+            <div>
+                <span id="thermal-badge" class="status-badge status-optimal">CLOSED-LOOP THERMAL NOMINAL</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="audit-terminal" id="terminal-log">
+        [SYSTEM STARTUP]: Lwandile Integrated Thermal &amp; Climate SCADA Initialized.<br>
+        [HEAT RECOVERY LINK]: CHP Jacket Water Loop Linked to Brooders &amp; Swine Floors.<br>
+        [NARRATOR SYSTEM]: Voice Narrator on Every Activation initialized.<br>
+        [STEWARD TEACHINGS]: Closed-Loop Thermal Independence Confirmed.
+    <br>[23:34:48]: [SCADA UPDATE]: Broiler Load: 9.7kW | Swine Load: 0.8kW | CHP Surplus: 31.4kW<br>[23:34:59]: [SCADA UPDATE]: Broiler Load: 16.7kW | Swine Load: 0.8kW | CHP Surplus: 38.4kW<br>[23:35:01]: [SCADA UPDATE]: Broiler Load: 12.2kW | Swine Load: 0.8kW | CHP Surplus: 34.0kW<br>[23:35:03]: [SCADA UPDATE]: Broiler Load: 9.9kW | Swine Load: 0.8kW | CHP Surplus: 31.5kW<br>[23:35:06]: [SCADA UPDATE]: Broiler Load: 29.6kW | Swine Load: 0.8kW | CHP Surplus: 11.8kW<br>[23:35:12]: [SCADA UPDATE]: Broiler Load: 19.7kW | Swine Load: 0.8kW | CHP Surplus: 21.7kW<br>[23:35:15]: [SCADA UPDATE]: Broiler Load: 0.0kW | Swine Load: 0.8kW | CHP Surplus: 41.4kW<br>[23:35:24]: [SCADA UPDATE]: Broiler Load: 54.2kW | Swine Load: 0.8kW | CHP Surplus: -12.8kW<br>[23:35:35]: [SCADA UPDATE]: Broiler Load: 69.0kW | Swine Load: 0.8kW | CHP Surplus: -27.6kW<br>[23:35:42]: [SCADA UPDATE]: Broiler Load: 49.3kW | Swine Load: 0.8kW | CHP Surplus: -7.9kW<br>[23:35:45]: [SCADA UPDATE]: Broiler Load: 34.5kW | Swine Load: 0.8kW | CHP Surplus: 6.9kW<br>[23:35:47]: [SCADA UPDATE]: Broiler Load: 39.4kW | Swine Load: 0.8kW | CHP Surplus: 2.0kW<br>[23:35:49]: [SCADA UPDATE]: Broiler Load: 44.4kW | Swine Load: 0.8kW | CHP Surplus: -3.0kW<br>[23:35:51]: [SCADA UPDATE]: Broiler Load: 39.4kW | Swine Load: 0.8kW | CHP Surplus: 2.0kW<br>[23:36:18]: [NARRATOR ACTIVATION]: Thermal SCADA directive engaged.<br>[6:15:13 PM]: [SCADA UPDATE]: Broiler Load: 9.7kW | Swine Load: 0.8kW | CHP Surplus: 31.4kW<br>[6:15:23 PM]: [NARRATOR ACTIVATION]: Thermal SCADA directive engaged.<br>[6:15:48 PM]: [SCADA UPDATE]: Broiler Load: 32.6kW | Swine Load: 0.8kW | CHP Surplus: 54.6kW<br>[6:15:52 PM]: [SCADA UPDATE]: Broiler Load: 32.6kW | Swine Load: 1.9kW | CHP Surplus: 93.3kW<br>[6:15:55 PM]: [SCADA UPDATE]: Broiler Load: 32.6kW | Swine Load: 5.0kW | CHP Surplus: 202.1kW<br>[6:15:58 PM]: [NARRATOR ACTIVATION]: Thermal SCADA directive engaged.<br>[6:16:00 PM]: [SCADA UPDATE]: Broiler Load: 32.6kW | Swine Load: 5.0kW | CHP Surplus: 202.1kW<br>[6:16:04 PM]: [SCADA UPDATE]: Broiler Load: 32.6kW | Swine Load: 5.0kW | CHP Surplus: 202.1kW<br>[6:16:07 PM]: [SCADA UPDATE]: Broiler Load: 0.0kW | Swine Load: 5.0kW | CHP Surplus: 234.7kW<br>[6:16:09 PM]: [SCADA UPDATE]: Broiler Load: 0.0kW | Swine Load: 5.0kW | CHP Surplus: 210.7kW<br>[6:16:10 PM]: [SCADA UPDATE]: Broiler Load: 0.0kW | Swine Load: 5.0kW | CHP Surplus: 186.4kW<br>[6:16:15 PM]: [SCADA UPDATE]: Broiler Load: 0.0kW | Swine Load: 0.8kW | CHP Surplus: 39.0kW<br>[6:16:17 PM]: [SCADA UPDATE]: Broiler Load: 0.0kW | Swine Load: 3.6kW | CHP Surplus: 36.2kW<br>[6:16:19 PM]: [SCADA UPDATE]: Broiler Load: 0.0kW | Swine Load: 15.5kW | CHP Surplus: 120.0kW<br>[6:16:23 PM]: [SCADA UPDATE]: Broiler Load: 0.0kW | Swine Load: 22.3kW | CHP Surplus: 167.3kW<br>[6:16:25 PM]: [SCADA UPDATE]: Broiler Load: 60.7kW | Swine Load: 22.3kW | CHP Surplus: 106.6kW<br>[6:16:33 PM]: [SCADA UPDATE]: Broiler Load: 43.3kW | Swine Load: 22.3kW | CHP Surplus: 124.0kW<br>[6:16:35 PM]: [SCADA UPDATE]: Broiler Load: 21.7kW | Swine Load: 22.3kW | CHP Surplus: 145.6kW<br>[6:16:42 PM]: [SCADA UPDATE]: Broiler Load: 0.0kW | Swine Load: 22.3kW | CHP Surplus: 167.3kW<br>[6:16:44 PM]: [SCADA UPDATE]: Broiler Load: 34.7kW | Swine Load: 22.3kW | CHP Surplus: 132.6kW</div>
+
+</div>
+
+<script>
+let isSpeakingDirective = false;
+let speechDebounceTimer = null;
+
+const visionText = `Voice of Vision, Integrated Thermal and Climate SCADA by Lwandile Engineering Projects. Excess heat from our biogas generator is recovered to sustain our mesophilic digester at 38 degrees Celsius, while providing zero cost heating for poultry brooding and swine floors. Proceed with Scapush Precision.`;
+
+function speakText(text) {
+    const isVoiceEnabled = document.getElementById('voice-activation-toggle').checked;
+    if (!isVoiceEnabled || !('speechSynthesis' in window)) return;
+
+    window.speechSynthesis.cancel();
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.rate = 1.0;
+    utterance.pitch = 0.95;
+    window.speechSynthesis.speak(utterance);
+}
+
+function logTerminal(message) {
+    const log = document.getElementById('terminal-log');
+    const timestamp = new Date().toLocaleTimeString();
+    log.innerHTML += `<br>[${timestamp}]: ${message}`;
+    log.scrollTop = log.scrollHeight;
+}
+
+function toggleVisionAudio() {
+    const btn = document.getElementById('audio-btn');
+    if ('speechSynthesis' in window) {
+        if (isSpeakingDirective) {
+            window.speechSynthesis.cancel();
+            isSpeakingDirective = false;
+            btn.innerHTML = '<span>▶</span> Listen to Directive';
+            btn.style.background = 'var(--accent-blue)';
+            logTerminal('[NARRATOR]: Thermal SCADA audio paused.');
+        } else {
+            const utterance = new SpeechSynthesisUtterance(visionText);
+            utterance.rate = 0.92;
+            utterance.pitch = 0.95;
+            
+            utterance.onend = function() {
+                isSpeakingDirective = false;
+                btn.innerHTML = '<span>▶</span> Listen to Directive';
+                btn.style.background = 'var(--accent-blue)';
+            };
+
+            window.speechSynthesis.speak(utterance);
+            isSpeakingDirective = true;
+            btn.innerHTML = '<span>⏹</span> Pause Directive';
+            btn.style.background = 'var(--accent-red)';
+            logTerminal('[NARRATOR ACTIVATION]: Thermal SCADA directive engaged.');
+        }
+    }
+}
+
+function updateSCADA() {
+    const broilers = parseInt(document.getElementById('broiler-input').value);
+    const broilerAmb = parseInt(document.getElementById('broiler-amb-input').value);
+    const swine = parseInt(document.getElementById('swine-input').value);
+    const swineAmb = parseInt(document.getElementById('swine-amb-input').value);
+
+    document.getElementById('broiler-val').innerText = broilers.toLocaleString();
+    document.getElementById('broiler-amb-val').innerText = broilerAmb;
+    document.getElementById('swine-val').innerText = swine;
+    document.getElementById('swine-amb-val').innerText = swineAmb;
+
+    // Thermal Load Math (Approx kWth based on delta T from target)
+    // Broiler target ~32C | Swine target ~20C
+    const broilerDelta = Math.max(0, 32 - broilerAmb);
+    const broilerKW = (broilers * broilerDelta * 0.00085).toFixed(1);
+
+    const swineDelta = Math.max(0, 20 - swineAmb);
+    const swineKW = (swine * (swineDelta + 2) * 0.0025).toFixed(1);
+
+    document.getElementById('broiler-heat-load').innerText = broilerKW + " kWth";
+    document.getElementById('swine-heat-load').innerText = swineKW + " kWth";
+
+    // CHP Heat Generation Proxy (Linked to livestock waste mass baseline)
+    const totalWasteKg = (broilers * 0.09) + (swine * 4.75);
+    const chpHeatKW = (totalWasteKg * 0.038).toFixed(1);
+    document.getElementById('chp-heat-output').innerText = chpHeatKW + " kWth";
+
+    const digesterParasiticKW = 6.5; // Digester jacket heating load
+    const totalDemandKW = parseFloat(broilerKW) + parseFloat(swineKW) + digesterParasiticKW;
+    const surplusKW = (parseFloat(chpHeatKW) - totalDemandKW).toFixed(1);
+
+    const surplusDisplay = document.getElementById('thermal-surplus');
+    const badge = document.getElementById('thermal-badge');
+
+    if (surplusKW < 0) {
+        surplusDisplay.style.color = "var(--accent-red)";
+        surplusDisplay.innerText = surplusKW + " kWth (DEFICIT - AUX BOILER ENGAGED)";
+        badge.className = "status-badge status-danger";
+        badge.innerText = "THERMAL DEFICIT: AUXILIARY BIOGAS BOILER ACTIVE";
+    } else {
+        surplusDisplay.style.color = "var(--accent-green)";
+        surplusDisplay.innerText = "+ " + surplusKW + " kWth (SURPLUS - 100% RECOVERED)";
+        badge.className = "status-badge status-optimal";
+        badge.innerText = "CLOSED-LOOP THERMAL NOMINAL";
+    }
+
+    clearTimeout(speechDebounceTimer);
+    speechDebounceTimer = setTimeout(() => {
+        logTerminal(`[SCADA UPDATE]: Broiler Load: ${broilerKW}kW | Swine Load: ${swineKW}kW | CHP Surplus: ${surplusKW}kW`);
+    }, 500);
+}
+
+updateSCADA();
+</script>
+
+
+</body></html>
